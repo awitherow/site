@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import sanity from "../lib/sanity";
 import { getAllHobbies } from "../queries/hobbies";
 
-function App({ hobbies }) {
+function Home({ hobbies }) {
   console.log(hobbies);
   useEffect(() => {});
   return (
@@ -57,10 +57,10 @@ function App({ hobbies }) {
   );
 }
 
-App.getInitialProps = async ({ req }) => {
+Home.getInitialProps = async ({ req }) => {
   return {
     hobbies: await sanity.fetch(getAllHobbies),
   };
 };
 
-export default App;
+export default Home;
