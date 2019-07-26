@@ -24,6 +24,35 @@ function App({ hobbies }) {
           about them, their benefits, and some starter pack items.
         </p>
       </div>
+      <ul id="hobbies-container">
+        {hobbies.map(({ _id, name, description, image, products, tags }) => (
+          <li key={_id}>
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <img src={image.url} />
+            <ul>
+              {tags.map(({ _id, tag }) => (
+                <li key={_id}>{tag}</li>
+              ))}
+            </ul>
+            <h4>Starter Kit Options</h4>
+            <ul>
+              {products.map(
+                ({ _id, name, creator, description, image, link }) => (
+                  <li key={_id}>
+                    <img src={image.url} />
+                    <h5>
+                      {name} by {creator}
+                    </h5>
+                    <p>{description}</p>
+                    <a href={link}>Purchase on Amazon</a>
+                  </li>
+                ),
+              )}
+            </ul>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
