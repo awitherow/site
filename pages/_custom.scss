@@ -3,6 +3,10 @@
 .btn-container {
   margin: 0.33rem auto;
 
+  &.left {
+    margin: 0.33rem 0 0.33rem 0;
+  }
+
   .btn {
     margin: 0.22rem;
   }

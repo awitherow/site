@@ -7,10 +7,10 @@ import Footer from "../components/Footer";
 
 import "./index.scss";
 
-function Home({ hobbies, ...props }) {
+function Home({ activities, ...props }) {
   useEffect(() => {});
 
-  console.log(hobbies);
+  console.log(activities);
 
   return (
     <div id="index" className="page">
@@ -20,8 +20,8 @@ function Home({ hobbies, ...props }) {
         <h1>HIVIBE</h1>
         <h2>Evolve to your Highest Vibration</h2>
         <div className="btn-container">
-          <Button onClick={() => Router.push("/habits")} variant="primary">
-            Explore Hobbies
+          <Button onClick={() => Router.push("/activities")} variant="primary">
+            Vibe Higher
           </Button>
           <Button onClick={() => Router.push("/about")} variant="light">
             Our Story

@@ -1,0 +1,36 @@
+#activities {
+  &.page {
+    .intro {
+      background: url("/static/img/icehike.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+      min-height: 66vh;
+      border-bottom: 8px solid skyblue;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: black;
+
+      h1 {
+        margin-bottom: 0;
+        font-size: 5rem;
+        font-weight: 300;
+      }
+
+      p {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+
+    #activities-container {
+      list-style: none;
+    }
+  }
+}

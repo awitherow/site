@@ -1,4 +1,4 @@
-export const getAllHobbies = `
+export const getAllActivities = `
 *[_type == 'hobby']{
     _id,
     name,
