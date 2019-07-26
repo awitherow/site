@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
-import Link from "next/link";
+import { link } from "../../lib/routing";
 
 import "./index.scss";
 
@@ -14,15 +14,15 @@ function Navigation(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Item>
-              <Link to="/">
-                <Nav.Link href="#">Home</Nav.Link>
-              </Link>
+              <Nav.Link href="#" onClick={() => link("/")}>
+                Home
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Link to="/habits">
-                <Nav.Link href="#">Habits</Nav.Link>
-              </Link>
+              <Nav.Link href="/hobbies" onClick={() => link("/hobbies")}>
+                Habits
+              </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

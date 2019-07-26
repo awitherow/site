@@ -9,7 +9,7 @@ export const getAllHobbies = `
     tags[]-> {
         ...
     }, 
-    benefits[]->{
+    benefits[]{
         ...
     },
     products[]-> {

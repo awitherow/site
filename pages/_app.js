@@ -1,7 +1,7 @@
 import React from "react";
 import App, { Container } from "next/app";
 
-import "./custom.scss";
+import "./_custom.scss";
 
 export default class HiVibe extends App {
   static async getInitialProps({ Component, ctx }) {
