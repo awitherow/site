@@ -2,9 +2,9 @@ import React from "react";
 import Navigation from "../components/Navigation";
 
 import sanity from "../lib/sanity";
-import { getAllHobbies } from "../queries/hobbies";
+import { getAllHobbies } from "../queries/habits";
 
-import "./hobbies.scss";
+import "./habits.scss";
 
 function Hobbies({ hobbies }) {
   return (

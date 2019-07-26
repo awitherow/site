@@ -1,11 +1,10 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
-import { link } from "../../lib/routing";
+import Router from "next/router";
 
 import "./index.scss";
 
 function Navigation(props) {
-  console.log(props);
   return (
     <Navbar bg="light" expand="lg" fixed="top">
       <div className="container">
@@ -14,13 +13,11 @@ function Navigation(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Item>
-              <Nav.Link href="#" onClick={() => link("/")}>
-                Home
-              </Nav.Link>
+              <Nav.Link onClick={() => Router.push("/")}>Home</Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link href="/hobbies" onClick={() => link("/hobbies")}>
+              <Nav.Link onClick={() => Router.push("/habits")}>
                 Habits
               </Nav.Link>
             </Nav.Item>
