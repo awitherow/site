@@ -7,9 +7,11 @@ export const getAllHobbies = `
         "url": asset->url
     },
     tags[]-> {
-        ...,
+        ...
     }, 
-    benefits,
+    benefits[]->{
+        ...
+    },
     products[]-> {
         ...,
         image {
