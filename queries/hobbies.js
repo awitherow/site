@@ -2,9 +2,18 @@ export const getAllHobbies = `
 *[_type == 'hobby']{
     _id,
     name,
-    description->,
-    image,
-    tags->,
+    description,
+    image {
+        "url": asset->url
+    },
+    tags[]-> {
+        ...,
+    }, 
     benefits,
-    products
+    products[]-> {
+        ...,
+        image {
+            "url": asset->url
+        }
+    }
 }`;
