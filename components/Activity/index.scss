@@ -1,58 +1,31 @@
 .hobby {
-  margin: 1rem auto;
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  @media (min-width: 900px) {
-    flex-direction: row;
-    margin: 2rem auto;
-  }
+  list-style: none;
+  padding: 0;
+  margin: 1rem;
 
   img {
     width: 100vw;
-
-    @media (min-width: 900px) {
-      width: 320px;
-    }
+    max-width: 360px;
   }
 
-  .info {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+  h3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    text-align: center;
+    font-size: 4rem;
+    line-height: 0;
+  }
 
-    margin-top: 1rem;
+  a {
+    position: relative;
+    color: white;
 
-    @media (min-width: 768px) {
-      margin-top: 0;
-      margin-left: 1rem;
-    }
-
-    h4 {
-      font-size: 1.33rem;
-    }
-
-    .tags {
-      list-style-type: none;
-      padding-left: 0;
-      margin: 0.22rem 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-
-      .tag {
-        font-size: 0.88rem;
-        padding: 0.33rem 0.66rem;
-        margin: 0.33rem;
-        border: 1px solid rgba(0, 0, 0, 0.33);
-        border-radius: 0.33rem;
-      }
+    &:hover {
+      color: steelblue;
     }
   }
 }

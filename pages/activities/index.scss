@@ -7,7 +7,7 @@
       -o-background-size: cover;
       background-size: cover;
 
-      min-height: 66vh;
+      min-height: 44vh;
       border-bottom: 8px solid skyblue;
 
       display: flex;
@@ -16,21 +16,25 @@
       flex-direction: column;
       color: black;
 
-      h1 {
-        margin-bottom: 0;
-        font-size: 5rem;
-        font-weight: 300;
+      h3 {
+        margin-top: 64px;
       }
 
       p {
         max-width: 600px;
         margin: 0 auto;
+        padding: 0 0.33rem;
         text-align: center;
       }
     }
 
     #activities-container {
-      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0 auto;
     }
   }
 }

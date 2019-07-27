@@ -10,15 +10,14 @@ import "./index.scss";
 function Home({ activities, ...props }) {
   useEffect(() => {});
 
-  console.log(activities);
-
   return (
     <div id="index" className="page">
-      <div className="cover" style={{ paddingTop: 64 }}>
-        <Navigation />
+      <Navigation />
 
+      <div className="cover" style={{ paddingTop: 64 }}>
         <h1>HIVIBE</h1>
         <h2>Evolve to your Highest Vibration</h2>
+
         <div className="btn-container">
           <Button onClick={() => Router.push("/activities")} variant="primary">
             Vibe Higher
@@ -28,6 +27,7 @@ function Home({ activities, ...props }) {
           </Button>
         </div>
       </div>
+
       <Footer />
     </div>
   );

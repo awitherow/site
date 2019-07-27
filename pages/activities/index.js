@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
@@ -12,13 +13,17 @@ import "./index.scss";
 function activities({ activities }) {
   return (
     <div id="activities" className="page">
+      <Navigation />
+
       <div className="intro">
-        <Navigation />
         <h3>Heighten Your Vibe</h3>
         <p>
           Below is a curated list of activities of a Higher Vibration,
           information about them, their benefits, and some starter pack items.
         </p>
+        <div className="btn-container">
+          <Button href="#activities-container">Popular Activities</Button>
+        </div>
       </div>
 
       <ul id="activities-container" className="container">
@@ -26,6 +31,7 @@ function activities({ activities }) {
           <Activity data={habit} />
         ))}
       </ul>
+
       <Footer />
     </div>
   );
