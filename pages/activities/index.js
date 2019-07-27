@@ -16,10 +16,11 @@ function activities({ activities }) {
       <Navigation />
 
       <div className="intro">
-        <h3>Heighten Your Vibe</h3>
+        <h3>Evolve to Your Highest Vibration</h3>
         <p>
-          Below is a curated list of activities of a Higher Vibration,
-          information about them, their benefits, and some starter pack items.
+          Below you will find a curated list of activities of a Higher
+          Vibration, information about them, their benefits, and how to get
+          started living in alignment with your Highest Vibration.
         </p>
         <div className="btn-container">
           <Button href="#activities-container">Popular Activities</Button>

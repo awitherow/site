@@ -20,10 +20,10 @@ function Home({ activities, ...props }) {
 
         <div className="btn-container">
           <Button onClick={() => Router.push("/activities")} variant="primary">
-            Vibe Higher
+            Get Started
           </Button>
           <Button onClick={() => Router.push("/about")} variant="light">
-            Our Story
+            Join The Movement
           </Button>
         </div>
       </div>
