@@ -4,6 +4,7 @@ import Router from "next/router";
 
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import Mailchimp from "../components/Mailchimp";
 
 import "./index.scss";
 
@@ -17,15 +18,7 @@ function Home({ activities, ...props }) {
       <div className="cover" style={{ paddingTop: 64 }}>
         <h1>HIVIBE</h1>
         <h2>Evolve to your Highest Vibration</h2>
-
-        <div className="btn-container">
-          <Button onClick={() => Router.push("/activities")} variant="primary">
-            Vibe Higher
-          </Button>
-          <Button onClick={() => Router.push("/about")} variant="light">
-            Our Story
-          </Button>
-        </div>
+        <Mailchimp />
       </div>
 
       <Footer />
