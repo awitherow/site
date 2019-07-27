@@ -1,6 +1,6 @@
 footer {
   background: steelblue;
-  padding: 2rem 0.33rem;
+  padding: 1.66rem 0.33rem;
 
   ul {
     margin: 0 auto;
@@ -10,7 +10,16 @@ footer {
 
     li {
       display: inline;
-      padding: 0.33rem;
+      padding: 0.33rem 0.5rem;
+
+      a {
+        color: white;
+        font-size: 1.66rem;
+
+        &:hover {
+          color: lighten(steelblue, 20%);
+        }
+      }
     }
   }
 }
