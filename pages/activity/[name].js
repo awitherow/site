@@ -31,11 +31,7 @@ const ActivityPage = () => {
       <Navigation />
 
       {globalState.activity._id ? (
-        <Activity data={globalState.activity} />
-      ) : null}
-
-      {globalState.activity._id ? (
-        <Product data={globalState.activity} />
+        <Activity data={globalState.activity} expanded />
       ) : null}
 
       <Footer />

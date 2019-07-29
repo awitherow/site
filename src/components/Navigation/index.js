@@ -10,7 +10,9 @@ function Navigation(props) {
     <Navbar expand="lg" fixed="top">
       <div className="container">
         <Navbar.Brand>
-          <Link href="/">HI VIBE</Link>
+          <Link href="/">
+            <a>HI VIBE</a>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

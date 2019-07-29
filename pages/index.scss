@@ -37,42 +37,5 @@
       margin: 2rem auto;
       max-width: 600px;
     }
-
-    #habits-container {
-      list-style: none;
-
-      .hobby {
-        padding-left: 0;
-
-        img {
-          max-width: 320px;
-          margin-right: 2rem;
-        }
-
-        .header {
-          display: flex;
-          align-items: flex-start;
-          justify-content: center;
-        }
-
-        h4 {
-          font-size: 1.33rem;
-        }
-
-        .tags {
-          list-style-type: none;
-          margin: 1rem auto;
-          padding-left: 0;
-
-          .tag {
-            display: inline;
-            padding: 0.33rem 0.66rem;
-            margin: 0.33rem;
-            border: 1px solid rgba(0, 0, 0, 0.33);
-            border-radius: 0.33rem;
-          }
-        }
-      }
-    }
   }
 }
