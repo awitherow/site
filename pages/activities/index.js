@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Router from "next/router";
 import { Button } from "react-bootstrap";
 
-import Navigation from "../../components/Navigation";
-import Footer from "../../components/Footer";
-import Activity from "../../components/Activity";
+import Navigation from "../../src/components/Navigation";
+import Footer from "../../src/components/Footer";
+import Activity from "../../src/components/Activity";
 
-import sanity from "../../lib/sanity";
-import { getAllActivities } from "../../queries/activities";
+import sanity from "../../src/lib/sanity";
+
+import useGlobal from "../../src/store";
 
 import "./index.scss";
 
-function activities({ activities }) {
+function Activities() {
+  const [globalState, globalActions] = useGlobal();
+
+  useEffect(() => {
+    async function getActivities() {
+      await globalActions.activities.getActivities();
+    }
+
+    getActivities();
+  }, []);
+
   return (
     <div id="activities" className="page">
       <Navigation />
@@ -27,21 +39,17 @@ function activities({ activities }) {
         </div>
       </div>
 
-      <ul id="activities-container" className="container">
-        {activities.map(habit => (
-          <Activity data={habit} />
-        ))}
-      </ul>
+      {globalState.activities.length && (
+        <div id="activities-container" className="container">
+          {globalState.activities.map((habit, i) => (
+            <Activity data={habit} key={i} />
+          ))}
+        </div>
+      )}
 
       <Footer />
     </div>
   );
 }
 
-activities.getInitialProps = async () => {
-  return {
-    activities: await sanity.fetch(getAllActivities),
-  };
-};
-
-export default activities;
+export default Activities;

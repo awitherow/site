@@ -1,6 +1,7 @@
 import React from "react";
 
-function Product({ _id, name, creator, description, image, link }) {
+function Product({ data }) {
+  const { _id, name, creator, description, image, link } = data;
   return (
     <li key={_id}>
       <img src={image.url} />
@@ -12,3 +13,5 @@ function Product({ _id, name, creator, description, image, link }) {
     </li>
   );
 }
+
+export default Product;

@@ -9,16 +9,12 @@ function Navigation(props) {
   return (
     <Navbar expand="lg" fixed="top">
       <div className="container">
-        <Navbar.Brand href="#home">HI VIBE</Navbar.Brand>
+        <Navbar.Brand>
+          <Link href="/">HI VIBE</Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Item>
-              <Link href="/">
-                <a className="nav-link">Home</a>
-              </Link>
-            </Nav.Item>
-
             <Nav.Item>
               <Link href="/activities">
                 <a className="nav-link">Activities</a>
