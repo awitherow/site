@@ -5,7 +5,6 @@ import * as actions from "../actions";
 
 // general state of the app
 const initialAppState = {
-  loading: true,
   error: false,
 };
 

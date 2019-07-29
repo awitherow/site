@@ -7,8 +7,6 @@ import useGlobal from "../src/store";
 import "./_custom.scss";
 
 export default class HiVibe extends App {
-  componentDidMount() {}
-
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 

@@ -16,7 +16,7 @@ const ActivityPage = () => {
   const [globalState, globalActions] = useGlobal();
   const router = useRouter();
 
-  console.log(globalState);
+  // TODO: no router.query.name ??
 
   useEffect(() => {
     async function getActivityData() {
