@@ -1,11 +1,24 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 import "./index.scss";
 
+const links = [
+  {
+    id: "lifestyle",
+    label: "Lifestyle",
+  },
+  {
+    id: "activities",
+    label: "Activities",
+  },
+];
+
 function Navigation(props) {
+  const router = useRouter();
+
   return (
     <Navbar expand="lg" fixed="top">
       <div className="container">
@@ -17,11 +30,21 @@ function Navigation(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Item>
-              <Link href="/activities">
-                <a className="nav-link">Activities</a>
-              </Link>
-            </Nav.Item>
+            {links.map(({ id, label }, i) => {
+              console.log(id, router.route);
+              return (
+                <Nav.Item key={i}>
+                  <Link href={`/${id}`}>
+                    <a
+                      className={`nav-link${
+                        router.route.includes(id) ? " active" : ""
+                      }`}>
+                      {label}
+                    </a>
+                  </Link>
+                </Nav.Item>
+              );
+            })}
           </Nav>
         </Navbar.Collapse>
       </div>
