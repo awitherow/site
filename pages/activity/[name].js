@@ -27,7 +27,11 @@ const ActivityPage = () => {
   return (
     <Layout id="activity">
       {globalState.activity._id ? (
-        <Activity data={globalState.activity} expanded />
+        <Activity
+          key={globalState.activity._id}
+          data={globalState.activity}
+          expanded
+        />
       ) : null}
     </Layout>
   );

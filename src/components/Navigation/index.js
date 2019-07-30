@@ -30,21 +30,18 @@ function Navigation(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            {links.map(({ id, label }, i) => {
-              console.log(id, router.route);
-              return (
-                <Nav.Item key={i}>
-                  <Link href={`/${id}`}>
-                    <a
-                      className={`nav-link${
-                        router.route.includes(id) ? " active" : ""
-                      }`}>
-                      {label}
-                    </a>
-                  </Link>
-                </Nav.Item>
-              );
-            })}
+            {links.map(({ id, label }, i) => (
+              <Nav.Item key={i}>
+                <Link href={`/${id}`}>
+                  <a
+                    className={`nav-link${
+                      router.route.includes(id) ? " active" : ""
+                    }`}>
+                    {label}
+                  </a>
+                </Link>
+              </Nav.Item>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </div>

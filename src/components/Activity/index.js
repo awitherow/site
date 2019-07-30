@@ -35,7 +35,7 @@ function Activity({ data, expanded }) {
         <div className="products">
           <h3>Products</h3>
           {products.map(product => (
-            <Product data={product} />
+            <Product key={product._id} data={product} />
           ))}
         </div>
       </div>
