@@ -3,6 +3,8 @@ import React from "react";
 import Navigation from "../Navigation";
 import Footer from "../Footer";
 
+import Divider from "./Divider";
+
 import "./index.scss";
 
 function Layout({ id, children }) {
@@ -16,3 +18,4 @@ function Layout({ id, children }) {
 }
 
 export default Layout;
+export { Divider };

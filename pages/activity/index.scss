@@ -1,4 +1,28 @@
 #activity {
+  &.page {
+    .products {
+      padding: 1rem;
+      max-width: 1200px;
+
+      h3 {
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 64px;
+    }
+
+    @media (min-width: 1200px) {
+      .products {
+        margin: 4rem auto;
+      }
+    }
+  }
   footer {
     margin-top: 64px;
   }

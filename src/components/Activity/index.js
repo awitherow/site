@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import Link from "next/link";
 
 import Product from "../../components/Product";
+import { Divider } from "../../components/Layout";
 
 import "./index.scss";
 
@@ -13,11 +13,14 @@ function Activity({ data, expanded }) {
     return null;
   }
 
-  const expansion = ({ tags, benefits, description, products }) => {
+  console.log(data);
+
+  const expansion = ({ tags, resources, description, products }) => {
     return (
       <div className="body">
         <div className="information">
           <h3>About {name} </h3>
+          <Divider />
           <div className="tags">
             {tags.map(({ tag }, i) => (
               <div key={i} className="tag">
@@ -29,14 +32,9 @@ function Activity({ data, expanded }) {
         </div>
         <div className="resources">
           <h3>Resources</h3>
+          <Divider />
           <p>Coming soon...</p>
           {/* TODO: add RESOURCES (redo benefits) */}
-        </div>
-        <div className="products">
-          <h3>Products</h3>
-          {products.map(product => (
-            <Product key={product._id} data={product} />
-          ))}
         </div>
       </div>
     );
