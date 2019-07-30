@@ -70,6 +70,10 @@
         margin: 1rem auto 0.33rem auto;
       }
 
+      .sub-heading {
+        margin-bottom: 0.5rem;
+      }
+
       .tags {
         margin: 0 auto 1rem auto;
         display: flex;
@@ -88,8 +92,11 @@
 
       @media (min-width: 1024px) {
         text-align: left;
+        padding: 0 1rem;
 
-        padding: 1rem;
+        h3 {
+          margin-top: 0;
+        }
 
         .tags {
           justify-content: flex-start;

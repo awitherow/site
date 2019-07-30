@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-import Product from "../../components/Product";
 import { Divider } from "../../components/Layout";
 
 import "./index.scss";
@@ -19,7 +18,7 @@ function Activity({ data, expanded }) {
     return (
       <div className="body">
         <div className="information">
-          <h3>About {name} </h3>
+          <h2>About {name} </h2>
           <Divider />
           <div className="tags">
             {tags.map(({ tag }, i) => (
@@ -31,7 +30,11 @@ function Activity({ data, expanded }) {
           <p>{description}</p>
         </div>
         <div className="resources">
-          <h3>Resources</h3>
+          <h3>Essence of {name}</h3>
+          <p className="sub-heading">
+            Some recommendations that succinctly constitute the{" "}
+            <strong>Essence of {name}</strong>.
+          </p>
           <Divider />
           <p>Coming soon...</p>
           {/* TODO: add RESOURCES (redo benefits) */}
