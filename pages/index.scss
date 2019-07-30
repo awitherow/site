@@ -1,5 +1,7 @@
 #index {
   &.page {
+    margin-top: 0;
+
     .cover {
       background: url("/static/img/adventure.png") no-repeat center center fixed;
       -webkit-background-size: cover;

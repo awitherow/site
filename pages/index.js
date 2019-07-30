@@ -26,14 +26,14 @@ function Home({ activities, ...props }) {
               Router.push("/activities");
             }}
             variant="primary">
-            Get Started
+            Get Active
           </Button>
           <Button
             onClick={() => {
-              Router.push("/about");
+              Router.push("/lifestyle");
             }}
             variant="light">
-            Join The Movement
+            Lifestyle
           </Button>
         </div>
       </div>
