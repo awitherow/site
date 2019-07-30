@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import { Button } from "react-bootstrap";
 
-import Navigation from "../../src/components/Navigation";
-import Footer from "../../src/components/Footer";
+import Layout from "../../src/components/Layout";
 import Activity from "../../src/components/Activity";
 
 import sanity from "../../src/lib/sanity";
@@ -24,9 +23,7 @@ function Activities() {
   }, []);
 
   return (
-    <div id="activities" className="page">
-      <Navigation />
-
+    <Layout id="activities">
       <div className="intro">
         <h3>Evolve to Your Highest Vibration</h3>
         <p>
@@ -46,9 +43,7 @@ function Activities() {
           ))}
         </div>
       )}
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 

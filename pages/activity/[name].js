@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import Navigation from "../../src/components/Navigation";
-import Footer from "../../src/components/Footer";
+import Layout from "../../src/components/Layout";
 import Activity from "../../src/components/Activity";
-import Product from "../../src/components/Product";
 
 import sanity from "../../src/lib/sanity";
 
@@ -27,15 +25,11 @@ const ActivityPage = () => {
   }, []);
 
   return (
-    <div id="activity" className="page">
-      <Navigation />
-
+    <Layout id="activity">
       {globalState.activity._id ? (
         <Activity data={globalState.activity} expanded />
       ) : null}
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
