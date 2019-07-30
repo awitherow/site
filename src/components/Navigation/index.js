@@ -11,7 +11,7 @@ function Navigation(props) {
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
-            <a>HI VIBE</a>
+            <a>HIVIBES</a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
