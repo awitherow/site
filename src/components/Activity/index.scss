@@ -1,4 +1,4 @@
-.hobby {
+.activity {
   margin: 1rem;
 
   a {
@@ -7,7 +7,7 @@
 
     img {
       width: 100vw;
-      max-width: 360px;
+      max-width: 200px;
     }
 
     h3 {
@@ -18,7 +18,6 @@
       bottom: 0;
       z-index: 3;
       text-align: center;
-      font-size: 4rem;
       line-height: 0;
     }
 
@@ -27,79 +26,109 @@
     }
   }
 
-  &.expansion {
+  @media (min-width: 768px) {
     a {
       img {
-        max-width: 100%;
-        width: auto;
-        max-height: 77vh;
+        max-width: 275px;
       }
-    }
-
-    @media (min-width: 768px) {
-      margin: 0;
-
-      a {
-        img {
-          max-height: 100%;
-        }
-      }
-    }
-
-    @media (min-width: 1200px) {
-      max-width: 1200px;
-      margin: 1rem auto;
-      display: flex;
-
-      a {
-        h3 {
-          display: none;
-        }
-
-        img {
-          max-width: 100%;
-        }
-      }
-    }
-
-    .body {
-      padding: 0.5rem;
 
       h3 {
-        margin: 1rem auto 0.33rem auto;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    a {
+      img {
+        max-width: 350px;
       }
 
-      .divider {
-        margin: 0 0 1rem 0;
+      h3 {
+        font-size: 4rem;
       }
+    }
+  }
 
-      .sub-heading {
-        margin-bottom: 0.5rem;
-      }
+  &.expansion {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 
-      .tags {
-        margin: 0 auto 1rem auto;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+    @media (min-width: 1024px) {
+      max-width: 1024px;
+      margin: 1rem auto;
+    }
 
-        .tag {
-          padding: 0.22rem 0.44rem;
-          margin: 0.22rem;
-          border: 1px solid rgba(0, 0, 0, 0.33);
-          border-radius: 0.33rem;
-          font-size: 0.88rem;
+    .divider {
+      margin: 0 0 1rem 0 !important;
+    }
+
+    .activity {
+      &-header {
+        @media (min-width: 768px) {
+          display: flex;
+          margin-bottom: 1rem;
+        }
+
+        img {
+          max-width: 100vw;
+
+          @media (min-width: 768px) {
+            max-width: 44%;
+          }
+
+          @media (min-width: 1024px) {
+            max-width: 33%;
+          }
+        }
+
+        &__info {
+          padding: 0.5rem;
+
+          h3 {
+            font-size: 1.33rem;
+            font-weight: 300;
+            margin: 1rem auto 0.33rem auto;
+          }
+
+          .sub-heading {
+            margin-bottom: 0.5rem;
+          }
+
+          .tags {
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            .tag {
+              padding: 0.22rem 0.44rem;
+              margin: 0.22rem;
+              border: 1px solid rgba(0, 0, 0, 0.33);
+              border-radius: 0.33rem;
+              font-size: 0.88rem;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            text-align: left;
+            padding: 0 1rem;
+
+            h3 {
+              margin-top: 0;
+            }
+          }
         }
       }
+    }
+
+    .resources {
+      padding: 0.5rem;
 
       @media (min-width: 1024px) {
-        text-align: left;
-        padding: 0 1rem;
-
-        h3 {
-          margin-top: 0;
-        }
+        padding: 0;
       }
     }
   }

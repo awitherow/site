@@ -1,42 +1,27 @@
-import React, { useEffect } from "react";
-import { ButtonToolbar, Button } from "react-bootstrap";
+import React from "react";
+import Link from "next/link";
 import Router from "next/router";
 
-import Navigation from "../src/components/Navigation";
-import Footer from "../src/components/Footer";
+import Layout from "../src/components/Layout";
 
 import "./index.scss";
 
-function Home({ activities, ...props }) {
-  return (
-    <div id="index" className="page">
-      <Navigation />
+const Home = ({ activities, ...props }) => (
+  <Layout id="index">
+    <div className="cover">
+      <h1>HIVIBE</h1>
+      <h2>Evolve to your Highest Vibration</h2>
 
-      <div className="cover" style={{ paddingTop: 64 }}>
-        <h1>HIVIBE</h1>
-        <h2>Evolve to your Highest Vibration</h2>
-
-        <div className="btn-container">
-          <Button
-            onClick={() => {
-              Router.push("/activities");
-            }}
-            variant="primary">
-            Get Active
-          </Button>
-          <Button
-            onClick={() => {
-              Router.push("/lifestyle");
-            }}
-            variant="light">
-            Lifestyle
-          </Button>
-        </div>
+      <div className="btn-container">
+        <Link href="/activities">
+          <a className="btn btn-primary">Get Active</a>
+        </Link>
+        <Link href="/lifestyle">
+          <a className="btn btn-secondary">Lifestyle</a>
+        </Link>
       </div>
-
-      <Footer />
     </div>
-  );
-}
+  </Layout>
+);
 
 export default Home;

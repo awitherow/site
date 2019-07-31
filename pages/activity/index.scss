@@ -2,7 +2,7 @@
   &.page {
     .products {
       padding: 1rem;
-      max-width: 1200px;
+      max-width: 1024px;
 
       h4 {
         margin: 0;
@@ -28,17 +28,25 @@
       margin-top: 4rem;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
       .products {
         margin: 2rem auto;
-        padding: 0;
+        padding: 0.5rem;
 
         h3 {
           text-align: left;
         }
 
+        @media (min-width: 1024px) {
+          padding: 0;
+        }
+
         #filter-bar {
           padding: 0.33rem 0;
+
+          .dropdown:first-child {
+            margin-left: 0;
+          }
 
           .btn-group,
           .dropdown {

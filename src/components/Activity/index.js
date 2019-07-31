@@ -6,27 +6,41 @@ import { Divider } from "../../components/Layout";
 import "./index.scss";
 
 function Activity({ data, expanded }) {
-  const { _id, name, image } = data;
+  const { _id, name, image, tags, description } = data;
 
   if (!_id) {
     return null;
   }
 
-  const expansion = ({ tags, resources, description, products }) => {
-    return (
-      <div className="body">
-        <div className="information">
-          <h2>About {name} </h2>
-          <Divider />
-          <div className="tags">
-            {tags.map(({ tag }, i) => (
-              <div key={i} className="tag">
-                {tag}
-              </div>
-            ))}
+  return (
+    <div className={`activity ${expanded && "expansion"}`}>
+      {!expanded ? (
+        <Link href="/activity/[name]" as={`/activity/${name.toLowerCase()}`}>
+          <a>
+            <h3>{name}</h3>
+            <img src={image.url} />
+          </a>
+        </Link>
+      ) : (
+        <div className="activity-header">
+          <img src={image.url} />
+          <div className="activity-header__info">
+            <h2>About {name} </h2>
+            <Divider />
+            <h3>Searchable Tags</h3>
+            <div className="tags">
+              {tags.map(({ tag }, i) => (
+                <div key={i} className="tag">
+                  {tag}
+                </div>
+              ))}
+            </div>
+            <h3>Description</h3>
+            <p>{description}</p>
           </div>
-          <p>{description}</p>
         </div>
+      )}
+      {expanded && (
         <div className="resources">
           <h3>Essence of {name}</h3>
           <p className="sub-heading">
@@ -35,21 +49,8 @@ function Activity({ data, expanded }) {
           </p>
           <Divider />
           <p>Coming soon...</p>
-          {/* TODO: add RESOURCES (redo benefits) */}
         </div>
-      </div>
-    );
-  };
-
-  return (
-    <div className={`hobby ${expanded && "expansion"}`}>
-      <Link href="/activity/[name]" as={`/activity/${name.toLowerCase()}`}>
-        <a>
-          <h3>{name}</h3>
-          <img src={image.url} />
-        </a>
-      </Link>
-      {expanded && expansion(data)}
+      )}
     </div>
   );
 }
