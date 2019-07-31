@@ -16,35 +16,17 @@ import Layout, { Divider } from "../../src/components/Layout";
 import Activity from "../../src/components/Activity";
 
 import sanity from "../../src/lib/sanity";
-
-import useGlobal from "../../src/store";
+import { getActivityByName } from "../../src/actions/activities/queries";
 
 import "./index.scss";
 
-const ActivityPage = () => {
-  const [globalState, globalActions] = useGlobal();
-  const router = useRouter();
-
-  // TODO: no router.query.name ??
-
-  useEffect(() => {
-    async function getActivityData() {
-      await globalActions.activities.getActivity(router.query.name);
-    }
-
-    getActivityData();
-  }, []);
-
+const ActivityPage = ({ activity }) => {
   return (
     <Layout id="activity">
-      {globalState.activity._id ? (
-        <Activity
-          key={globalState.activity._id}
-          data={globalState.activity}
-          expanded
-        />
+      {activity._id ? (
+        <Activity key={activity._id} data={activity} expanded />
       ) : null}
-      {globalState.activity.products ? (
+      {activity.products ? (
         <div className="products">
           <h3>Essential Items</h3>
           <Divider />
@@ -80,9 +62,9 @@ const ActivityPage = () => {
             </ButtonGroup>
           </ButtonToolbar>
 
-          <h5>{globalState.activity.products.length} Results</h5>
+          <h5>{activity.products.length} Results</h5>
           <CardColumns>
-            {globalState.activity.products.map(
+            {activity.products.map(
               ({ _id, image, description, link, name, creator, tags }) => (
                 <Card key={_id}>
                   <Card.Img variant="top" src={image.url} />
@@ -115,6 +97,12 @@ const ActivityPage = () => {
       ) : null}
     </Layout>
   );
+};
+
+ActivityPage.getInitialProps = async function({ query }) {
+  return {
+    activity: await sanity.fetch(getActivityByName(query.name)),
+  };
 };
 
 export default ActivityPage;

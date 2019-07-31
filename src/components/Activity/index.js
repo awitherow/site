@@ -12,8 +12,6 @@ function Activity({ data, expanded }) {
     return null;
   }
 
-  console.log(data);
-
   const expansion = ({ tags, resources, description, products }) => {
     return (
       <div className="body">

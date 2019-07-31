@@ -5,13 +5,9 @@ import Router from "next/router";
 import Navigation from "../src/components/Navigation";
 import Footer from "../src/components/Footer";
 
-import useGlobal from "../src/store";
-
 import "./index.scss";
 
 function Home({ activities, ...props }) {
-  const [globalState, globalActions] = useGlobal();
-
   return (
     <div id="index" className="page">
       <Navigation />

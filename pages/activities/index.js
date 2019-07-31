@@ -7,21 +7,11 @@ import Activity from "../../src/components/Activity";
 
 import sanity from "../../src/lib/sanity";
 
-import useGlobal from "../../src/store";
+import { getAllActivities } from "../../src/actions/activities/queries";
 
 import "./index.scss";
 
-function Activities() {
-  const [globalState, globalActions] = useGlobal();
-
-  useEffect(() => {
-    async function getActivities() {
-      await globalActions.activities.getActivities();
-    }
-
-    getActivities();
-  }, []);
-
+function Activities({ activities }) {
   return (
     <Layout id="activities">
       <div className="intro">
@@ -36,9 +26,9 @@ function Activities() {
         </div>
       </div>
 
-      {globalState.activities.length && (
+      {activities.length && (
         <div id="activities-container" className="container">
-          {globalState.activities.map((habit, i) => (
+          {activities.map((habit, i) => (
             <Activity data={habit} key={i} />
           ))}
         </div>
@@ -46,5 +36,11 @@ function Activities() {
     </Layout>
   );
 }
+
+Activities.getInitialProps = async function({ query }) {
+  return {
+    activities: await sanity.fetch(getAllActivities),
+  };
+};
 
 export default Activities;
