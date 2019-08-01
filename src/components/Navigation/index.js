@@ -19,9 +19,7 @@ const links = [
   },
 ];
 
-function Navigation(props) {
-  const router = useRouter();
-
+function Navigation() {
   return (
     <Navbar expand="lg" fixed="top">
       <div className="container">
@@ -40,7 +38,7 @@ function Navigation(props) {
                 <Link href={`/${id}`}>
                   <a
                     className={`nav-link${
-                      router.route.includes(id) ? " active" : ""
+                      useRouter().route.includes(id) ? " active" : ""
                     }`}>
                     {label}
                   </a>
