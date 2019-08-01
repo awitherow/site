@@ -15,27 +15,15 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Layout, { Divider } from "../../src/components/Layout";
 import Activity from "../../src/components/Activity";
 
-import useGlobal from "../../src/store";
+import sanity from "../../src/lib/es6sanity";
 
 import "./index.scss";
 
 const ActivityPage = ({ activity }) => {
-  const [globalState, globalActions] = useGlobal();
-
-  useEffect(() => {
-    async function getActivityData() {
-      await globalActions.activities.getActivity(useRouter().query.name);
-    }
-
-    getActivityData();
-  }, []);
-
   return (
     <Layout id="activity">
-      {globalState.activity._id && (
-        <Activity key={activity._id} data={activity} expanded />
-      )}
-      {globalState.activity._id && (
+      {activity._id && <Activity key={activity._id} data={activity} expanded />}
+      {activity._id && (
         <div className="products">
           <h3>Essential Items</h3>
           <Divider />
@@ -111,6 +99,32 @@ const ActivityPage = ({ activity }) => {
       )}
     </Layout>
   );
+};
+
+ActivityPage.getInitialProps = async function({ query }) {
+  return {
+    activity: await sanity.fetch(`
+    *[_type == 'hobby' && name match "${name}"]{
+        _id,
+        name,
+        description,
+        image {
+            "url": asset->url
+        },
+        tags[]-> {
+            ...
+        }, 
+        benefits[]{
+            ...
+        },
+        products[]-> {
+            ...,
+            image {
+                "url": asset->url
+            }
+        }
+    }[0]`),
+  };
 };
 
 export default ActivityPage;
