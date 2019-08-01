@@ -1,4 +1,5 @@
 const sanity = require("./src/lib/sanity");
+const Activities = require("./src/actions/activities/queries");
 const withSass = require("@zeit/next-sass");
 
 module.exports = withSass({
@@ -8,10 +9,12 @@ module.exports = withSass({
       "/lifestyle": { page: "/lifestyle" },
     };
 
-    activitiess.forEach(activity => {
-      paths[`/activities/${activity.name}`] = {
+    const activities = await sanity.fetch(Activities.getAllActivities);
+
+    activities.forEach(activity => {
+      paths[`/activity/${activity.name.toLowerCase()}`] = {
         page: "/activity/[name]",
-        query: { name: activity.name },
+        query: { name: activity.name.toLowerCase() },
       };
     });
 
