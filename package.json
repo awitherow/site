@@ -2,13 +2,10 @@
   "name": "site",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
-    "export": "next export",
-    "deploy": "npm run build && npm run export",
     "start": "next start"
   },
   "author": "",

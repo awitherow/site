@@ -4,6 +4,7 @@ import Navigation from "../Navigation";
 import Footer from "../Footer";
 
 import Divider from "./Divider";
+import SectionHeader from "./SectionHeader";
 
 import "./index.scss";
 
@@ -18,4 +19,4 @@ function Layout({ id, children }) {
 }
 
 export default Layout;
-export { Divider };
+export { Divider, SectionHeader };

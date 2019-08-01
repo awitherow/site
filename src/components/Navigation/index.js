@@ -3,16 +3,19 @@ import { Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+
 import "./index.scss";
 
 const links = [
   {
-    id: "lifestyle",
-    label: "Lifestyle",
+    id: "",
+    label: "Home",
   },
   {
-    id: "activities",
-    label: "Activities",
+    id: "lifestyle",
+    label: "Lifestyle",
   },
 ];
 
@@ -24,7 +27,9 @@ function Navigation(props) {
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
-            <a>HIVIBES</a>
+            <a>
+              <FontAwesomeIcon icon={faChevronUp} /> hivibes
+            </a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -7,7 +7,7 @@
       -o-background-size: cover;
       background-size: cover;
 
-      min-height: 100vh;
+      min-height: 66vh;
 
       display: flex;
       align-items: center;
@@ -20,16 +20,29 @@
       h1 {
         margin-bottom: 0;
         font-size: 5rem;
-        font-weight: 200;
+        font-weight: 500;
         letter-spacing: 0.25rem;
+
+        span {
+          margin-left: 1rem;
+        }
       }
 
       h2 {
         margin-top: 0;
-        font-weight: 300;
+        font-weight: 200;
         text-transform: uppercase;
-        font-size: 2rem;
+        font-size: 1.66rem;
       }
     }
+  }
+
+  #activities-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 auto;
   }
 }
