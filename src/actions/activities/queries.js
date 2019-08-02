@@ -1,4 +1,4 @@
-module.exports.getAllActivities = `
+export const getAllActivities = `
 *[_type == 'hobby']{
     _id,
     name,
@@ -20,7 +20,7 @@ module.exports.getAllActivities = `
     }
 }`;
 
-module.exports.getActivityCardData = `
+export const getActivityCardData = `
 *[_type == 'hobby']{
     _id,
     name,
@@ -29,7 +29,8 @@ module.exports.getActivityCardData = `
     }
 }`;
 
-module.exports.getActivityByName = function(name) {
+export const getActivityByName = name => {
+  console.log(name);
   return `
     *[_type == 'hobby' && name match "${name}"]{
         _id,

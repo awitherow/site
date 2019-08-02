@@ -1,6 +1,6 @@
-var sanityClient = require("@sanity/client");
+import sanityClient from "@sanity/client";
 
-module.exports = sanityClient({
+export default sanityClient({
   projectId: "sfrxzga1",
   dataset: "production",
   useCdn: true,

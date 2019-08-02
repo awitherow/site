@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import { withRouter } from "next/router";
 import {
   ButtonToolbar,
   ButtonGroup,
@@ -17,25 +17,16 @@ import Activity from "../../src/components/Activity";
 
 import useGlobal from "../../src/store";
 
+import sanity from "../../src/lib/sanity";
+import { getActivityByName } from "../../src/actions/activities/queries";
+
 import "./index.scss";
 
-const ActivityPage = ({ activity }) => {
-  const [globalState, globalActions] = useGlobal();
-
-  useEffect(() => {
-    async function getActivityData() {
-      await globalActions.activities.getActivity(useRouter().query.name);
-    }
-
-    getActivityData();
-  }, []);
-
+function ActivityPage({ activity }) {
   return (
     <Layout id="activity">
-      {globalState.activity._id && (
-        <Activity key={activity._id} data={activity} expanded />
-      )}
-      {globalState.activity._id && (
+      {activity && <Activity key={activity._id} data={activity} expanded />}
+      {activity && (
         <div className="products">
           <h3>Essential Items</h3>
           <Divider />
@@ -111,6 +102,13 @@ const ActivityPage = ({ activity }) => {
       )}
     </Layout>
   );
+}
+
+ActivityPage.getInitialProps = async ({ query }) => {
+  console.log("hello");
+  return {
+    activity: await sanity.fetch(getActivityByName(query.name)),
+  };
 };
 
 export default ActivityPage;
