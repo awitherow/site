@@ -30,7 +30,6 @@ export const getActivityCardData = `
 }`;
 
 export const getActivityByName = name => {
-  console.log(name);
   return `
     *[_type == 'hobby' && name match "${name}"]{
         _id,
@@ -49,6 +48,9 @@ export const getActivityByName = name => {
             ...,
             image {
                 "url": asset->url
+            },
+            tags[] -> {
+                ...
             }
         }
     }[0]`;

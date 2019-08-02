@@ -14,6 +14,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import Layout, { Divider } from "../../src/components/Layout";
 import Activity from "../../src/components/Activity";
+import Tags from "../../src/components/Tags";
 
 import useGlobal from "../../src/store";
 
@@ -63,13 +64,14 @@ function ActivityPage({ activity, seo }) {
           </ButtonToolbar>
 
           <h5>
-            {activity.products
-              ? `${activity.products.length} Results`
+            {activity.products.length
+              ? `${activity.products.length} Essential Items`
               : "Essential Items Coming Soon!"}
           </h5>
-          <CardColumns>
-            {activity.products &&
-              activity.products.map(
+
+          {activity.products.length ? (
+            <CardColumns>
+              {activity.products.map(
                 ({ _id, image, description, link, name, creator, tags }) => (
                   <Card key={_id}>
                     <Card.Img variant="top" src={image.url} />
@@ -77,15 +79,7 @@ function ActivityPage({ activity, seo }) {
                       <Card.Title>
                         {name} by {creator}
                       </Card.Title>
-                      {tags.length && (
-                        <div className="tags">
-                          {tags.map(({ tag }, i) => (
-                            <div key={i} className="tag">
-                              {tag}
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                      {tags.length ? <Tags tags={tags} /> : null}
                       <Card.Text>{`${description.substring(
                         0,
                         180,
@@ -97,7 +91,8 @@ function ActivityPage({ activity, seo }) {
                   </Card>
                 ),
               )}
-          </CardColumns>
+            </CardColumns>
+          ) : null}
         </div>
       )}
     </Layout>

@@ -3,4 +3,13 @@
   margin: 0 auto;
   padding: 1rem 0.33rem;
   text-align: center;
+
+  @media (min-width: 1024px) {
+    padding: 3rem 0.33rem 1rem 0.33rem;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    padding: 0;
+  }
 }
