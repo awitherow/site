@@ -11,15 +11,21 @@
 
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      padding: 2rem 0.33rem;
       flex-direction: column;
       color: white;
 
       text-align: center;
 
+      @media (min-width: 768px) {
+        justify-content: center;
+        padding: 4rem 0 0 0;
+      }
+
       h1 {
         margin-bottom: 0;
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: 500;
         letter-spacing: 0.25rem;
 
@@ -37,7 +43,7 @@
     }
   }
 
-  #activities-container {
+  #hobbies {
     display: flex;
     align-items: center;
     justify-content: center;

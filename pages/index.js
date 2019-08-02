@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
 
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import sanity from "../src/lib/sanity";
 import { getAllActivities } from "../src/actions/activities/queries";
 
@@ -24,22 +26,19 @@ const Home = ({ seo, activities }) => {
         <h2>Evolve to your Highest Vibration</h2>
 
         <div className="btn-container">
-          <a href="#activities-container" className="btn btn-primary">
-            Frequencie Modulators
-          </a>
-          <Link href="/lifestyle">
-            <a className="btn btn-secondary">Lifestyle</a>
-          </Link>
+          <AnchorLink offset="220" className="btn btn-primary" href="#hobbies">
+            High Vibe Hobbies
+          </AnchorLink>
         </div>
       </div>
 
       <section>
         <SectionHeader
-          title="Frequency Modulators"
-          subtitle="Below is a collection of Frequency Modulators to Tune your Vibration in Life to its Highest Potential"
+          title="High Vibe Hobbies"
+          subtitle="Below is a collection of High Vibe Hobbies to Tune your Vibration in Life to its Highest Potential"
         />
         {activities.length ? (
-          <div id="activities-container" className="container">
+          <div id="hobbies" className="container">
             {activities.map((habit, i) => (
               <Activity data={habit} key={i} />
             ))}
@@ -56,7 +55,7 @@ Home.getInitialProps = async ({ query }) => {
     seo: {
       title: "hivib.es | Evolve to Your Highest Vibration",
       description:
-        "We promote the kind of amazing life that leaves you gasping in a rush of ecstacy due to its sheer awesomeness. We provide the knowledge and simplest but yet most effective solutions for attaining that in all of life's adventures. See our Frequency Modulators for ideas on how to tweak your vibration.",
+        "We promote the kind of amazing life that leaves you gasping in a rush of ecstacy due to its sheer awesomeness. We provide the knowledge and simplest but yet most effective solutions for attaining that in all of life's adventures. See our High Vibe Hobbies for ideas on how to tweak your vibration.",
     },
   };
 };
