@@ -10,12 +10,12 @@ import "./index.scss";
 
 const links = [
   {
-    id: "",
-    label: "Home",
-  },
-  {
     id: "lifestyle",
     label: "Lifestyle",
+  },
+  {
+    id: "mail",
+    label: "Free eBook!",
   },
 ];
 

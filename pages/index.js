@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
 
+import { Button } from "react-bootstrap";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import sanity from "../src/lib/sanity";
@@ -26,9 +27,12 @@ const Home = ({ seo, activities }) => {
         <h2>Evolve to your Highest Vibration</h2>
 
         <div className="btn-container">
-          <AnchorLink offset="220" className="btn btn-primary" href="#hobbies">
-            High Vibe Hobbies
+          <AnchorLink offset="220" className="btn btn-success" href="#hobbies">
+            Vibe HIGHER
           </AnchorLink>
+          <Link href="/mail">
+            <a className="btn btn-primary">Free eBook!</a>
+          </Link>
         </div>
       </div>
 
