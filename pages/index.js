@@ -13,9 +13,9 @@ import Activity from "../src/components/Activity";
 
 import "./index.scss";
 
-const Home = ({ activities }) => {
+const Home = ({ seo, activities }) => {
   return (
-    <Layout id="index">
+    <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>
           <FontAwesomeIcon icon={faChevronUp} />
@@ -50,13 +50,14 @@ const Home = ({ activities }) => {
   );
 };
 
-Home.defaultProps = {
-  activities: [],
-};
-
 Home.getInitialProps = async ({ query }) => {
   return {
     activities: await sanity.fetch(getAllActivities),
+    seo: {
+      title: "hivib.es | Evolve to Your Highest Vibration",
+      description:
+        "We promote the kind of amazing life that leaves you gasping in a rush of ecstacy due to its sheer awesomeness. We provide the knowledge and simplest but yet most effective solutions for attaining that in all of life's adventures. See our Frequency Modulators for ideas on how to tweak your vibration.",
+    },
   };
 };
 

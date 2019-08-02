@@ -22,9 +22,9 @@ import { getActivityByName } from "../../src/actions/activities/queries";
 
 import "./index.scss";
 
-function ActivityPage({ activity }) {
+function ActivityPage({ activity, seo }) {
   return (
-    <Layout id="activity">
+    <Layout id="activity" seo={seo}>
       {activity && <Activity key={activity._id} data={activity} expanded />}
       {activity && (
         <div className="products">
@@ -77,7 +77,7 @@ function ActivityPage({ activity }) {
                       <Card.Title>
                         {name} by {creator}
                       </Card.Title>
-                      {tags && (
+                      {tags.length && (
                         <div className="tags">
                           {tags.map(({ tag }, i) => (
                             <div key={i} className="tag">
@@ -105,9 +105,14 @@ function ActivityPage({ activity }) {
 }
 
 ActivityPage.getInitialProps = async ({ query }) => {
-  console.log("hello");
   return {
     activity: await sanity.fetch(getActivityByName(query.name)),
+    seo: {
+      title: `The Best of ${query.name} | Understand the Essence of ${
+        query.name
+      } and Essential Items!`,
+      description: ``,
+    },
   };
 };
 
