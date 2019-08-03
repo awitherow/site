@@ -2,8 +2,6 @@ import React from "react";
 import Layout, { Divider } from "../../src/components/Layout";
 import { Form, Button } from "react-bootstrap";
 
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-
 import "./index.scss";
 
 function Mail({ seo, book }) {
@@ -18,15 +16,21 @@ function Mail({ seo, book }) {
             <h3>Table of Contents</h3>
             <ul>
               {book.chapters.map(chapter => (
-                <li>{chapter}</li>
+                <li key={chapter}>{chapter}</li>
               ))}
             </ul>
           </div>
-          <div className="form">
-            <h3>Get Your eBook Today!</h3>
-            <Divider />
-            <MailchimpSubscribe url="https://awitherow.us19.list-manage.com/subscribe?u=c60ea29dfa8a09bdd8e0cca02&id=3f3895ba76" />
-          </div>
+          <p>
+            Sign up for our newsletter to reserve your eBook, today. We are
+            still polishing up the chapters and will email it to you soon!
+          </p>
+          <Button
+            variant="primary"
+            href="http://eepurl.com/dE5G81"
+            size="lg"
+            target="_blank">
+            Sign Up to Get Your Free eBook!
+          </Button>
         </div>
       </div>
     </Layout>
