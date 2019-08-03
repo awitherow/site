@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "next/router";
 import {
   ButtonToolbar,
@@ -7,7 +7,10 @@ import {
   Card,
   CardColumns,
   Dropdown,
+  Alert,
 } from "react-bootstrap";
+
+import { titleCase } from "../../src/lib/strings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +25,20 @@ import sanity from "../../src/lib/sanity";
 import { getActivityByName } from "../../src/actions/activities/queries";
 
 import "./index.scss";
+
+function AlertDismissible() {
+  const [show, setShow] = useState(true);
+
+  if (show) {
+    return (
+      <Alert variant="info" onClose={() => setShow(false)} dismissible>
+        We use affiliate links, meaning that hivib.es receives a commission on
+        the products below — thanks so much for supporting us!
+      </Alert>
+    );
+  }
+  return null;
+}
 
 function ActivityPage({ activity, seo }) {
   return (
@@ -69,6 +86,8 @@ function ActivityPage({ activity, seo }) {
               : "Essential Items Coming Soon!"}
           </h5>
 
+          <AlertDismissible />
+
           {activity.products.length ? (
             <CardColumns>
               {activity.products.map(
@@ -103,9 +122,11 @@ ActivityPage.getInitialProps = async ({ query }) => {
   return {
     activity: await sanity.fetch(getActivityByName(query.name)),
     seo: {
-      title: `The Best of ${query.name} | Understand the Essence of ${
-        query.name
-      } and Essential Items!`,
+      title: `The Best of ${titleCase(
+        query.name,
+      )} | Understand the Essence of ${titleCase(
+        query.name,
+      )} and Essential Items!`,
       description: ``,
     },
   };

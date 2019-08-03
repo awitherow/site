@@ -15,7 +15,9 @@ function Activity({ data, expanded }) {
   return (
     <div className={`activity ${expanded && "expansion"}`}>
       {!expanded ? (
-        <Link href="/activity/[name]" as={`/activity/${name.toLowerCase()}`}>
+        <Link
+          href="/activity/[name]"
+          as={`/activity/${name.replace(/\s+/g, "-").toLowerCase()}`}>
           <a>
             <h3>{name}</h3>
             <img src={image.url} />

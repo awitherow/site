@@ -7,11 +7,6 @@ import { PageTransition } from "next-page-transitions";
 import "./_custom.scss";
 
 class HiVibe extends App {
-  // Only uncomment this method if you have blocking data requirements for
-  // every single page in your application. This disables the ability to
-  // perform automatic static optimization, causing every page in your app to
-  // be server-side rendered.
-  //
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
