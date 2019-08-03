@@ -10,12 +10,12 @@ import "./index.scss";
 
 const links = [
   {
-    id: "",
-    label: "Home",
-  },
-  {
     id: "lifestyle",
     label: "Lifestyle",
+  },
+  {
+    id: "mail",
+    label: "Free eBook!",
   },
 ];
 
@@ -26,7 +26,7 @@ function Navigation() {
         <Navbar.Brand>
           <Link href="/">
             <a>
-              <FontAwesomeIcon icon={faChevronUp} /> hivibes
+              <span>🚀</span>hivib.es
             </a>
           </Link>
         </Navbar.Brand>

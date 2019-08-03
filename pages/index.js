@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
 
+import { Button } from "react-bootstrap";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import sanity from "../src/lib/sanity";
@@ -20,25 +21,30 @@ const Home = ({ seo, activities }) => {
     <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>
-          <FontAwesomeIcon icon={faChevronUp} />
-          <span>hivibes</span>
+          <span>🚀</span>hivib.es
         </h1>
         <h2>Evolve to your Highest Vibration</h2>
 
         <div className="btn-container">
-          <AnchorLink offset="220" className="btn btn-primary" href="#hobbies">
-            High Vibe Hobbies
+          <AnchorLink
+            offset="220"
+            className="btn btn-success"
+            href="#lifestyle">
+            Vibe HIGHER
           </AnchorLink>
+          <Link href="/mail">
+            <a className="btn btn-primary">Free eBook!</a>
+          </Link>
         </div>
       </div>
 
       <section>
         <SectionHeader
-          title="High Vibe Hobbies"
-          subtitle="Below is a collection of High Vibe Hobbies to Tune your Vibration in Life to its Highest Potential"
+          title="High Vibe Lifestyle"
+          subtitle="Below is a collection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential"
         />
         {activities.length ? (
-          <div id="hobbies" className="container">
+          <div id="lifestyle" className="container">
             {activities.map((habit, i) => (
               <Activity data={habit} key={i} />
             ))}
