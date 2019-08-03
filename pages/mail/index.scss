@@ -37,17 +37,19 @@
     .preform {
       padding: 0.33rem;
 
-      .divider {
-        margin: 1rem 0;
-      }
-
       text-align: left;
     }
 
     .form {
-      border: 2px solid#28a745;
-      border-radius: 6px;
       padding: 0.66rem;
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      .divider {
+        margin: 1rem 0;
+      }
 
       &:hover {
         border-color: lighten(#28a745, 2.5%);
