@@ -10,10 +10,6 @@ import "./index.scss";
 
 const links = [
   {
-    id: "lifestyle",
-    label: "Lifestyle",
-  },
-  {
     id: "mail",
     label: "Free eBook!",
   },
