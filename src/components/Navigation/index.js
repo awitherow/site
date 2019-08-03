@@ -26,7 +26,7 @@ function Navigation() {
         <Navbar.Brand>
           <Link href="/">
             <a>
-              <FontAwesomeIcon icon={faChevronUp} /> hivibes
+              <span>🚀</span>hivib.es
             </a>
           </Link>
         </Navbar.Brand>

@@ -1,5 +1,6 @@
 footer {
-  background: steelblue;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1.66rem 0.33rem;
   border-top: 8px solid #ffd700;
 
@@ -7,7 +8,7 @@ footer {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    color: white;
+    color: #ffd700;
 
     li {
       display: inline;
@@ -17,8 +18,9 @@ footer {
         color: white;
         font-size: 1.66rem;
 
-        &:hover {
-          color: lighten(steelblue, 20%);
+        &:hover,
+        &:visited {
+          color: darken(#ffd700, 20%);
         }
       }
     }

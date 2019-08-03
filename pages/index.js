@@ -21,8 +21,7 @@ const Home = ({ seo, activities }) => {
     <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>
-          <FontAwesomeIcon icon={faChevronUp} />
-          <span>hivibes</span>
+          <span>🚀</span>hivib.es
         </h1>
         <h2>Evolve to your Highest Vibration</h2>
 
