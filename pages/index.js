@@ -26,7 +26,10 @@ const Home = ({ seo, activities }) => {
         <h2>Evolve to your Highest Vibration</h2>
 
         <div className="btn-container">
-          <AnchorLink offset="220" className="btn btn-success" href="#hobbies">
+          <AnchorLink
+            offset="220"
+            className="btn btn-success"
+            href="#lifestyle">
             Vibe HIGHER
           </AnchorLink>
           <Link href="/mail">
@@ -37,11 +40,11 @@ const Home = ({ seo, activities }) => {
 
       <section>
         <SectionHeader
-          title="High Vibe Hobbies"
-          subtitle="Below is a collection of High Vibe Hobbies to Tune your Vibration in Life to its Highest Potential"
+          title="High Vibe Lifestyle"
+          subtitle="Below is a collection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential"
         />
         {activities.length ? (
-          <div id="hobbies" className="container">
+          <div id="lifestyle" className="container">
             {activities.map((habit, i) => (
               <Activity data={habit} key={i} />
             ))}

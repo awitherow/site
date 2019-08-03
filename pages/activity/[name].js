@@ -33,7 +33,7 @@ function AlertDismissible() {
     return (
       <Alert variant="info" onClose={() => setShow(false)} dismissible>
         We use affiliate links, meaning that hivib.es receives a commission on
-        the products below — thanks so much for supporting us!
+        the products below — hope you enjoy the hivib.es!
       </Alert>
     );
   }

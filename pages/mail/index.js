@@ -36,9 +36,9 @@ function Mail({ seo, book }) {
 Mail.getInitialProps = async () => {
   return {
     book: {
-      title: "High Vibrational Habits",
+      title: "High Vibrational Lifestyle",
       description:
-        "High Vibrational Habits is a quick dive into 5 Essential Habits that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration. Product recommendations are also within to help you get vibe higher, faster.",
+        "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration. Product recommendations are also within to help you get vibe higher, faster.",
       chapters: [
         "Starting Each Day Right",
         "Biofuel for Your Rocket Ship",
@@ -48,9 +48,9 @@ Mail.getInitialProps = async () => {
       ],
     },
     seo: {
-      title: "Free eBook From hivib.es | High Vibrational Habits",
+      title: "Free eBook From hivib.es | High Vibrational Lifestyle",
       description:
-        "High Vibrational Habits is a collection of the most Essential Habits and Lifestyle Adjustments, boiled down to their Essence so that you can absorb them, integrate them, and Live Your Best Life at your Highest Vibration! Evolve with us today.",
+        "High Vibrational Lifestyle is a collection of the most Essential and Lifestyle Enhancements, boiled down to their Essence so that you can absorb them, integrate them, and Live Your Best Life at your Highest Vibration! Evolve with us today.",
     },
   };
 };
