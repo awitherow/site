@@ -11,12 +11,14 @@ function Mail({ seo, book }) {
         <img src="https://via.placeholder.com/500" />
         <div className="preform&form">
           <div className="preform">
-            <h2>{book.title}</h2>
+            <h2>{book.title} eBook Preorder!</h2>
             <p>{book.description}</p>
             <h3>Table of Contents</h3>
             <ul>
               {book.chapters.map(chapter => (
-                <li key={chapter}>{chapter}</li>
+                <li key={chapter}>
+                  <i>{chapter}</i>
+                </li>
               ))}
             </ul>
           </div>
@@ -25,11 +27,10 @@ function Mail({ seo, book }) {
             still polishing up the chapters and will email it to you soon!
           </p>
           <Button
-            variant="primary"
+            variant="success"
             href="http://eepurl.com/dE5G81"
-            size="lg"
             target="_blank">
-            Sign Up to Get Your Free eBook!
+            Sign Up Today!
           </Button>
         </div>
       </div>
@@ -42,12 +43,12 @@ Mail.getInitialProps = async () => {
     book: {
       title: "High Vibrational Lifestyle",
       description:
-        "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration. Product recommendations are also within to help you get vibe higher, faster.",
+        "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.",
       chapters: [
         "Starting Each Day Right",
-        "Biofuel for Your Rocket Ship",
+        "Fueling up For Takeoff",
         "Wheels Up for a Sustainable Flight",
-        "Wheels Down for a Smooth Landing",
+        "A Smooth, Evening Landing",
         "Catalyzing Your Chances for a Successful Tomorrow",
       ],
     },

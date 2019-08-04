@@ -9,13 +9,25 @@ import SectionHeader from "./SectionHeader";
 
 import "./index.scss";
 
+const defaultSEO = [
+  { key: "author", value: "hivib.es" },
+  { key: "robots", value: "index, follow" },
+  {
+    key: "keywords",
+    value:
+      "healthy lifestyle choices, how to live a healthy lifestyle, healthy lifestyle products, good habits",
+  },
+];
+
 function Layout({ id, children, seo }) {
   return (
     <div id={id} className="page">
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
-        <meta name="robots" content="index, follow" />
+        {defaultSEO.map(({ key, value }) => (
+          <meta name={key} content={value} />
+        ))}
       </Head>
 
       <Navigation />

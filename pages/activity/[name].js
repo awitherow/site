@@ -47,7 +47,14 @@ function ActivityPage({ activity, seo }) {
       {activity && (
         <div className="products">
           <h3>Essential Items</h3>
+          <p className="sub-heading">
+            Researched brands and products that are amongst the best in the
+            world in terms of quality and price satisfaction.
+          </p>
+
+          <AlertDismissible />
           <Divider />
+
           <h4>Filter items by...</h4>
           <ButtonToolbar id="filter-bar">
             <Dropdown>
@@ -82,11 +89,11 @@ function ActivityPage({ activity, seo }) {
 
           <h5>
             {activity.products.length
-              ? `${activity.products.length} Essential Items`
-              : "Essential Items Coming Soon!"}
+              ? `${activity.products.length} Essential Product${
+                  activity.products.length === 1 ? "" : "s"
+                }`
+              : "Essential Products Coming Soon!"}
           </h5>
-
-          <AlertDismissible />
 
           {activity.products.length ? (
             <CardColumns>

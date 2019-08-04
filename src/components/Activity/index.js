@@ -46,19 +46,22 @@ function Activity({ data, expanded }) {
       )}
       {expanded && (
         <div className="resources">
-          <h3>Essence of {name}</h3>
+          <h3>Everything to Know About {name}</h3>
           <p className="sub-heading">
-            Some recommendations that succinctly constitute the{" "}
-            <strong>Essence of {name}</strong>.
+            Recommendations, blog posts, articles and other content that
+            succinctly constitute the <strong>Essence of {name}</strong>.
           </p>
           <Divider />
           <ul>
-            {resources &&
+            {resources ? (
               resources.map(({ text, address }, i) => (
                 <li key={i}>
                   <a href={address}>{text}</a>
                 </li>
-              ))}
+              ))
+            ) : (
+              <li>Resources coming soon!</li>
+            )}
           </ul>
         </div>
       )}
