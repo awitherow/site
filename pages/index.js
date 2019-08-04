@@ -20,9 +20,7 @@ const Home = ({ seo, activities }) => {
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
-        <h1>
-          <span>🚀</span>hivib.es
-        </h1>
+        <h1>hivib.es</h1>
         <h2>Evolve to your Highest Vibration</h2>
 
         <div className="btn-container">
@@ -61,7 +59,7 @@ Home.getInitialProps = async ({ query }) => {
     seo: {
       title: "hivib.es | Evolve to Your Highest Vibration",
       description:
-        "We promote the kind of amazing life that leaves you gasping in a rush of ecstacy due to its sheer awesomeness. We provide the knowledge and simplest but yet most effective solutions for attaining that in all of life's adventures. See our High Vibe Hobbies for ideas on how to tweak your vibration.",
+        "Promoting an amazing life that leaves you gasping in a rush of ecstacy IN EVERY MOMENT... Fostering these Moments with knowledge and Effective Solutions. See our High Vibe Hobbies for ideas on how to tweak your vibration.",
     },
   };
 };

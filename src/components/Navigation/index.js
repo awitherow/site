@@ -21,9 +21,7 @@ function Navigation() {
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
-            <a>
-              <span>🚀</span>hivib.es
-            </a>
+            <a>hivib.es</a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
