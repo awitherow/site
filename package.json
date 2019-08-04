@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "dev": "node server/app.js NODE_ENV=dev",
+    "dev": "nodemon --watch server server/app.js NODE_ENV=dev",
     "build": "next build",
     "start": "node server/app.js",
     "deploy": "now --target production"
@@ -32,5 +32,8 @@
     "sitemap": "^3.2.2",
     "smoothscroll-polyfill": "^0.4.4",
     "use-global-hook": "^0.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
