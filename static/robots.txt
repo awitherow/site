@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://hivib.es/sitemap.xml
