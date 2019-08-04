@@ -9,7 +9,7 @@ export const getAllActivities = `
     tags[]-> {
         ...
     }, 
-    benefits[]{
+    resources[]{
         ...
     },
     products[]-> {
@@ -41,8 +41,9 @@ export const getActivityByName = name => {
         tags[]-> {
             ...
         }, 
-        benefits[]{
-            ...
+        resources[] {
+            name,
+            address
         },
         products[]-> {
             ...,
