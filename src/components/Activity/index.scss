@@ -1,6 +1,12 @@
 .activity {
   margin: 1rem;
 
+  li {
+    a {
+      color: #007bff;
+    }
+  }
+
   a {
     position: relative;
     color: white;

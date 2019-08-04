@@ -42,8 +42,7 @@ export const getActivityByName = name => {
             ...
         }, 
         resources[] {
-            name,
-            address
+            ...
         },
         products[]-> {
             ...,

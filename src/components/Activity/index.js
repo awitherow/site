@@ -6,11 +6,13 @@ import { Divider } from "../../components/Layout";
 import "./index.scss";
 
 function Activity({ data, expanded }) {
-  const { _id, name, image, tags, description } = data;
+  const { _id, name, image, tags, description, resources } = data;
 
   if (!_id) {
     return null;
   }
+
+  console.log(resources);
 
   return (
     <div className={`activity ${expanded && "expansion"}`}>
@@ -50,7 +52,14 @@ function Activity({ data, expanded }) {
             <strong>Essence of {name}</strong>.
           </p>
           <Divider />
-          <p>Coming soon...</p>
+          <ul>
+            {resources &&
+              resources.map(({ text, address }, i) => (
+                <li key={i}>
+                  <a href={address}>{text}</a>
+                </li>
+              ))}
+          </ul>
         </div>
       )}
     </div>
