@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "../";
+import { Divider } from "../../Layout";
 
 import "./index.scss";
 

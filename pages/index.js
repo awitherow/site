@@ -5,14 +5,14 @@ import Router from "next/router";
 import { Button } from "react-bootstrap";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-import sanity from "../src/lib/sanity";
-import { getAllActivities } from "../src/actions/activities/queries";
+import sanity from "../lib/sanity";
+import { getAllActivities } from "../queries/activities";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-import Layout, { SectionHeader } from "../src/components/Layout";
-import Activity from "../src/components/Activity";
+import Layout, { SectionHeader, Divider } from "../components/Layout";
+import Activity from "../components/Activity";
 
 import "./index.scss";
 
@@ -30,7 +30,7 @@ const Home = ({ seo, activities }) => {
             offset="220"
             className="btn btn-success"
             href="#lifestyle">
-            Vibe HIGHER
+            View The Collection
           </AnchorLink>
           <Link href="/mail">
             <a className="btn btn-primary">Free eBook!</a>
@@ -40,8 +40,8 @@ const Home = ({ seo, activities }) => {
 
       <section>
         <SectionHeader
-          title="High Vibe Lifestyle"
-          subtitle="Below is a collection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential. Whether you are looking for routines to integrate into your schedule, lifestyle changes to integrate, or some ideas for a fun weekend or something to do when you are bored, everything below is certified High Vibe."
+          title="High Vibe Lifestyle Collection"
+          subtitle="Acollection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential. Whether you are looking for routines to integrate into your schedule, entire lifestyle changes to make, some ideas for the weekend, or something for when you're bored, everything below is certified High Vibe."
         />
         {activities.length ? (
           <div id="lifestyle" className="container">

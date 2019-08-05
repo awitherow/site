@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Divider } from "../../components/Layout";
+import { Divider } from "../Layout";
 
 import "./index.scss";
 
@@ -11,8 +11,6 @@ function Activity({ data, expanded }) {
   if (!_id) {
     return null;
   }
-
-  console.log(resources);
 
   return (
     <div className={`activity ${expanded && "expansion"}`}>

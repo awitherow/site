@@ -23,7 +23,6 @@ app.prepare().then(async () => {
     const { pathname } = parsedUrl;
 
     if (pathname === "/robots.txt") {
-      console.log("what happens here?");
       return res.status(200).sendFile("robots.txt", {
         root: __dirname,
         headers: {

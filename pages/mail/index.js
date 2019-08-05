@@ -1,5 +1,5 @@
 import React from "react";
-import Layout, { Divider } from "../../src/components/Layout";
+import Layout, { Divider } from "../../components/Layout";
 import { Form, Button } from "react-bootstrap";
 
 import "./index.scss";
@@ -44,13 +44,13 @@ Mail.getInitialProps = async () => {
       title: "High Vibrational Lifestyle",
       description:
         "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle Routines that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.",
-        get: [
-          "Achieve Your Dreams Through Proper Planning",
-          "Build Rock Solid Confidence and Peace of Mind",
-          "Tone and Shape up Your Beach Body"
-          "Learn the Simple Key to Flow States",
-          "See Life with Abundance and not Scarcity",
-        ],
+      get: [
+        "Achieve Your Dreams Through Proper Planning",
+        "Build Rock Solid Confidence and Peace of Mind",
+        "Tone and Shape up Your Beach Body",
+        "Learn the Simple Key to Flow States",
+        "See Life with Abundance and not Scarcity",
+      ],
     },
     seo: {
       title: "Free eBook From hivib.es | High Vibrational Lifestyle",

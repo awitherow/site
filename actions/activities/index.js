@@ -1,6 +1,6 @@
 import sanity from "../../lib/sanity";
 
-import { getAllActivities, getActivityByName } from "./queries";
+import { getAllActivities, getActivityByName } from "../../queries/activities";
 
 export const getActivities = async (store, name) => {
   try {

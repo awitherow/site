@@ -10,19 +10,19 @@ import {
   Alert,
 } from "react-bootstrap";
 
-import { titleCase } from "../../src/lib/strings";
+import { titleCase } from "../../lib/strings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-import Layout, { Divider } from "../../src/components/Layout";
-import Activity from "../../src/components/Activity";
-import Tags from "../../src/components/Tags";
+import Layout, { Divider } from "../../components/Layout";
+import Activity from "../../components/Activity";
+import Tags from "../../components/Tags";
 
-import useGlobal from "../../src/store";
+import useGlobal from "../../store";
 
-import sanity from "../../src/lib/sanity";
-import { getActivityByName } from "../../src/actions/activities/queries";
+import sanity from "../../lib/sanity";
+import { getActivityByName } from "../../queries/activities";
 
 import "./index.scss";
 
