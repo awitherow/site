@@ -13,11 +13,11 @@ function Mail({ seo, book }) {
           <div className="preform">
             <h2>{book.title} eBook Preorder!</h2>
             <p>{book.description}</p>
-            <h3>Table of Contents</h3>
+            <h3>What You'll Get</h3>
             <ul>
-              {book.chapters.map(chapter => (
-                <li key={chapter}>
-                  <i>{chapter}</i>
+              {book.get.map(get => (
+                <li key={get}>
+                  <i>{get}</i>
                 </li>
               ))}
             </ul>
@@ -43,14 +43,14 @@ Mail.getInitialProps = async () => {
     book: {
       title: "High Vibrational Lifestyle",
       description:
-        "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.",
-      chapters: [
-        "Starting Each Day Right",
-        "Fueling up For Takeoff",
-        "Wheels Up for a Sustainable Flight",
-        "A Smooth, Evening Landing",
-        "Catalyzing Your Chances for a Successful Tomorrow",
-      ],
+        "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle Routines that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.",
+        get: [
+          "Achieve Your Dreams Through Proper Planning",
+          "Build Rock Solid Confidence and Peace of Mind",
+          "Tone and Shape up Your Beach Body"
+          "Learn the Simple Key to Flow States",
+          "See Life with Abundance and not Scarcity",
+        ],
     },
     seo: {
       title: "Free eBook From hivib.es | High Vibrational Lifestyle",

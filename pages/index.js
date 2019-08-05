@@ -21,7 +21,9 @@ const Home = ({ seo, activities }) => {
     <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>hivib.es</h1>
-        <h2>Evolve to your Highest Vibration</h2>
+        <h2>
+          Promoting effective activities and solutions to help you achieve more.
+        </h2>
 
         <div className="btn-container">
           <AnchorLink
@@ -39,7 +41,7 @@ const Home = ({ seo, activities }) => {
       <section>
         <SectionHeader
           title="High Vibe Lifestyle"
-          subtitle="Below is a collection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential"
+          subtitle="Below is a collection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential. Whether you are looking for routines to integrate into your schedule, lifestyle changes to integrate, or some ideas for a fun weekend or something to do when you are bored, everything below is certified High Vibe."
         />
         {activities.length ? (
           <div id="lifestyle" className="container">
