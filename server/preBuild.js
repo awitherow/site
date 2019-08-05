@@ -1,14 +1,21 @@
 const fs = require("fs-extra");
 const sm = require("sitemap");
 const sanity = require("./sanity");
-const directory = "public";
+
+console.log("postbuild activated");
+
+global.__basedir = __dirname;
+
+function getDirectory() {
+  return __basedir + "/public";
+}
 
 function buildRobotsTxt() {
   const robotsTxt = `User-agent: *
-    Sitemap: https://hivib.es/sitemap.xml
-    Disallow:`;
+    Disallow:
+    Sitemap: https://hivib.es/sitemap.xml`;
 
-  fs.writeFileSync(`${directory}/robots.txt`, robotsTxt);
+  fs.writeFileSync(`${getDirectory()}/robots.txt`, robotsTxt);
   console.log("- Robots.txt saved!");
 }
 
@@ -44,7 +51,7 @@ async function buildSitemap() {
       console.log("error writing sitemap");
       return;
     }
-    fs.writeFileSync(`${directory}/sitemap.xml`, xml);
+    fs.writeFileSync(`${getDirectory()}/sitemap.xml`, xml);
     console.log("- Sitemap.xml saved!\n");
   });
 }

@@ -2,12 +2,15 @@
   "name": "site",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "v10.16.0"
+  },
   "main": "",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "postbuild": "node ./server/postBuild.js",
+    "now-build": "node ./server/preBuild.js && npm run build",
     "deploy": "now --target production"
   },
   "author": "",
@@ -36,6 +39,7 @@
     "use-global-hook": "^0.1.7"
   },
   "devDependencies": {
+    "fs-extra": "^8.1.0",
     "nodemon": "^1.19.1"
   }
 }
