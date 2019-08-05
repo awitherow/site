@@ -4,9 +4,10 @@
   "description": "",
   "main": "",
   "scripts": {
-    "dev": "nodemon --watch server server/app.js NODE_ENV=dev",
+    "dev": "next",
     "build": "next build",
-    "start": "node server/app.js",
+    "start": "next start",
+    "postbuild": "node ./server/postBuild.js",
     "deploy": "now --target production"
   },
   "author": "",
