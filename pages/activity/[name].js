@@ -10,6 +10,8 @@ import {
   Alert,
 } from "react-bootstrap";
 
+import { logEvent } from "../../lib/analytics";
+
 import { titleCase } from "../../lib/strings";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -110,7 +112,15 @@ function ActivityPage({ activity, seo }) {
                         0,
                         180,
                       )}...`}</Card.Text>
-                      <a href={link} className="btn btn-primary">
+                      <a
+                        href={link}
+                        onClick={e =>
+                          logEvent(
+                            `/activity/${activity.name}`,
+                            `product ${name} comission click`,
+                          )
+                        }
+                        className="btn btn-primary">
                         <FontAwesomeIcon icon={faShoppingCart} /> Select Item
                       </a>
                     </Card.Body>

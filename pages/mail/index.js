@@ -2,6 +2,8 @@ import React from "react";
 import Layout, { Divider } from "../../components/Layout";
 import { Form, Button } from "react-bootstrap";
 
+import { logEvent } from "../../lib/analytics";
+
 import "./index.scss";
 
 function Mail({ seo, book }) {
@@ -29,6 +31,7 @@ function Mail({ seo, book }) {
           <Button
             variant="success"
             href="http://eepurl.com/dE5G81"
+            onClick={e => logEvent("/mail.button", "exit to mailchimp signup")}
             target="_blank">
             Sign Up Today!
           </Button>

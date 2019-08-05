@@ -5,6 +5,8 @@ import Router from "next/router";
 import { Button } from "react-bootstrap";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
+import { logEvent } from "../lib/analytics";
+
 import sanity from "../lib/sanity";
 import { getAllActivities } from "../queries/activities";
 
@@ -27,13 +29,19 @@ const Home = ({ seo, activities }) => {
 
         <div className="btn-container">
           <AnchorLink
+            onClick={e => logEvent("/.button", "scroll to list")}
             offset="220"
             className="btn btn-success"
             href="#lifestyle">
+            {" "}
             View The Collection
           </AnchorLink>
           <Link href="/mail">
-            <a className="btn btn-primary">Free eBook!</a>
+            <a
+              className="btn btn-primary"
+              onClick={e => logEvent("/.button", "nav to /mail")}>
+              Free eBook!
+            </a>
           </Link>
         </div>
       </div>
