@@ -2,18 +2,14 @@ const fs = require("fs-extra");
 const sm = require("sitemap");
 const sanity = require("./sanity");
 
-console.log("postbuild activated");
-
-global.__basedir = __dirname;
-
 function getDirectory() {
-  return __basedir + "/public";
+  return process.cwd() + "/public";
 }
 
 function buildRobotsTxt() {
   const robotsTxt = `User-agent: *
-    Disallow:
-    Sitemap: https://hivib.es/sitemap.xml`;
+Disallow:
+Sitemap: https://hivib.es/sitemap.xml`;
 
   fs.writeFileSync(`${getDirectory()}/robots.txt`, robotsTxt);
   console.log("- Robots.txt saved!");

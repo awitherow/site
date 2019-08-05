@@ -9,9 +9,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "prebuild": "node ./server/preBuild.js",
     "start": "next start",
-    "now-build": "npm run build",
+    "now-build": "node ./server/preBuild.js && next build",
     "deploy": "now --target production"
   },
   "author": "",
