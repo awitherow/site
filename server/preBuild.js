@@ -3,7 +3,7 @@ const sm = require("sitemap");
 const sanity = require("./sanity");
 
 function getDirectory() {
-  return process.cwd() + "/public";
+  return process.cwd() + "/out";
 }
 
 function buildRobotsTxt() {
