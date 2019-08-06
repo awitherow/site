@@ -1,6 +1,10 @@
 nav {
   background-color: rgba(255, 255, 255, 0.99);
 
+  &.fixed-top {
+    background-color: rgba(255, 255, 255, 0.77);
+  }
+
   .navbar-brand {
     a {
       font-weight: 200;

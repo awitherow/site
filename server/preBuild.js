@@ -3,7 +3,7 @@ const sm = require("sitemap");
 const sanity = require("./sanity");
 
 function getDirectory() {
-  return process.cwd() + "/public";
+  return process.cwd() + "/out";
 }
 
 function buildRobotsTxt() {
@@ -37,6 +37,20 @@ async function buildSitemap() {
     const item = Items[i];
     sitemap.add({
       url: `/activity/${item.name.replace(/\s+/g, "-").toLowerCase()}`,
+      changefreq: "daily",
+      priority: 0.9,
+    });
+  }
+
+  const Posts = await sanity.fetch(`
+    *[_type == 'post']{
+      slug,
+  `);
+
+  for (let i = 0; i < Posts.length; i += 1) {
+    const item = Posts[i];
+    sitemap.add({
+      url: `/blog-post/${item.slug}`,
       changefreq: "daily",
       priority: 0.9,
     });
