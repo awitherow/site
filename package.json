@@ -10,7 +10,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "now-build": "node ./server/preBuild.js && next build",
+    "now-build": "node ./server/preBuild.js & next build",
     "deploy": "now --target production"
   },
   "author": "",
