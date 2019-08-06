@@ -3,6 +3,7 @@ const sm = require("sitemap");
 const sanity = require("./sanity");
 
 function getDirectory() {
+  console.log("HELLO! ---- ", process.cwd());
   return process.cwd() + "/public";
 }
 
