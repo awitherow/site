@@ -1,41 +1,36 @@
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import client from "../client";
+import sanity from "../../lib/sanity";
 
 import { getPostBySlug } from "../../queries/posts";
 
 import Layout from "../../components/Layout";
+import Tags from "../../components/Tags";
 
 import "./index.scss";
 
 function urlFor(source) {
-  return imageUrlBuilder(client).image(source);
+  return imageUrlBuilder(sanity).image(source);
 }
 
-function Post(props) {
+function Post({ post, seo }) {
   const {
     title = "Missing title",
     name = "Missing name",
-    categories,
+    tags,
+    image,
     authorImage,
     body = [],
-    seo = {},
-    id = "Missing title",
-  } = props;
+    id,
+  } = post;
+
   return (
     <Layout seo={seo} id={id}>
       <article>
         <h1>{title}</h1>
         <span>By {name}</span>
-        {categories && (
-          <ul>
-            Posted in
-            {categories.map(category => (
-              <li key={category}>{category}</li>
-            ))}
-          </ul>
-        )}
+        {tags && <Tags tags={tags} />}
         {authorImage && (
           <div>
             <img
@@ -48,7 +43,7 @@ function Post(props) {
         <BlockContent
           blocks={body}
           imageOptions={{ w: 320, h: 240, fit: "max" }}
-          {...client.config()}
+          {...sanity.config()}
         />
       </article>
     </Layout>
@@ -56,9 +51,16 @@ function Post(props) {
 }
 
 Post.getInitialProps = async function({ query }) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = query;
-  return await client.fetch(getPostBySlug, { slug });
+  const post = await sanity.fetch(getPostBySlug, { slug });
+
+  return {
+    post,
+    seo: {
+      title: post.title + " - hivib.es",
+      description: post.description,
+    },
+  };
 };
 
 export default Post;

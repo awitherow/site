@@ -139,11 +139,9 @@ ActivityPage.getInitialProps = async ({ query }) => {
   return {
     activity: await sanity.fetch(getActivityByName(query.name)),
     seo: {
-      title: `The Best of ${titleCase(
+      title: `The Best of ${titleCase(query.name)} | ${titleCase(
         query.name,
-      )} | Understand the Essence of ${titleCase(
-        query.name,
-      )} and Essential Items!`,
+      )} Articles You Need to Read, and Essential Products!`,
       description: ``,
     },
   };

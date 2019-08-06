@@ -46,15 +46,20 @@ function Activity({ data, expanded }) {
         <div className="resources">
           <h3>Everything to Know About {name}</h3>
           <p className="sub-heading">
-            Recommendations, blog posts, articles and other content that
-            succinctly constitute the <strong>Essence of {name}</strong>.
+            Only the Best Articles that succinctly constitute the
+            <strong> Essence of {name}</strong>.
           </p>
           <Divider />
           <ul>
             {resources ? (
-              resources.map(({ text, address }, i) => (
+              resources.map(({ title, slug }, i) => (
                 <li key={i}>
-                  <a href={address}>{text}</a>
+                  <Link
+                    prefetch
+                    href={`/blog-post/[slug]`}
+                    as={`/blog-post/${slug.current}`}>
+                    <a>{title}</a>
+                  </Link>
                 </li>
               ))
             ) : (

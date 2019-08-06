@@ -17,7 +17,7 @@ const links = [
 
 function Navigation() {
   return (
-    <Navbar expand="lg" fixed="top">
+    <Navbar expand="lg">
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
