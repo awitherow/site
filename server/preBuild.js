@@ -5,7 +5,7 @@ const File = require("phylo");
 
 function getDirectory() {
   console.log("HELLO! ---- ", File.cwd());
-  console.log("LIST OF ALL FILES HERE... ---- ", File.list());
+  console.log("LIST OF ALL FILES HERE... ---- ", File.cwd().list());
   return process.cwd() + "/public";
 }
 
