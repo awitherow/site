@@ -42,6 +42,20 @@ async function buildSitemap() {
     });
   }
 
+  const Posts = await sanity.fetch(`
+    *[_type == 'post']{
+      slug,
+  `);
+
+  for (let i = 0; i < Posts.length; i += 1) {
+    const item = Posts[i];
+    sitemap.add({
+      url: `/blog-post/${item.slug}`,
+      changefreq: "daily",
+      priority: 0.9,
+    });
+  }
+
   sitemap.toXML((err, xml) => {
     if (err) {
       console.log("error writing sitemap");
