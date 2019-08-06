@@ -21,9 +21,9 @@ export default class Sitemap extends Component {
         }`);
 
     for (let i = 0; i < Items.length; i += 1) {
-      const item = Items[i];
+      const activities = Items[i];
       sitemap.add({
-        url: `/activity/${item.name.replace(/\s+/g, "-").toLowerCase()}`,
+        url: `/activity/${activities.name.replace(/\s+/g, "-").toLowerCase()}`,
         changefreq: "daily",
         priority: 0.9,
       });
