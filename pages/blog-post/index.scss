@@ -1,0 +1,22 @@
+.full-img {
+  height: 66vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+article {
+  max-width: 1024px;
+  margin: 2rem auto;
+
+  .author {
+    margin: 1rem auto;
+  }
+}

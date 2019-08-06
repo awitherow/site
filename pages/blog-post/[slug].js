@@ -19,27 +19,27 @@ function Post({ post, seo }) {
     title = "Missing title",
     name = "Missing name",
     tags,
-    image,
-    authorImage,
+    mainImage,
+    description,
     body = [],
     id,
   } = post;
 
   return (
-    <Layout seo={seo} id={id}>
-      <article>
+    <Layout seo={seo} id={id} fixedNav={true}>
+      <div
+        className="full-img"
+        style={{
+          background: `url(${urlFor(
+            mainImage,
+          ).url()}) no-repeat center center fixed`,
+        }}>
         <h1>{title}</h1>
         <span>By {name}</span>
+      </div>
+      <article>
         {tags && <Tags tags={tags} />}
-        {authorImage && (
-          <div>
-            <img
-              src={urlFor(authorImage)
-                .width(50)
-                .url()}
-            />
-          </div>
-        )}
+        <blockquote>{description}</blockquote>
         <BlockContent
           blocks={body}
           imageOptions={{ w: 320, h: 240, fit: "max" }}
