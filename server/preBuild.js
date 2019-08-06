@@ -1,12 +1,8 @@
 const fs = require("fs-extra");
 const sm = require("sitemap");
 const sanity = require("./sanity");
-const File = require("phylo");
 
 function getDirectory() {
-  fs.readdirSync(process.cwd()).forEach(file => {
-    console.log(file);
-  });
   return process.cwd() + "/public";
 }
 
