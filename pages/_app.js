@@ -25,12 +25,12 @@ class HiVibe extends App {
     return (
       <Container>
         <PageTransition
-          timeout={100}
+          timeout={300}
           classNames="page-transition"
           loadingComponent={<Loader />}
-          loadingDelay={100}
+          loadingDelay={0}
           loadingTimeout={{
-            enter: 100,
+            enter: 300,
             exit: 0,
           }}
           loadingClassNames="page-transition">

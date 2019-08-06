@@ -19,12 +19,12 @@ $color-gold: #ffd700;
 }
 .page-transition-enter-active {
   opacity: 1;
-  transition: opacity 100ms;
+  transition: opacity 300ms;
 }
 .page-transition-exit {
   opacity: 1;
 }
 .page-transition-exit-active {
   opacity: 0;
-  transition: opacity 100ms;
+  transition: opacity 300ms;
 }
