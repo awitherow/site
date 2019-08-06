@@ -22,7 +22,7 @@ class HiVibe extends App {
 
     return (
       <Container>
-        <PageTransition timeout={500} classNames="page-transition">
+        <PageTransition timeout={100} classNames="page-transition">
           <Component {...pageProps} key={router.route} />
         </PageTransition>
       </Container>
