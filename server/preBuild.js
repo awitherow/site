@@ -4,8 +4,9 @@ const sanity = require("./sanity");
 const File = require("phylo");
 
 function getDirectory() {
-  console.log("HELLO! ---- ", File.cwd());
-  console.log("LIST OF ALL FILES HERE... ---- ", File.cwd().list());
+  fs.readdirSync(process.cwd()).forEach(file => {
+    console.log(file);
+  });
   return process.cwd() + "/public";
 }
 
