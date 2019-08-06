@@ -15,9 +15,9 @@ const links = [
   },
 ];
 
-function Navigation() {
+function Navigation({ fixedNav = false }) {
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" fixed={fixedNav && "top"}>
       <div className="container">
         <Navbar.Brand>
           <Link href="/">

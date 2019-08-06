@@ -16,7 +16,7 @@ const defaultSEO = [
   { key: "robots", value: "index, follow" },
 ];
 
-function Layout({ id, children, seo }) {
+function Layout({ id, children, seo, fixedNav }) {
   useEffect(() => {
     async function analyze() {
       if (!window.GA_INITIALIZED) {
@@ -40,7 +40,7 @@ function Layout({ id, children, seo }) {
         ))}
       </Head>
 
-      <Navigation />
+      <Navigation fixedNav={fixedNav} />
       {children}
       <Footer />
     </div>
