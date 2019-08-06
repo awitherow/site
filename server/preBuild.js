@@ -1,9 +1,11 @@
 const fs = require("fs-extra");
 const sm = require("sitemap");
 const sanity = require("./sanity");
+const File = require("phylo");
 
 function getDirectory() {
-  console.log("HELLO! ---- ", process.cwd());
+  console.log("HELLO! ---- ", File.cwd());
+  console.log("LIST OF ALL FILES HERE... ---- ", File.list());
   return process.cwd() + "/public";
 }
 
@@ -46,7 +48,7 @@ async function buildSitemap() {
   const Posts = await sanity.fetch(`
     *[_type == 'post']{
       slug,
-  `);
+    }`);
 
   for (let i = 0; i < Posts.length; i += 1) {
     const item = Posts[i];
