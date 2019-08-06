@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import sm from "sitemap";
 import sanity from "../lib/sanity";
+import fs from "fs";
 
 export default class Sitemap extends Component {
   static async getInitialProps({ res }) {
