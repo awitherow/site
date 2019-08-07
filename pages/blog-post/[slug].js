@@ -57,11 +57,11 @@ Post.getInitialProps = async function({ query, asPath }) {
   return {
     post,
     seo: {
-      title: post.title + " - hivib.es",
+      title: post.title,
       description: post.description,
       openGraph: {
         url: asPath,
-        title: post.title + " - hivib.es",
+        title: post.title,
         description: post.description,
         images: [
           {

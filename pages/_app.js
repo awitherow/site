@@ -25,6 +25,7 @@ class HiVibe extends App {
     return (
       <Container>
         <DefaultSeo
+          titleTemplate="hivib.es | %s"
           openGraph={{
             type: "website",
             locale: "en_IE",
