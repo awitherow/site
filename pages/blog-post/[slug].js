@@ -1,4 +1,3 @@
-import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import sanity from "../../lib/sanity";
@@ -54,31 +53,34 @@ Post.getInitialProps = async function({ query, asPath }) {
   const { slug = "" } = query;
   const post = await sanity.fetch(getPostBySlug, { slug });
 
+  const { title, descriptin, mainImage, name, publishedAt, tags } = post;
+  const nameSplit = nameSplit;
+
   return {
     post,
     seo: {
-      title: post.title,
-      description: post.description,
+      title,
+      description,
       openGraph: {
         url: asPath,
-        title: post.title,
-        description: post.description,
+        title,
+        description,
         images: [
           {
-            url: post.urlFor(post.mainImage),
+            url: urlFor(mainImage),
           },
         ],
         profile: {
-          firstName: post.name.split()[0],
-          lastName: post.name.split()[1],
-          username: post.name,
+          firstName: nameSplit[0],
+          lastName: nameSplit[1],
+          username: `${nameSplit[0]}${nameSplit[1]}`,
           gender: "male", // TODO: sanity option
         },
         article: {
-          publishedTime: post.publishedAt,
-          authors: [post.name],
+          publishedTime: publishedAt,
+          authors: [name],
           // section: TODO: sanity option.
-          tags: post.tags,
+          tags: tags,
         },
       },
     },
