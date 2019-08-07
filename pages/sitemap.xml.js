@@ -1,30 +1,32 @@
 import React, { Component } from "react";
 import sm from "sitemap";
 import sanity from "../lib/sanity";
-import fs from "fs";
 
 export default class Sitemap extends Component {
   static async getInitialProps({ res }) {
-    const sitemap = sm.createSitemap({
-      hostname: "https://hivib.es",
-      cacheTime: 600000, // 600 sec - cache purge period
-    });
+    let xml = "";
+    xml += '<?xml version="1.0" encoding="UTF-8"?>';
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
-    sitemap.add({
-      url: "/",
-      changefreq: "daily",
-      priority: 1,
-    });
+    const SITE_ROOT = "https://hivib.es";
 
-    const Items = await sanity.fetch(`
+    const routes = [
+      {
+        url: "/",
+        changefreq: "daily",
+        priority: 1,
+      },
+    ];
+
+    const activities = await sanity.fetch(`
         *[_type == 'hobby']{
             name,
         }`);
 
-    for (let i = 0; i < Items.length; i += 1) {
-      const activities = Items[i];
-      sitemap.add({
-        url: `/activity/${activities.name.replace(/\s+/g, "-").toLowerCase()}`,
+    for (let i = 0; i < activities.length; i += 1) {
+      const activity = activities[i];
+      routes.push({
+        url: `activity/${activity.name.replace(/\s+/g, "-").toLowerCase()}`,
         changefreq: "daily",
         priority: 0.9,
       });
@@ -37,21 +39,25 @@ export default class Sitemap extends Component {
 
     for (let i = 0; i < Posts.length; i += 1) {
       const item = Posts[i];
-      sitemap.add({
-        url: `/blog-post/${item.slug}`,
+      routes.push({
+        url: `blog-post/${item.slug}`,
         changefreq: "daily",
         priority: 0.9,
       });
     }
 
-    sitemap.toXML((err, xml) => {
-      if (err) {
-        console.log("error writing sitemap");
-        return;
-      }
-      res.setHeader("Content-Type", "text/xml");
-      res.write(xml);
-      res.end();
+    routes.map(({ url, changeFreq, priority }) => {
+      xml += "<url>";
+      xml += `<loc>${SITE_ROOT}/${url}</loc>`;
+      xml += `<changefreq>${changeFreq}</changefreq>`;
+      xml += `<priority>${priority}</priority>`;
+      xml += "</url>";
     });
+
+    xml += "</urlset>";
+
+    res.setHeader("Content-Type", "text/xml");
+    res.write(xml);
+    res.end();
   }
 }
