@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 import { initGA, logPageView } from "../../lib/analytics";
 
@@ -11,12 +11,7 @@ import SectionHeader from "./SectionHeader";
 
 import "./index.scss";
 
-const defaultSEO = [
-  { key: "author", value: "hivib.es" },
-  { key: "robots", value: "index, follow" },
-];
-
-function Layout({ id, children, seo, fixedNav }) {
+function Layout({ id, children, seo, ...props }) {
   useEffect(() => {
     async function analyze() {
       if (!window.GA_INITIALIZED) {
@@ -30,16 +25,11 @@ function Layout({ id, children, seo, fixedNav }) {
     analyze();
   }, []);
 
+  const { fixedNav } = props;
+
   return (
     <div id={id} className="page">
-      <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-        {defaultSEO.map(({ key, value }) => (
-          <meta key={key} name={key} content={value} />
-        ))}
-      </Head>
-
+      <NextSeo {...seo} />
       <Navigation fixedNav={fixedNav} />
       {children}
       <Footer />

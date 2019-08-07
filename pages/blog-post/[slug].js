@@ -50,7 +50,7 @@ function Post({ post, seo }) {
   );
 }
 
-Post.getInitialProps = async function({ query }) {
+Post.getInitialProps = async function({ query, asPath }) {
   const { slug = "" } = query;
   const post = await sanity.fetch(getPostBySlug, { slug });
 
@@ -59,6 +59,28 @@ Post.getInitialProps = async function({ query }) {
     seo: {
       title: post.title + " - hivib.es",
       description: post.description,
+      openGraph: {
+        url: asPath,
+        title: post.title + " - hivib.es",
+        description: post.description,
+        images: [
+          {
+            url: post.urlFor(post.mainImage),
+          },
+        ],
+        profile: {
+          firstName: post.name.split()[0],
+          lastName: post.name.split()[1],
+          username: post.name,
+          gender: "male", // TODO: sanity option
+        },
+        article: {
+          publishedTime: post.publishedAt,
+          authors: [post.name],
+          // section: TODO: sanity option.
+          tags: post.tags,
+        },
+      },
     },
   };
 };

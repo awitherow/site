@@ -41,12 +41,14 @@ function Mail({ seo, book }) {
   );
 }
 
-Mail.getInitialProps = async () => {
+Mail.getInitialProps = async ({ asPath }) => {
+  const title = "Free eBook From hivib.es | High Vibrational Lifestyle";
+  const description =
+    "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle Routines that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.";
   return {
     book: {
       title: "High Vibrational Lifestyle",
-      description:
-        "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle Routines that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.",
+      description,
       get: [
         "Achieve Your Dreams Through Proper Planning",
         "Build Rock Solid Confidence and Peace of Mind",
@@ -56,9 +58,18 @@ Mail.getInitialProps = async () => {
       ],
     },
     seo: {
-      title: "Free eBook From hivib.es | High Vibrational Lifestyle",
-      description:
-        "High Vibrational Lifestyle is a collection of the most Essential and Lifestyle Enhancements, boiled down to their Essence so that you can absorb them, integrate them, and Live Your Best Life at your Highest Vibration! Evolve with us today.",
+      title,
+      description,
+      openGraph: {
+        url: asPath,
+        title: title,
+        description,
+        images: [
+          {
+            url: "https://via.placeholder.com/500", // TODO: Set to eBook graphic URL
+          },
+        ],
+      },
     },
   };
 };

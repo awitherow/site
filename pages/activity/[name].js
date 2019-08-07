@@ -12,8 +12,6 @@ import {
 
 import { logEvent } from "../../lib/analytics";
 
-import { titleCase } from "../../lib/strings";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -135,14 +133,27 @@ function ActivityPage({ activity, seo }) {
   );
 }
 
-ActivityPage.getInitialProps = async ({ query }) => {
+ActivityPage.getInitialProps = async ({ query, asPath }) => {
+  const activity = await sanity.fetch(getActivityByName(query.name));
+  const { image, name, description } = activity;
+
+  const title = `The Best ${name} Articles, and Essential Products | hivib.es`;
+
   return {
-    activity: await sanity.fetch(getActivityByName(query.name)),
+    activity,
     seo: {
-      title: `The Best of ${titleCase(query.name)} | ${titleCase(
-        query.name,
-      )} Articles You Need to Read, and Essential Products!`,
-      description: ``,
+      title,
+      description,
+      openGraph: {
+        url: asPath,
+        title: title,
+        description,
+        images: [
+          {
+            url: image.url,
+          },
+        ],
+      },
     },
   };
 };
