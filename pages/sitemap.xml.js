@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import sm from "sitemap";
 import sanity from "../lib/sanity";
 
 export default class Sitemap extends Component {
