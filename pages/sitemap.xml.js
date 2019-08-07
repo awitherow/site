@@ -39,16 +39,16 @@ export default class Sitemap extends Component {
     for (let i = 0; i < Posts.length; i += 1) {
       const item = Posts[i];
       routes.push({
-        url: `blog-post/${item.slug}`,
+        url: `blog-post/${item.slug.current}`,
         changefreq: "daily",
         priority: 0.9,
       });
     }
 
-    routes.map(({ url, changeFreq, priority }) => {
+    routes.map(({ url, changefreq, priority }) => {
       xml += "<url>";
       xml += `<loc>${SITE_ROOT}/${url}</loc>`;
-      xml += `<changefreq>${changeFreq}</changefreq>`;
+      xml += `<changefreq>${changefreq}</changefreq>`;
       xml += `<priority>${priority}</priority>`;
       xml += "</url>";
     });
