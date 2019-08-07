@@ -1,4 +1,3 @@
-import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import sanity from "../../lib/sanity";
@@ -50,15 +49,40 @@ function Post({ post, seo }) {
   );
 }
 
-Post.getInitialProps = async function({ query }) {
+Post.getInitialProps = async function({ query, asPath }) {
   const { slug = "" } = query;
   const post = await sanity.fetch(getPostBySlug, { slug });
+
+  const { title, descriptin, mainImage, name, publishedAt, tags } = post;
+  const nameSplit = nameSplit;
 
   return {
     post,
     seo: {
-      title: post.title + " - hivib.es",
-      description: post.description,
+      title,
+      description,
+      openGraph: {
+        url: asPath,
+        title,
+        description,
+        images: [
+          {
+            url: urlFor(mainImage),
+          },
+        ],
+        profile: {
+          firstName: nameSplit[0],
+          lastName: nameSplit[1],
+          username: `${nameSplit[0]}${nameSplit[1]}`,
+          gender: "male", // TODO: sanity option
+        },
+        article: {
+          publishedTime: publishedAt,
+          authors: [name],
+          // section: TODO: sanity option.
+          tags: tags,
+        },
+      },
     },
   };
 };

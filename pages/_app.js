@@ -1,6 +1,6 @@
 import React from "react";
 import App, { Container } from "next/app";
-import { useRouter } from "next/router";
+import { DefaultSeo } from "next-seo";
 
 import Loader from "../components/Loader";
 
@@ -24,6 +24,20 @@ class HiVibe extends App {
 
     return (
       <Container>
+        <DefaultSeo
+          titleTemplate="hivib.es | %s"
+          openGraph={{
+            type: "website",
+            locale: "en_IE",
+            url: "https://hivib.es",
+            site_name: "hivib.es",
+          }}
+          twitter={{
+            handle: "@hivib.es",
+            site: "@hivib.es",
+            cardType: "summary_large_image",
+          }}
+        />
         <PageTransition
           timeout={300}
           classNames="page-transition"
