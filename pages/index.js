@@ -67,7 +67,7 @@ Home.getInitialProps = async ({ query }) => {
   return {
     activities: await sanity.fetch(getAllActivities),
     seo: {
-      title: "hivib.es | Evolve to Your Highest Vibration",
+      title: "Evolve to Your Highest Vibration",
       description:
         "Promoting an amazing life that leaves you gasping in a rush of ecstacy IN EVERY MOMENT... Fostering these Moments with knowledge and Effective Solutions. See our High Vibe Hobbies for ideas on how to tweak your vibration.",
     },
