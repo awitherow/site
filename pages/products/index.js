@@ -10,3 +10,5 @@ function Products() {
     </Layout>
   );
 }
+
+export default Products;
