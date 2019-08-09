@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
+import { urlFor } from "../../lib/sanity";
+
 import { Divider } from "../Layout";
 
 import "./index.scss";
@@ -20,14 +22,24 @@ function Activity({ data, expanded }) {
           as={`/activity/${name.replace(/\s+/g, "-").toLowerCase()}`}>
           <a>
             <h3>{name}</h3>
-            <img src={image.url} />
+            <img
+              src={urlFor(image)
+                .width(500)
+                .height(500)
+                .url()}
+            />
           </a>
         </Link>
       ) : (
         <div className="activity-header">
-          <img src={image.url} />
+          <img
+            src={urlFor(image)
+              .height(500)
+              .width(1600)
+              .url()}
+          />
           <div className="activity-header__info">
-            <h2>About {name} </h2>
+            <h2>High Vibrational {name} </h2>
             <Divider />
             <h3>Searchable Tags</h3>
             <div className="tags">

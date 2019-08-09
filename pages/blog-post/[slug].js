@@ -1,6 +1,5 @@
-import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import sanity from "../../lib/sanity";
+import sanity, { urlFor } from "../../lib/sanity";
 
 import { getPostBySlug } from "../../queries/posts";
 
@@ -8,10 +7,6 @@ import Layout from "../../components/Layout";
 import Tags from "../../components/Tags";
 
 import "./index.scss";
-
-function urlFor(source) {
-  return imageUrlBuilder(sanity).image(source);
-}
 
 function Post({ post, seo }) {
   const {

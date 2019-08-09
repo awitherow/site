@@ -88,14 +88,14 @@ function ActivityPage({ activity, seo }) {
           </ButtonToolbar>
 
           <h5>
-            {activity.products.length
+            {activity.products
               ? `${activity.products.length} Essential Product${
                   activity.products.length === 1 ? "" : "s"
                 }`
               : "Essential Products Coming Soon!"}
           </h5>
 
-          {activity.products.length ? (
+          {activity.products ? (
             <CardColumns>
               {activity.products.map(
                 ({ _id, image, description, link, name, creator, tags }) => (
@@ -105,7 +105,7 @@ function ActivityPage({ activity, seo }) {
                       <Card.Title>
                         {name} by {creator}
                       </Card.Title>
-                      {tags.length ? <Tags tags={tags} /> : null}
+                      {tags ? <Tags tags={tags} /> : null}
                       <Card.Text>{`${description.substring(
                         0,
                         180,
@@ -137,7 +137,7 @@ ActivityPage.getInitialProps = async ({ query, asPath }) => {
   const activity = await sanity.fetch(getActivityByName(query.name));
   const { image, name, description } = activity;
 
-  const title = `The Best ${name} Articles, and Essential Products | hivib.es`;
+  const title = `High Vibrational ${name} | Transformational Articles, Essential Products | hivib.es`;
 
   return {
     activity,

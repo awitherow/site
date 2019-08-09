@@ -2,9 +2,7 @@ export const getAllActivities = `
 *[_type == 'hobby']{
     _id,
     name,
-    image {
-        "url": asset->url
-    },
+    image,
 }`;
 
 export const getActivityByName = name => {
@@ -13,9 +11,7 @@ export const getActivityByName = name => {
         _id,
         name,
         description,
-        image {
-            "url": asset->url
-        },
+        image,
         tags[]-> {
             ...
         }, 
