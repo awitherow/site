@@ -22,7 +22,7 @@ const Home = ({ seo, activities }) => {
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
-        <h1>hivib.es</h1>
+        <h1>hi vibes</h1>
         <h2>
           Promoting effective activities and solutions to help you achieve more.
         </h2>
@@ -48,8 +48,8 @@ const Home = ({ seo, activities }) => {
 
       <section>
         <SectionHeader
-          title="High Vibe Lifestyle Collection"
-          subtitle="Acollection from the High Vibe Lifestyle to Tune your Vibration in Life to its Highest Potential. Whether you are looking for routines to integrate into your schedule, entire lifestyle changes to make, some ideas for the weekend, or something for when you're bored, everything below is certified High Vibe."
+          title="Hi Vibes Lifestyle Collection"
+          subtitle="A collection of the best from the Hi Vibes Lifestyle to Tune your Vibes to their Highest Potential. Routines, lifestyle transformations, ideas for the weekend, something to do when you're bored, we got it. All Certified Hi Vibes!"
         />
         {activities.length ? (
           <div id="lifestyle" className="container">

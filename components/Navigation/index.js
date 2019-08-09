@@ -10,6 +10,14 @@ import "./index.scss";
 
 const links = [
   {
+    id: "lifestyle",
+    label: "Lifestyle",
+  },
+  {
+    id: "products",
+    label: "Products",
+  },
+  {
     id: "mail",
     label: "Free eBook!",
   },
@@ -21,7 +29,7 @@ function Navigation({ fixedNav = false }) {
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
-            <a>hivib.es</a>
+            <a>hi vibes</a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
