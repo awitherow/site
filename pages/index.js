@@ -22,9 +22,9 @@ const Home = ({ seo, activities }) => {
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
-        <h1>hi vibes</h1>
+        <h1>hi_vibes</h1>
         <h2>
-          Promoting effective activities and solutions to help you achieve more.
+          Your Life at its Highest Vibration. Awaken The Potential Within You.
         </h2>
 
         <div className="btn-container">
@@ -33,8 +33,7 @@ const Home = ({ seo, activities }) => {
             offset="220"
             className="btn btn-success"
             href="#lifestyle">
-            {" "}
-            View The Collection
+            Awaken Your Potential
           </AnchorLink>
           <Link href="/mail">
             <a
@@ -48,8 +47,8 @@ const Home = ({ seo, activities }) => {
 
       <section>
         <SectionHeader
-          title="Hi Vibes Lifestyle Collection"
-          subtitle="A collection of the best from the Hi Vibes Lifestyle to Tune your Vibes to their Highest Potential. Routines, lifestyle transformations, ideas for the weekend, something to do when you're bored, we got it. All Certified Hi Vibes!"
+          title="Awaken The Potential Within You"
+          subtitle="Imagine Your Life at its Highest Vibration. Feel that growing sense of wonder at your own Innate Potential. The Ability to Maintain your Highest Vibration is Essential in this Awakening. Don't worry, we got your back with the HiVibes Lifestyle Collection. A curated list of theoretical and practical guides, as well as elite products for the most effective habits, routines, ideas and more #onlyhivibes."
         />
         {activities.length ? (
           <div id="lifestyle" className="container">
