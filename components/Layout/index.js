@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Head from "next/head";
 import { NextSeo } from "next-seo";
 
 import { initGA, logPageView } from "../../lib/analytics";
@@ -29,6 +30,12 @@ function Layout({ id, children, seo, ...props }) {
 
   return (
     <div id={id} className="page">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="Jr-O8hDyohipkSzYI8ozk2c8raUfRyLEa24UqBq3q0U"
+        />
+      </Head>
       <NextSeo {...seo} />
       <Navigation fixedNav={fixedNav} />
       {children}

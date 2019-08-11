@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "groq": "^0.141.5",
     "next": "^9.0.2",
+    "next-fbq": "^2.0.0",
     "next-page-transitions": "^1.0.0-beta.2",
     "next-seo": "^2.0.0",
     "node-sass": "^4.12.0",

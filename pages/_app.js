@@ -1,5 +1,8 @@
 import React from "react";
+
 import App, { Container } from "next/app";
+import Router from "next/router";
+import withFBQ from "next-fbq";
 import { DefaultSeo } from "next-seo";
 
 import Loader from "../components/Loader";
@@ -55,4 +58,4 @@ class HiVibe extends App {
   }
 }
 
-export default HiVibe;
+export default withFBQ("670279876784486", Router)(HiVibe);
