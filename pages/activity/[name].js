@@ -55,7 +55,7 @@ function ActivityPage({ activity, seo }) {
           <AlertDismissible />
           <Divider />
 
-          <h4>Filter items by...</h4>
+          {/* <h4>Filter items by...</h4>
           <ButtonToolbar id="filter-bar">
             <Dropdown>
               <Dropdown.Toggle variant="primary" id="dropdown-type">
@@ -85,7 +85,7 @@ function ActivityPage({ activity, seo }) {
               <Button variant="success">$$$</Button>
               <Button variant="success">$$$</Button>
             </ButtonGroup>
-          </ButtonToolbar>
+          </ButtonToolbar> */}
 
           <h5>
             {activity.products

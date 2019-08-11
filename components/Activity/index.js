@@ -24,8 +24,8 @@ function Activity({ data, expanded }) {
             <h3>{name}</h3>
             <img
               src={urlFor(image)
-                .width(500)
-                .height(500)
+                .width(700)
+                .height(700)
                 .url()}
             />
           </a>

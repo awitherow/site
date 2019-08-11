@@ -1,6 +1,4 @@
 .activity {
-  margin: 1rem;
-
   li {
     a {
       color: #007bff;
@@ -13,7 +11,7 @@
 
     img {
       width: 100vw;
-      max-width: 200px;
+      max-width: 725px;
     }
 
     h3 {
@@ -36,7 +34,7 @@
   @media (min-width: 768px) {
     a {
       img {
-        max-width: 275px;
+        max-width: 360px;
       }
     }
   }
@@ -44,7 +42,15 @@
   @media (min-width: 1024px) {
     a {
       img {
-        max-width: 250px;
+        max-width: 320px;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    a {
+      img {
+        max-width: 285px;
       }
     }
   }
