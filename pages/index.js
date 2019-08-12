@@ -22,9 +22,10 @@ const Home = ({ seo, activities }) => {
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
-        <h1>hi_vibes</h1>
+        <h1>highvib.es</h1>
         <h2>
-          Your Life at its Highest Vibration. Awaken The Potential Within You.
+          Imagine YOUR LIFE AT ITS HIGHEST VIBRATION. Make dreams reality.
+          AWAKEN THE POTENTIAL WITHIN YOU
         </h2>
 
         <div className="btn-container">

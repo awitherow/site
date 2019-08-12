@@ -32,8 +32,8 @@ function AlertDismissible() {
   if (show) {
     return (
       <Alert variant="info" onClose={() => setShow(false)} dismissible>
-        We use affiliate links, meaning that hivib.es receives a commission on
-        the products below — hope you enjoy the hivib.es!
+        We use affiliate links, meaning that highvib.es receives a commission on
+        the products below — hope you enjoy the highvib.es!
       </Alert>
     );
   }
@@ -137,7 +137,7 @@ ActivityPage.getInitialProps = async ({ query, asPath }) => {
   const activity = await sanity.fetch(getActivityByName(query.name));
   const { image, name, description } = activity;
 
-  const title = `High Vibrational ${name} | Transformational Articles, Essential Products | hivib.es`;
+  const title = `High Vibrational ${name} | Transformational Articles, Essential Products | highvib.es`;
 
   return {
     activity,

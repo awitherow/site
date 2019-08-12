@@ -1,6 +1,24 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css?family=Oswald:300|Raleway&display=swap");
 
 $color-gold: #ffd700;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+p,
+button,
+a,
+li,
+body {
+  font-family: "Raleway", sans-serif;
+}
 
 .btn-container {
   margin: 0.33rem auto;

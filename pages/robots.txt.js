@@ -5,7 +5,7 @@ export default class Robots extends Component {
     res.setHeader("Content-Type", "text/plain");
     res.write(`User-agent: *
     Disallow:
-    Sitemap: https://hivib.es/sitemap.xml`);
+    Sitemap: https://highvib.es/sitemap.xml`);
     res.end();
   }
 }

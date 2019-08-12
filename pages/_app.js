@@ -28,16 +28,16 @@ class HiVibe extends App {
     return (
       <Container>
         <DefaultSeo
-          titleTemplate="hivib.es | %s"
+          titleTemplate="highvib.es | %s"
           openGraph={{
             type: "website",
             locale: "en_IE",
-            url: "https://hivib.es",
-            site_name: "hivib.es",
+            url: "https://highvib.es",
+            site_name: "highvib.es",
           }}
           twitter={{
-            handle: "@hivib.es",
-            site: "@hivib.es",
+            handle: "@highvib.es",
+            site: "@highvib.es",
             cardType: "summary_large_image",
           }}
         />

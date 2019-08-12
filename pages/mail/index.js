@@ -42,7 +42,7 @@ function Mail({ seo, book }) {
 }
 
 Mail.getInitialProps = async ({ asPath }) => {
-  const title = "Free eBook From hivib.es | High Vibrational Lifestyle";
+  const title = "Free eBook From highvib.es | High Vibrational Lifestyle";
   const description =
     "High Vibrational Lifestyle is a quick dive into 5 Essential Lifestyle Routines that should constitute your day, boiled down to their Essence, for you to absorb and integrate, so that you can Live at your Highest Vibration.";
   return {

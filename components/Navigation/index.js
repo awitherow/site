@@ -29,7 +29,7 @@ function Navigation({ fixedNav = false }) {
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
-            <a>hi_vibes</a>
+            <a>highvib.es</a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
