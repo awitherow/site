@@ -28,22 +28,22 @@ import {
 
 export default [
   {
-    id: "fb",
+    id: "facebook",
     component: FacebookShareButton,
     shareComponent: FacebookShareCount,
   },
   {
-    id: "li",
+    id: "linkedin",
     component: LinkedinShareButton,
     shareComponent: null,
   },
   {
-    id: "tw",
+    id: "twitter",
     component: TwitterShareButton,
     shareComponent: null,
   },
   {
-    id: "pi",
+    id: "pinterest",
     component: PinterestShareButton,
     shareComponent: PinterestShareCount,
   },
@@ -53,8 +53,43 @@ export default [
     shareComponent: null,
   },
   {
-    id: "wa",
+    id: "reddit",
+    component: RedditShareButton,
+    shareComponent: RedditShareCount,
+  },
+  {
+    id: "whatsapp",
     component: WhatsappShareButton,
+    shareComponent: null,
+  },
+  {
+    id: "pocket",
+    component: PocketShareButton,
+    shareComponent: null,
+  },
+  {
+    id: "instapaper",
+    component: InstapaperShareButton,
+    shareComponent: null,
+  },
+  {
+    id: "tumblr",
+    component: TumblrShareButton,
+    shareComponent: TumblrShareCount,
+  },
+  {
+    id: "line",
+    component: LineShareButton,
+    shareComponent: null,
+  },
+  {
+    id: "viber",
+    component: ViberShareButton,
+    shareComponent: null,
+  },
+  {
+    id: "livejournal",
+    component: LivejournalShareButton,
     shareComponent: null,
   },
   {
@@ -68,48 +103,13 @@ export default [
     shareComponent: OKShareCount,
   },
   {
-    id: "tum",
-    component: TumblrShareButton,
-    shareComponent: TumblrShareCount,
-  },
-  {
-    id: "lj",
-    component: LivejournalShareButton,
-    shareComponent: null,
-  },
-  {
-    id: "mr",
+    id: "mailru",
     component: MailruShareButton,
     shareComponent: null,
   },
   {
-    id: "vib",
-    component: ViberShareButton,
-    shareComponent: null,
-  },
-  {
-    id: "wp",
+    id: "workplace",
     component: WorkplaceShareButton,
-    shareComponent: null,
-  },
-  {
-    id: "line",
-    component: LineShareButton,
-    shareComponent: null,
-  },
-  {
-    id: "po",
-    component: PocketShareButton,
-    shareComponent: null,
-  },
-  {
-    id: "ip",
-    component: InstapaperShareButton,
-    shareComponent: null,
-  },
-  {
-    id: "email",
-    component: EmailShareButton,
     shareComponent: null,
   },
 ];

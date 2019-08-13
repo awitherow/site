@@ -20,6 +20,7 @@ export default function ShareIcons(url, img) {
         <component
           onBeforeClick={resolve => {
             logEvent(`share-button ${id}`, url);
+            resolve();
           }}
           size={54}
           round={true}
