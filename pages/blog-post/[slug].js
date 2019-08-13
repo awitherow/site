@@ -9,7 +9,7 @@ import ShareIcons from "../../components/ShareIcons";
 
 import "./index.scss";
 
-function Post({ post, seo, asPath }) {
+function Post({ post, seo }) {
   const {
     title = "Missing title",
     name = "Missing name",
@@ -40,7 +40,7 @@ function Post({ post, seo, asPath }) {
           imageOptions={{ w: 320, h: 240, fit: "max" }}
           {...sanity.config()}
         />
-        <div style={{ marginTop: "3rem", textAlign: "center" }}>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
           <ShareIcons
             title={title}
             description={description}

@@ -15,7 +15,7 @@ function ShareIcons(props) {
       }
     }
     init();
-  });
+  }, []);
 
   return (
     <div className="share-icons-container">
@@ -32,7 +32,7 @@ function ShareIcons(props) {
               resolve();
             }}
             {...props}>
-            <Icon size={54} round />
+            <Icon size={48} round />
           </Component>
         ))}
       </div>
