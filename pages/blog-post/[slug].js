@@ -5,6 +5,7 @@ import { getPostBySlug } from "../../queries/posts";
 
 import Layout from "../../components/Layout";
 import Tags from "../../components/Tags";
+import ShareIcons from "../../components/ShareIcons";
 
 import "./index.scss";
 
@@ -39,6 +40,20 @@ function Post({ post, seo }) {
           imageOptions={{ w: 320, h: 240, fit: "max" }}
           {...sanity.config()}
         />
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <ShareIcons
+            title={title}
+            description={description}
+            caption={description}
+            media={urlFor(mainImage).url()}
+            image={urlFor(mainImage).url()}
+            subject={`Check out this article, ${title}, from highvib.es`}
+            body="I found this pretty useful and wanted to share it with you!"
+            openWindow={true}
+            tags={tags}
+            quote={description}
+          />
+        </div>
       </article>
     </Layout>
   );
