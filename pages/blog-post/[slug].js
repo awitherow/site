@@ -1,5 +1,4 @@
 import BlockContent from "@sanity/block-content-to-react";
-import { withRouter } from "next/router";
 import sanity, { urlFor } from "../../lib/sanity";
 
 import { getPostBySlug } from "../../queries/posts";
@@ -41,20 +40,21 @@ function Post({ post, seo, asPath }) {
           imageOptions={{ w: 320, h: 240, fit: "max" }}
           {...sanity.config()}
         />
+        <div style={{ marginTop: "3rem", textAlign: "center" }}>
+          <ShareIcons
+            title={title}
+            description={description}
+            caption={description}
+            media={urlFor(mainImage).url()}
+            image={urlFor(mainImage).url()}
+            subject={`Check out this article, ${title}, from highvib.es`}
+            body="I found this pretty useful and wanted to share it with you!"
+            openWindow={true}
+            tags={tags}
+            quote={description}
+          />
+        </div>
       </article>
-      <ShareIcons
-        url={asPath}
-        title={title}
-        description={description}
-        caption={description}
-        media={urlFor(mainImage).url()}
-        image={urlFor(mainImage).url()}
-        subject={`Check out this article, ${title}, from highvib.es`}
-        body="I found this pretty useful and wanted to share it with you!"
-        openWindow={true}
-        tags={tags}
-        quote={description}
-      />
     </Layout>
   );
 }
@@ -97,4 +97,4 @@ Post.getInitialProps = async function({ query, asPath }) {
   };
 };
 
-export default withRouter(Post);
+export default Post;

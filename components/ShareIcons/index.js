@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
+import { withRouter } from "next/router";
 import { Divider } from "../Layout";
 import buttons from "./buttons";
 import { initGA, logEvent } from "../../lib/analytics";
 
-export default function ShareIcons(url, img) {
+import "./index.scss";
+
+function ShareIcons(props) {
   useEffect(() => {
     async function init() {
       if (!window.GA_INITIALIZED) {
@@ -15,23 +18,26 @@ export default function ShareIcons(url, img) {
   });
 
   return (
-    <div className="share-icons">
-      {buttons.map(({ id, component, shareComponent }) => (
-        <component
-          onBeforeClick={resolve => {
-            logEvent(`share-button ${id}`, url);
-            resolve();
-          }}
-          size={54}
-          round={true}
-          {...props}>
-          {shareCount =>
-            shareComponent != null ? (
-              <span className="share-count">{shareCount}</span>
-            ) : null
-          }
-        </component>
-      ))}
+    <div className="share-icons-container">
+      <h2>Share on Social Media!</h2>
+      <Divider />
+      <div className="share-icons">
+        {buttons.map(({ id, Component, Icon }) => (
+          <Component
+            url={`https://highvib.es${props.router.asPath}`}
+            key={id}
+            onBeforeClick={resolve => {
+              console.log("log event sharebutton");
+              logEvent(`share-button ${id}`, url);
+              resolve();
+            }}
+            {...props}>
+            <Icon size={54} round />
+          </Component>
+        ))}
+      </div>
     </div>
   );
 }
+
+export default withRouter(ShareIcons);
