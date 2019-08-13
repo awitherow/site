@@ -1,26 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Divider } from "../Layout";
 import buttons from "./buttons";
+import { initGA, logEvent } from "../../lib/analytics";
 
 export default function ShareIcons(url, img) {
-  const [fullScreen, setFullScreen] = useState(false);
-
-  const getProps = function({ url, img }) {
-    props = { url };
-    if (img) {
-      props.media = img;
+  useEffect(() => {
+    async function init() {
+      if (!window.GA_INITIALIZED) {
+        await initGA();
+        window.GA_INITIALIZED = true;
+      }
     }
-    return props;
-  };
-
-  const buttons = fullScreen ? buttons : buttons.slice(0, 5);
+    init();
+  });
 
   return (
-    <div className={`share-icons ${fullScreen ? "full-screen" : ""}`}>
+    <div className="share-icons">
       {buttons.map(({ id, component, shareComponent }) => (
-        <component size={54} round={true} {...getProps(url, img)}>
+        <component
+          onBeforeClick={resolve => {
+            logEvent(`share-button ${id}`, url);
+          }}
+          size={54}
+          round={true}
+          {...props}>
           {shareCount =>
-            shareComponet != null ? (
+            shareComponent != null ? (
               <span className="share-count">{shareCount}</span>
             ) : null
           }
