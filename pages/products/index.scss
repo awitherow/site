@@ -1,15 +1,12 @@
-#archive {
+#products {
   h2 {
     margin: 2rem auto 1rem auto;
     text-align: center;
   }
 
-  ul {
+  .card-columns {
     max-width: 1200px;
     margin: 0 auto;
-
-    .tags {
-      margin-bottom: 0.33rem;
-    }
+    padding: 0.5rem;
   }
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { getAllBlogPosts } from "../../queries/posts";
 
-import Layout from "../../components/Layout";
+import Layout, { Divider } from "../../components/Layout";
 import Tags from "../../components/Tags";
 
 import "./index.scss";
@@ -14,6 +14,7 @@ function Archive({ posts, seo }) {
   return (
     <Layout seo={seo} id="archive">
       <h2>The Best of High Vibes</h2>
+      <Divider />
       <ul>
         {posts.map(({ slug, title, description }, i) => (
           <li key={i}>

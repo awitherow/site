@@ -10,16 +10,16 @@ import "./index.scss";
 
 export const links = [
   {
+    id: "mail",
+    label: "Free eBook!",
+  },
+  {
     id: "lifestyle",
     label: "Lifestyle",
   },
   {
     id: "products",
     label: "Products",
-  },
-  {
-    id: "mail",
-    label: "Free eBook!",
   },
   {
     id: "archive",
