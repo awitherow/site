@@ -12,7 +12,7 @@ export default class Sitemap extends Component {
 
     const routes = [
       {
-        url: "/",
+        url: "",
         changefreq: "daily",
         priority: 1,
       },
@@ -20,7 +20,7 @@ export default class Sitemap extends Component {
 
     links.map(({ id }) =>
       routes.push({
-        url: `/${id}`,
+        url: `${id}`,
         changefreq: "daily",
         priority: 1,
       }),
