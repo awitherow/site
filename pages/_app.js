@@ -11,7 +11,7 @@ import { PageTransition } from "next-page-transitions";
 
 import "./_custom.scss";
 
-class HiVibe extends App {
+class HighVibes extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -58,4 +58,4 @@ class HiVibe extends App {
   }
 }
 
-export default withFBQ("670279876784486", Router)(HiVibe);
+export default withFBQ("670279876784486", Router)(HighVibes);

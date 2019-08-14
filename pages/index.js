@@ -49,7 +49,7 @@ const Home = ({ seo, activities }) => {
       <section>
         <SectionHeader
           title="Awaken The Potential Within You"
-          subtitle="Imagine Your Life at its Highest Vibration. Feel that growing sense of wonder at your own Innate Potential. The Ability to Maintain your Highest Vibration is Essential in this Awakening. Don't worry, we got your back with the HiVibes Lifestyle Collection. A curated list of theoretical and practical guides, as well as elite products for the most effective habits, routines, ideas and more #onlyhivibes."
+          subtitle="Imagine Your Life at its Highest Vibration. Feel that growing sense of wonder at your own Innate Potential. The Ability to Maintain your Highest Vibration is Essential in this Awakening. Don't worry, we got your back with the HighVibes Lifestyle Collection. A curated list of theoretical and practical guides, as well as elite products for the most effective habits, routines, ideas and more #onlyhighvibes."
         />
         {activities.length ? (
           <div id="lifestyle" className="container">

@@ -8,7 +8,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.scss";
 
-const links = [
+export const links = [
   {
     id: "lifestyle",
     label: "Lifestyle",
@@ -20,6 +20,10 @@ const links = [
   {
     id: "mail",
     label: "Free eBook!",
+  },
+  {
+    id: "archive",
+    label: "Blog Archive",
   },
 ];
 
