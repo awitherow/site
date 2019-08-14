@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 
-function Tags(tags) {
+function Tags({ tags }) {
   if (tags.length) {
     return (
       <div className="tags">

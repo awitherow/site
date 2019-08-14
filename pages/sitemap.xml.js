@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import sanity from "../lib/sanity";
 
+import { links } from "../components/Navigation";
+
 export default class Sitemap extends Component {
   static async getInitialProps({ res }) {
-    let xml = "";
-    xml += '<?xml version="1.0" encoding="UTF-8"?>';
+    let xml = '<?xml version="1.0" encoding="UTF-8"?>';
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
     const SITE_ROOT = "https://highvib.es";
@@ -17,6 +18,14 @@ export default class Sitemap extends Component {
       },
     ];
 
+    links.map(({ id }) =>
+      routes.push({
+        url: `/${id}`,
+        changefreq: "daily",
+        priority: 1,
+      }),
+    );
+
     const activities = await sanity.fetch(`
         *[_type == 'hobby']{
             name,
@@ -27,7 +36,7 @@ export default class Sitemap extends Component {
       routes.push({
         url: `activity/${activity.name.replace(/\s+/g, "-").toLowerCase()}`,
         changefreq: "daily",
-        priority: 0.9,
+        priority: 1,
       });
     }
 
@@ -41,7 +50,7 @@ export default class Sitemap extends Component {
       routes.push({
         url: `blog-post/${item.slug.current}`,
         changefreq: "daily",
-        priority: 0.9,
+        priority: 1,
       });
     }
 

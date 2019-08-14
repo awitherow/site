@@ -1,0 +1,15 @@
+#archive {
+  h2 {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  ul {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .tags {
+      margin-bottom: 0.33rem;
+    }
+  }
+}
