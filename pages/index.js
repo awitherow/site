@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import Router from "next/router";
 
 import { Button } from "react-bootstrap";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -23,10 +22,7 @@ const Home = ({ seo, activities }) => {
     <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>highvib.es</h1>
-        <h2>
-          Imagine YOUR LIFE AT ITS HIGHEST VIBRATION. Make dreams reality.
-          AWAKEN THE POTENTIAL WITHIN YOU
-        </h2>
+        <h2>Your life at its highest vibration</h2>
 
         <div className="btn-container">
           <AnchorLink
@@ -67,9 +63,9 @@ Home.getInitialProps = async ({ query }) => {
   return {
     activities: await sanity.fetch(getAllActivities),
     seo: {
-      title: "Evolve to Your Highest Vibration",
+      title: "Your Life at its Highest Vibration",
       description:
-        "Promoting an amazing life that leaves you gasping in a rush of ecstacy IN EVERY MOMENT... Fostering these Moments with knowledge and Effective Solutions. See our High Vibe Hobbies for ideas on how to tweak your vibration.",
+        "Promoting a life that leaves you gasping in a rush of ecstacy at its own amazingness. Fostering such moments with Succint Knowledge and Effective Solutions.",
     },
   };
 };
