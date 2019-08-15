@@ -9,3 +9,7 @@ export const getAllProducts = groq`*[_type == "product"]{
         "url": asset->url
     },
   }`;
+
+export const getProductBySlug = groq`*[_type == "product" && slug.current == $slug][0]{
+    ...
+  }`;
