@@ -1,6 +1,4 @@
-import groq from "groq";
-
-export const getAllProducts = groq`*[_type == "product"]{
+export const getAllProducts = `*[_type == "product"]{
     _id, description, link, name, creator,
     tags[] -> {
         tag

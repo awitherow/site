@@ -19,8 +19,6 @@ import Layout, { Divider } from "../../components/Layout";
 import Activity from "../../components/Activity";
 import Tags from "../../components/Tags";
 
-import useGlobal from "../../store";
-
 import sanity from "../../lib/sanity";
 import { getActivityByName } from "../../queries/activities";
 

@@ -17,7 +17,6 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
-    "@fortawesome/free-regular-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@sanity/block-content-to-react": "^2.0.6",
@@ -25,8 +24,6 @@
     "@sanity/image-url": "^0.140.12",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.3.1",
-    "express": "^4.17.1",
-    "groq": "^0.141.5",
     "next": "^9.0.2",
     "next-fbq": "^2.0.0",
     "next-page-transitions": "^1.0.0-beta.2",
@@ -37,8 +34,7 @@
     "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
-    "react-share": "^3.0.0",
-    "use-global-hook": "^0.1.7"
+    "react-share": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
