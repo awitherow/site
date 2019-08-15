@@ -30,7 +30,7 @@ function Mail({ seo, book }) {
           </p>
           <Button
             variant="success"
-            href="http://eepurl.com/dE5G81"
+            href="https://mailchi.mp/a0c8d95ccbd3/highvibes-newsletter"
             onClick={e => logEvent("/mail.button", "exit to mailchimp signup")}
             target="_blank">
             Sign Up Today!
