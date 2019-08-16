@@ -22,12 +22,11 @@ const Home = ({ seo, activities }) => {
     <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>highvib.es</h1>
-        <h2>Your life at its highest vibration</h2>
+        <h2>Create Your life at its highest vibration</h2>
 
         <div className="btn-container">
           <AnchorLink
             onClick={e => logEvent("/.button", "scroll to list")}
-            offset="220"
             className="btn btn-success"
             href="#lifestyle">
             Awaken Your Potential
@@ -42,18 +41,14 @@ const Home = ({ seo, activities }) => {
         </div>
       </div>
 
-      <section>
-        <SectionHeader
-          title="Awaken The Potential Within You"
-          subtitle="Imagine Your Life at its Highest Vibration. Feel that growing sense of wonder at your own Innate Potential. The Ability to Maintain your Highest Vibration is Essential in this Awakening. Don't worry, we got your back with the HighVibes Lifestyle Collection. A curated list of theoretical and practical guides, as well as elite products for the most effective habits, routines, ideas and more #onlyhighvibes."
-        />
-        {activities.length ? (
-          <div id="lifestyle" className="container">
-            {activities.map((habit, i) => (
-              <Activity data={habit} key={i} />
-            ))}
-          </div>
-        ) : null}
+      <section id="lifestyle">
+        <SectionHeader title="Awaken The Potential Within You" subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life. Awaken the Potential Within You." />
+
+        <div className="container activities">
+          {activities.map((habit, i) => (
+            <Activity data={habit} key={i} />
+          ))}
+        </div>
       </section>
     </Layout>
   );

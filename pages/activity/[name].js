@@ -7,7 +7,6 @@ import {
   Card,
   CardColumns,
   Dropdown,
-  Alert,
 } from "react-bootstrap";
 
 import { logEvent } from "../../lib/analytics";
@@ -29,6 +28,7 @@ function ActivityPage({ activity = {}, seo }) {
   return (
     <Layout id="activity" seo={seo}>
       <Activity key={activity._id} data={activity} expanded />
+
       <div className="products">
         <h3>Essential Items</h3>
         <p className="sub-heading">
