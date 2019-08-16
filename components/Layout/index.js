@@ -26,7 +26,7 @@ function Layout({ id, children, seo, ...props }) {
     analyze();
   }, []);
 
-  const { fixedNav } = props;
+  const { fixedNav = false } = props;
 
   return (
     <div id={id} className="page">

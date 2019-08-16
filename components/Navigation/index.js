@@ -27,7 +27,7 @@ export const links = [
   },
 ];
 
-function Navigation({ fixedNav = false }) {
+export default function Navigation({ fixedNav = false }) {
   return (
     <Navbar expand="lg" fixed={fixedNav && "top"}>
       <div className="container">
@@ -57,5 +57,3 @@ function Navigation({ fixedNav = false }) {
     </Navbar>
   );
 }
-
-export default Navigation;

@@ -18,42 +18,28 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Layout, { Divider } from "../../components/Layout";
 import Activity from "../../components/Activity";
 import Tags from "../../components/Tags";
+import AlertDismissible from "../../components/AlertDismissible";
 
 import sanity from "../../lib/sanity";
 import { getActivityByName } from "../../queries/activities";
 
 import "./index.scss";
 
-function AlertDismissible() {
-  const [show, setShow] = useState(true);
-
-  if (show) {
-    return (
-      <Alert variant="info" onClose={() => setShow(false)} dismissible>
-        We use affiliate links, meaning that highvib.es receives a commission on
-        the products below — hope you enjoy the highvib.es!
-      </Alert>
-    );
-  }
-  return null;
-}
-
-function ActivityPage({ activity, seo }) {
+function ActivityPage({ activity = {}, seo }) {
   return (
     <Layout id="activity" seo={seo}>
-      {activity && <Activity key={activity._id} data={activity} expanded />}
-      {activity && (
-        <div className="products">
-          <h3>Essential Items</h3>
-          <p className="sub-heading">
-            Researched brands and products that are amongst the best in the
-            world in terms of quality and price satisfaction.
-          </p>
+      <Activity key={activity._id} data={activity} expanded />
+      <div className="products">
+        <h3>Essential Items</h3>
+        <p className="sub-heading">
+          Researched brands and products that are amongst the best in the world
+          in terms of quality and price satisfaction.
+        </p>
 
-          <AlertDismissible />
-          <Divider />
+        <AlertDismissible />
+        <Divider />
 
-          {/* <h4>Filter items by...</h4>
+        {/* <h4>Filter items by...</h4>
           <ButtonToolbar id="filter-bar">
             <Dropdown>
               <Dropdown.Toggle variant="primary" id="dropdown-type">
@@ -85,48 +71,47 @@ function ActivityPage({ activity, seo }) {
             </ButtonGroup>
           </ButtonToolbar> */}
 
-          <h5>
-            {activity.products
-              ? `${activity.products.length} Essential Product${
-                  activity.products.length === 1 ? "" : "s"
-                }`
-              : "Essential Products Coming Soon!"}
-          </h5>
+        <h5>
+          {activity.products
+            ? `${activity.products.length} Essential Product${
+                activity.products.length === 1 ? "" : "s"
+              }`
+            : "Essential Products Coming Soon!"}
+        </h5>
 
-          {activity.products ? (
-            <CardColumns>
-              {activity.products.map(
-                ({ _id, image, description, link, name, creator, tags }) => (
-                  <Card key={_id}>
-                    <Card.Img variant="top" src={image.url} />
-                    <Card.Body>
-                      <Card.Title>
-                        {name} by {creator}
-                      </Card.Title>
-                      {tags ? <Tags tags={tags} /> : null}
-                      <Card.Text>{`${description.substring(
-                        0,
-                        180,
-                      )}...`}</Card.Text>
-                      <a
-                        href={link}
-                        onClick={e =>
-                          logEvent(
-                            `/activity/${activity.name}`,
-                            `product ${name} comission click`,
-                          )
-                        }
-                        className="btn btn-primary">
-                        <FontAwesomeIcon icon={faShoppingCart} /> Select Item
-                      </a>
-                    </Card.Body>
-                  </Card>
-                ),
-              )}
-            </CardColumns>
-          ) : null}
-        </div>
-      )}
+        {activity.products.length ? (
+          <CardColumns>
+            {activity.products.map(
+              ({ _id, image, description, link, name, creator, tags }) => (
+                <Card key={_id}>
+                  <Card.Img variant="top" src={image.url} />
+                  <Card.Body>
+                    <Card.Title>
+                      {name} by {creator}
+                    </Card.Title>
+                    {tags ? <Tags tags={tags} /> : null}
+                    <Card.Text>{`${description.substring(
+                      0,
+                      180,
+                    )}...`}</Card.Text>
+                    <a
+                      href={link}
+                      onClick={e =>
+                        logEvent(
+                          `/activity/${activity.name}`,
+                          `product ${name} comission click`,
+                        )
+                      }
+                      className="btn btn-primary">
+                      <FontAwesomeIcon icon={faShoppingCart} /> Select Item
+                    </a>
+                  </Card.Body>
+                </Card>
+              ),
+            )}
+          </CardColumns>
+        ) : null}
+      </div>
     </Layout>
   );
 }

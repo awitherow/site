@@ -21,6 +21,7 @@ function ShareIcons(props) {
     <div className="share-icons-container">
       <h2>Share on Social Media!</h2>
       <Divider />
+
       <div className="share-icons">
         {buttons.map(({ id, Component, Icon }) => (
           <Component

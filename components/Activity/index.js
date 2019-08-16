@@ -1,13 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-import { urlFor } from "../../lib/sanity";
-
 import { Divider } from "../Layout";
+
+import Tile from "./Tile";
+import Jumbotron from "./Jumbotron";
+import Resources from "./Resources";
 
 import "./index.scss";
 
-function Activity({ data, expanded }) {
+export default function Activity({ data, expanded }) {
   const { _id, name, image, tags, description, resources } = data;
 
   if (!_id) {
@@ -15,73 +17,18 @@ function Activity({ data, expanded }) {
   }
 
   return (
-    <div className={`activity ${expanded && "expansion"}`}>
+    <div className={`activity ${expanded ? "expansion" : ""}`}>
       {!expanded ? (
-        <Link
-          href="/activity/[name]"
-          as={`/activity/${name.replace(/\s+/g, "-").toLowerCase()}`}>
-          <a>
-            <h3>{name}</h3>
-            <img
-              src={urlFor(image)
-                .width(700)
-                .height(700)
-                .url()}
-            />
-          </a>
-        </Link>
+        <Tile name={name} image={image} />
       ) : (
-        <div className="activity-header">
-          <img
-            src={urlFor(image)
-              .height(500)
-              .width(1600)
-              .url()}
-          />
-          <div className="activity-header__info">
-            <h2>High Vibrational {name} </h2>
-            <Divider />
-            <h3>Searchable Tags</h3>
-            <div className="tags">
-              {tags.map(({ tag }, i) => (
-                <div key={i} className="tag">
-                  {tag}
-                </div>
-              ))}
-            </div>
-            <h3>Description</h3>
-            <p>{description}</p>
-          </div>
-        </div>
+        <Jumbotron
+          image={image}
+          name={name}
+          tags={tags}
+          description={description}
+        />
       )}
-      {expanded && (
-        <div className="resources">
-          <h3>Everything to Know About {name}</h3>
-          <p className="sub-heading">
-            Only the Best Articles that succinctly constitute the
-            <strong> Essence of {name}</strong>.
-          </p>
-          <Divider />
-          <ul>
-            {resources ? (
-              resources.map(({ title, slug }, i) => (
-                <li key={i}>
-                  <Link
-                    prefetch
-                    href={`/blog-post/[slug]`}
-                    as={`/blog-post/${slug.current}`}>
-                    <a>{title}</a>
-                  </Link>
-                </li>
-              ))
-            ) : (
-              <li>Resources coming soon!</li>
-            )}
-          </ul>
-        </div>
-      )}
+      {expanded ? <Resources name={name} resources={resources} /> : null}
     </div>
   );
 }
-
-export default Activity;
