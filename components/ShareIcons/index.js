@@ -6,7 +6,7 @@ import { initGA, logEvent } from "../../lib/analytics";
 
 import "./index.scss";
 
-function ShareIcons(props) {
+function ShareIcons({ path, ...props }) {
   useEffect(() => {
     async function init() {
       if (!window.GA_INITIALIZED) {
@@ -25,7 +25,7 @@ function ShareIcons(props) {
       <div className="share-icons">
         {buttons.map(({ id, Component, Icon }) => (
           <Component
-            url={`https://highvib.es${props.router.asPath}`}
+            url={`https://highvib.es${path}`}
             key={id}
             onBeforeClick={resolve => {
               console.log("log event sharebutton");

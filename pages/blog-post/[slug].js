@@ -1,3 +1,5 @@
+import React from "react";
+import { withRouter } from "next/router";
 import BlockContent from "@sanity/block-content-to-react";
 import sanity, { urlFor } from "../../lib/sanity";
 
@@ -9,7 +11,7 @@ import ShareIcons from "../../components/ShareIcons";
 
 import "./index.scss";
 
-function Post({ post, seo }) {
+function Post({ post, seo, asPath }) {
   const {
     title = "Missing title",
     name = "Missing name",
@@ -42,6 +44,7 @@ function Post({ post, seo }) {
         />
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
           <ShareIcons
+            path={asPath}
             title={title}
             description={description}
             caption={description}
@@ -72,7 +75,7 @@ Post.getInitialProps = async function({ query, asPath }) {
       title,
       description,
       openGraph: {
-        url: asPath,
+        url: `https://highvib.es${asPath}`,
         title,
         description,
         images: [
@@ -97,4 +100,4 @@ Post.getInitialProps = async function({ query, asPath }) {
   };
 };
 
-export default Post;
+export default withRouter(Post);
