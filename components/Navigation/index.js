@@ -1,5 +1,6 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
+import { useGlobal } from "reactn";
+import { Button, Navbar, Nav } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -12,10 +13,12 @@ export const links = [
   {
     id: "mail",
     label: "Free eBook!",
+    modal: "MailchimpSignup",
   },
   {
     id: "lifestyle",
     label: "Lifestyle",
+    modal: "MailchimpSignup",
   },
   {
     id: "products",
@@ -28,6 +31,8 @@ export const links = [
 ];
 
 export default function Navigation({ fixedNav = false }) {
+  const [globalModal, setModal] = useGlobal("modal");
+
   return (
     <Navbar expand="lg" fixed={fixedNav && "top"}>
       <div className="container">
@@ -39,16 +44,22 @@ export default function Navigation({ fixedNav = false }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            {links.map(({ id, label }, i) => (
+            {links.map(({ id, label, modal }, i) => (
               <Nav.Item key={i}>
-                <Link href={`/${id}`}>
-                  <a
-                    className={`nav-link${
-                      useRouter().route.includes(id) ? " active" : ""
-                    }`}>
+                {!modal ? (
+                  <Link href={`/${id}`}>
+                    <a
+                      className={`nav-link${
+                        useRouter().route.includes(id) ? " active" : ""
+                      }`}>
+                      {label}
+                    </a>
+                  </Link>
+                ) : (
+                  <Button variant="link" onClick={() => setModal(modal)}>
                     {label}
-                  </a>
-                </Link>
+                  </Button>
+                )}
               </Nav.Item>
             ))}
           </Nav>

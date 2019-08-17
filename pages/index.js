@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useGlobal } from "reactn";
 import Link from "next/link";
 
 import { Button } from "react-bootstrap";
@@ -18,6 +19,8 @@ import Activity from "../components/Activity";
 import "./index.scss";
 
 const Home = ({ seo, activities }) => {
+  const [modal, setModal] = useGlobal("modal");
+
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
@@ -29,20 +32,19 @@ const Home = ({ seo, activities }) => {
             onClick={e => logEvent("/.button", "scroll to list")}
             className="btn btn-success"
             href="#lifestyle">
-            Awaken Your Potential
+            Vibe Higher
           </AnchorLink>
-          <Link href="/mail">
-            <a
-              className="btn btn-primary"
-              onClick={e => logEvent("/.button", "nav to /mail")}>
-              Free eBook!
-            </a>
-          </Link>
+          <Button onClick={() => setModal("MailchimpSignup")}>
+            Free eBook!
+          </Button>
         </div>
       </div>
 
       <section id="lifestyle">
-        <SectionHeader title="Awaken The Potential Within You" subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life. Awaken the Potential Within You." />
+        <SectionHeader
+          title="Vibe Higher"
+          subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life."
+        />
 
         <div className="container activities">
           {activities.map((habit, i) => (
