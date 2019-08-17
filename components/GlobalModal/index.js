@@ -5,13 +5,13 @@ import { Modal, Button } from "react-bootstrap";
 import Views from "./Views";
 
 export default function GlobalModal() {
-  const [modal, setModal] = useGlobal("modal");
-  const handleClose = () => setModal(null);
-  const CurrentModal = Views[modal];
+  const [globalModal, setGlobalModal] = useGlobal("modal");
+  const handleClose = () => setGlobalModal(null);
+  const CurrentModal = Views[globalModal];
   let children = null;
 
   if (CurrentModal != null) {
-    const { title, body, href, yesStr, noStr, yesFn } = Views[modal];
+    const { title, body, href, yesStr, noStr, yesFn } = Views[globalModal];
     const interaction = {};
 
     if (href) {
@@ -23,8 +23,6 @@ export default function GlobalModal() {
       interaction["onClick"] = props => yesFn(props);
     }
 
-    console.log(interaction);
-
     children = (
       <>
         <Modal.Header closeButton>
@@ -34,7 +32,7 @@ export default function GlobalModal() {
         <Modal.Body>{body}</Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={() => setModal(null)} variant="secondary">
+          <Button onClick={() => setGlobalModal(null)} variant="secondary">
             {noStr}
           </Button>
           <Button {...interaction} variant="primary">
@@ -46,7 +44,7 @@ export default function GlobalModal() {
   }
 
   return (
-    <Modal show={children != null} onHide={handleClose}>
+    <Modal show={children != null || globalModal != null} onHide={handleClose}>
       {children}
     </Modal>
   );
