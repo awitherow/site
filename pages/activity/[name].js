@@ -73,13 +73,13 @@ function ActivityPage({ activity = {}, seo }) {
 
         <h5>
           {activity.products
-            ? `${activity.products.length} Essential Product${
+            ? `${activity.products} Essential Product${
                 activity.products.length === 1 ? "" : "s"
               }`
             : "Essential Products Coming Soon!"}
         </h5>
 
-        {activity.products.length ? (
+        {activity.products ? (
           <CardColumns>
             {activity.products.map(
               ({ _id, image, description, link, name, creator, tags }) => (
