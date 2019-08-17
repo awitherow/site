@@ -46,7 +46,7 @@ export default function GlobalModal() {
   }
 
   return (
-    <Modal size="lg" centered show={children != null} onHide={handleClose}>
+    <Modal show={children != null} onHide={handleClose}>
       {children}
     </Modal>
   );

@@ -32,7 +32,7 @@ const Home = ({ seo, activities }) => {
             onClick={e => logEvent("/.button", "scroll to list")}
             className="btn btn-success"
             href="#lifestyle">
-            Awaken Your Potential
+            Vibe Higher
           </AnchorLink>
           <Button onClick={() => setModal("MailchimpSignup")}>
             Free eBook!
@@ -42,8 +42,8 @@ const Home = ({ seo, activities }) => {
 
       <section id="lifestyle">
         <SectionHeader
-          title="Awaken The Potential Within You"
-          subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life. Awaken the Potential Within You."
+          title="Vibe Higher"
+          subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life."
         />
 
         <div className="container activities">
