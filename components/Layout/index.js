@@ -36,7 +36,7 @@ function Layout({ id, children, seo, ...props }) {
       <Head>
         <meta
           name="google-site-verification"
-          content="Jr-O8hDyohipkSzYI8ozk2c8raUfRyLEa24UqBq3q0U"
+          content="sO6wuMmvZ9hsBHpkHZaNRqqA9xnwGV8_YRN6N2TU2nc"
         />
       </Head>
       <NextSeo {...seo} />
