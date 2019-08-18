@@ -73,7 +73,7 @@ function ActivityPage({ activity = {}, seo }) {
 
         <h5>
           {activity.products
-            ? `${activity.products} Essential Product${
+            ? `${activity.products.length} Essential Product${
                 activity.products.length === 1 ? "" : "s"
               }`
             : "Essential Products Coming Soon!"}
@@ -118,9 +118,10 @@ function ActivityPage({ activity = {}, seo }) {
 
 ActivityPage.getInitialProps = async ({ query, asPath }) => {
   const activity = await sanity.fetch(getActivityByName(query.name));
-  const { image, name, description } = activity;
+  const { image, name, description, seo_hook, seo_line, seo_sinker } = activity;
 
-  const title = `High Vibrational ${name} | Transformational Articles, Essential Products | highvib.es`;
+  const title = `${seo_hook} - ${seo_line}`;
+  const description = `${seo_hook}. ${seo_line}. ${seo_sinker}`;
 
   return {
     activity,
