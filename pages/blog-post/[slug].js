@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDisqusComments from "react-disqus-comments";
 import { withRouter } from "next/router";
 import BlockContent from "@sanity/block-content-to-react";
 import sanity, { urlFor } from "../../lib/sanity";
@@ -34,30 +35,40 @@ function Post({ post, seo, asPath }) {
         <h1>{title}</h1>
         <span>By {name}</span>
       </div>
-      <article>
-        {tags && <Tags tags={tags} />}
-        <blockquote>{description}</blockquote>
-        <BlockContent
-          blocks={body}
-          imageOptions={{ w: 320, h: 240, fit: "max" }}
-          {...sanity.config()}
-        />
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <ShareIcons
-            path={asPath}
-            title={title}
-            description={description}
-            caption={description}
-            media={urlFor(mainImage).url()}
-            image={urlFor(mainImage).url()}
-            subject={`Check out this article, ${title}, from highvib.es`}
-            body="I found this pretty useful and wanted to share it with you!"
-            openWindow={true}
-            tags={tags}
-            quote={description}
+
+      <div className="body">
+        <article>
+          {tags && <Tags tags={tags} />}
+          <blockquote>{description}</blockquote>
+          <BlockContent
+            blocks={body}
+            imageOptions={{ w: 320, h: 240, fit: "max" }}
+            {...sanity.config()}
           />
-        </div>
-      </article>
+          <div style={{ marginTop: "2rem", textAlign: "center" }}>
+            <ShareIcons
+              path={asPath}
+              title={title}
+              description={description}
+              caption={description}
+              media={urlFor(mainImage).url()}
+              image={urlFor(mainImage).url()}
+              subject={`Check out this article, ${title}, from highvib.es`}
+              body="I found this pretty useful and wanted to share it with you!"
+              openWindow={true}
+              tags={tags}
+              quote={description}
+            />
+
+            <ReactDisqusComments
+              shortname="highvib.es"
+              url={`https://highvib.es${asPath}`}
+              identifier={id}
+              title={title}
+            />
+          </div>
+        </article>
+      </div>
     </Layout>
   );
 }

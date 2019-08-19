@@ -42,14 +42,16 @@ const Home = ({ seo, activities }) => {
 
       <section id="lifestyle">
         <SectionHeader
-          title="Vibe Higher"
+          title="Featured High Vibrational Enhancements"
           subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life."
         />
 
         <div className="container activities">
-          {activities.map((habit, i) => (
-            <Activity data={habit} key={i} />
-          ))}
+          {activities
+            .filter(habit => habit.featured)
+            .map((habit, i) => (
+              <Activity data={habit} key={i} />
+            ))}
         </div>
       </section>
     </Layout>
