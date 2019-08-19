@@ -2,6 +2,7 @@
   "version": 2,
   "public": true,
   "env": {
-    "MAILCHIMP": "@mailchimp"
+    "MAILCHIMP": "@mailchimp",
+    "LIST_ID": "@list_id"
   }
 }
