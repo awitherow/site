@@ -11,7 +11,11 @@ import {
 const social = [
   { id: "fb", link: "https://facebook.com/lwithero", icon: faFacebook },
   { id: "twitter", link: "https://twitter.com/highvib_es", icon: faTwitter },
-  { id: "instagram", link: "https://instagram.com/highvib", icon: faInstagram },
+  {
+    id: "instagram",
+    link: "https://instagram.com/highvib.es",
+    icon: faInstagram,
+  },
 ];
 
 export default function Footer() {
