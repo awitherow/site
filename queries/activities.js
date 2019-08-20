@@ -3,6 +3,7 @@ export const getAllActivities = `
     _id,
     name,
     image,
+    featured,
 }`;
 
 export const getActivityByName = name => {

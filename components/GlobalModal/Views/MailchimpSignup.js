@@ -1,7 +1,7 @@
 export default {
-  title: "Free Weekly Newsletter Subscription",
+  title: "Get The eBook When It's Ready!",
   body:
-    "Highvib.es is currently under construction. Lots of goodines incoming! If you're interested in getting quality content for building a High Vibrational Lifestyle, sign up for our newslatter. You'll automatically recieve the free eBook when it is done in the very near future.",
+    "I am currently compiling the most valuable High Vibrational information for you into a simple eBook. Sign up today for future updates! When the eBook is ready, I'll send you a copy!",
   noStr: "Maybe Later",
   yesFn: () => {},
   yesStr: "I'm in!",
