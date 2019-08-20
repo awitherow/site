@@ -13,6 +13,25 @@ import ShareIcons from "../../components/ShareIcons";
 
 import "./index.scss";
 
+const successMap = {
+  "n/a": {
+    text: "Sign up!",
+    variant: "primary",
+  },
+  waiting: {
+    text: "Processing...",
+    variant: "warning",
+  },
+  good: {
+    text: "Thanks for signing up!",
+    variant: "success",
+  },
+  bad: {
+    text: "Try again?",
+    variant: "danger",
+  },
+};
+
 function Post({ post, seo, asPath }) {
   const {
     title = "Missing title",
@@ -26,19 +45,21 @@ function Post({ post, seo, asPath }) {
 
   const [email_address, updateEmail] = useState("");
   const [fname, updateFName] = useState("");
+  const [success, setSuccess] = useState("n/a");
 
   const handleSignup = async () => {
-    const result = await axios.post("/mailchimp/subscribe", {
+    setSuccess("waiting");
+    const result = await axios.post("/api/mailchimp/subscribe", {
       email_address,
       fname,
     });
 
-    console.log("hello");
-
     if (typeof result != Error) {
-      console.log("yay");
+      setSuccess("good");
+      // TODO: disable all email signup on that device for that list.
     } else {
-      console.log("uh oh");
+      setSuccess("bad");
+      //TODO: ROLLBAR
     }
   };
 
@@ -109,8 +130,10 @@ function Post({ post, seo, asPath }) {
                   onChange={e => updateFName(e.target.value)}
                 />
               </Form.Group>
-              <Button onClick={() => handleSignup()} variant="primary">
-                Sign up!
+              <Button
+                onClick={() => handleSignup()}
+                variant={successMap[success].variant}>
+                {successMap[success].text}
               </Button>
             </Form>
           </div>
