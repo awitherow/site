@@ -24,16 +24,16 @@ export default function Resources({ name = "", resources = [] }) {
       <Divider />
       {resources.length ? (
         <ul>
-          ( resources.map(({(title, slug)}, i) => (
-          <li key={i}>
-            <Link
-              prefetch
-              href={`/blog-post/[slug]`}
-              as={`/blog-post/${slug.current}`}>
-              <a>{title}</a>
-            </Link>
-          </li>
-          )) )
+          {resources.map(({ title, slug }, i) => (
+            <li key={i}>
+              <Link
+                prefetch
+                href={`/blog-post/[slug]`}
+                as={`/blog-post/${slug.current}`}>
+                <a>{title}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       ) : (
         <p>New articles coming soon!</p>

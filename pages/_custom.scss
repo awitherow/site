@@ -32,6 +32,12 @@ body {
   }
 }
 
+.btn-amazon {
+  background-color: rgb(255, 153, 0);
+  border-color: darken(rgb(255, 153, 0), 10%);
+  color: black;
+}
+
 .page-transition-enter {
   opacity: 0;
 }

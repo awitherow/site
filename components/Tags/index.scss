@@ -1,9 +1,13 @@
 .tags {
-  margin: 0 auto 1rem auto;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
+
+  &:first-child {
+    margin-left: 0;
+  }
 
   .tag {
     padding: 0.22rem 0.44rem;
@@ -11,5 +15,11 @@
     border: 1px solid rgba(0, 0, 0, 0.33);
     border-radius: 0.33rem;
     font-size: 0.88rem;
+
+    &.small {
+      padding: 0.1rem 0.2rem;
+      margin: 0.16rem;
+      font-size: 0.77rem;
+    }
   }
 }

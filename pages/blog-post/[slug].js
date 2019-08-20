@@ -9,6 +9,7 @@ import { getPostBySlug } from "../../queries/posts";
 
 import Layout, { Divider } from "../../components/Layout";
 import Tags from "../../components/Tags";
+import MailchimpForm from "../../components/MailchimpForm";
 import ShareIcons from "../../components/ShareIcons";
 
 import "./index.scss";

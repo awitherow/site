@@ -1,22 +1,12 @@
 import React, { useState } from "react";
 import { withRouter } from "next/router";
-import {
-  ButtonToolbar,
-  ButtonGroup,
-  Button,
-  Card,
-  CardColumns,
-  Dropdown,
-} from "react-bootstrap";
+import { CardColumns } from "react-bootstrap";
 
 import { logEvent } from "../../lib/analytics";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-
 import Layout, { Divider } from "../../components/Layout";
 import Activity from "../../components/Activity";
-import Tags from "../../components/Tags";
+import Product from "../../components/Product";
 import AlertDismissible from "../../components/AlertDismissible";
 
 import sanity from "../../lib/sanity";
@@ -39,38 +29,6 @@ function ActivityPage({ activity = {}, seo }) {
         <AlertDismissible />
         <Divider />
 
-        {/* <h4>Filter items by...</h4>
-          <ButtonToolbar id="filter-bar">
-            <Dropdown>
-              <Dropdown.Toggle variant="primary" id="dropdown-type">
-                Type
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown>
-              <Dropdown.Toggle variant="secondary" id="dropdown-tag">
-                Tag
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-
-            <ButtonGroup aria-label="Cost range">
-              <Button variant="success">$</Button>
-              <Button variant="success">$$$</Button>
-              <Button variant="success">$$$</Button>
-            </ButtonGroup>
-          </ButtonToolbar> */}
-
         <h5>
           {activity.products
             ? `${activity.products.length} Essential Product${
@@ -81,34 +39,17 @@ function ActivityPage({ activity = {}, seo }) {
 
         {activity.products ? (
           <CardColumns>
-            {activity.products.map(
-              ({ _id, image, description, link, name, creator, tags }) => (
-                <Card key={_id}>
-                  <Card.Img variant="top" src={image.url} />
-                  <Card.Body>
-                    <Card.Title>
-                      {name} by {creator}
-                    </Card.Title>
-                    {tags ? <Tags tags={tags} /> : null}
-                    <Card.Text>{`${description.substring(
-                      0,
-                      180,
-                    )}...`}</Card.Text>
-                    <a
-                      href={link}
-                      onClick={e =>
-                        logEvent(
-                          `/activity/${activity.name}`,
-                          `product ${name} comission click`,
-                        )
-                      }
-                      className="btn btn-primary">
-                      <FontAwesomeIcon icon={faShoppingCart} /> Select Item
-                    </a>
-                  </Card.Body>
-                </Card>
-              ),
-            )}
+            {activity.products.map(product => (
+              <Product
+                {...product}
+                onClick={e =>
+                  logEvent(
+                    `/activity/${activity.name}`,
+                    `product ${name} comission click`,
+                  )
+                }
+              />
+            ))}
           </CardColumns>
         ) : null}
       </div>
@@ -118,6 +59,7 @@ function ActivityPage({ activity = {}, seo }) {
 
 ActivityPage.getInitialProps = async ({ query, asPath }) => {
   const activity = await sanity.fetch(getActivityByName(query.name));
+
   const { image, name, title, description } = activity;
 
   return {
@@ -127,7 +69,7 @@ ActivityPage.getInitialProps = async ({ query, asPath }) => {
       description,
       openGraph: {
         url: asPath,
-        title: title,
+        title,
         description,
         images: [
           {
