@@ -50,6 +50,7 @@ function Post({ post, seo, asPath }) {
   const handleSignup = async () => {
     setSuccess("waiting");
     const result = await axios.post("/api/mailchimp/subscribe", {
+      source: `Blog Post: ${title}`,
       email_address,
       fname,
     });
@@ -131,6 +132,7 @@ function Post({ post, seo, asPath }) {
                 />
               </Form.Group>
               <Button
+                disabled={success === "good"}
                 onClick={() => handleSignup()}
                 variant={successMap[success].variant}>
                 {successMap[success].text}
