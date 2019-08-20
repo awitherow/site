@@ -73,7 +73,13 @@ ActivityPage.getInitialProps = async ({ query, asPath }) => {
         description,
         images: [
           {
-            url: image.url,
+            url: urlFor(image)
+              .height(800)
+              .width(800)
+              .url(),
+            width: 800,
+            height: 800,
+            alt: "description",
           },
         ],
       },

@@ -101,7 +101,13 @@ Post.getInitialProps = async function({ query, asPath }) {
         description,
         images: [
           {
-            url: urlFor(mainImage),
+            url: urlFor(mainImage)
+              .height(800)
+              .width(800)
+              .url(),
+            width: 800,
+            height: 800,
+            alt: "description",
           },
         ],
         profile: {
