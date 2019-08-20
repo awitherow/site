@@ -6,7 +6,7 @@ export default function AlertDismissible() {
 
   if (show) {
     return (
-      <Alert variant="info" onClose={() => setShow(false)} dismissible>
+      <Alert variant="primary" onClose={() => setShow(false)} dismissible>
         We use affiliate links, meaning that highvib.es receives a commission on
         the products below — hope you enjoy the highvib.es!
       </Alert>
