@@ -25,7 +25,7 @@ const Home = ({ seo, activities }) => {
     <Layout id="index" seo={seo}>
       <div className="cover">
         <h1>highvib.es</h1>
-        <h2>Create Your life at its highest vibration</h2>
+        <h2>Create Your Life at its Highest Vibration</h2>
 
         <div className="btn-container">
           <AnchorLink

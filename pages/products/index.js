@@ -15,7 +15,7 @@ import "./index.scss";
 function Products({ products }) {
   return (
     <Layout id="products">
-      <h2>Essential High Vibrational Products</h2>
+      <h2>Essentials</h2>
       <Divider />
       <CardColumns>
         {products.map(
