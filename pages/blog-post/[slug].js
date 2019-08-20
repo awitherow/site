@@ -27,11 +27,13 @@ function Post({ post, seo, asPath }) {
   const [email_address, updateEmail] = useState("");
   const [fname, updateFName] = useState("");
 
-  const handleEmailSubmission = async () => {
-    const result = await axios.post("/mailchimp-subscribe", {
+  const handleSignup = async () => {
+    const result = await axios.post("/mailchimp/subscribe", {
       email_address,
       fname,
     });
+
+    console.log("hello");
 
     if (typeof result != Error) {
       console.log("yay");
@@ -107,7 +109,9 @@ function Post({ post, seo, asPath }) {
                   onChange={e => updateFName(e.target.value)}
                 />
               </Form.Group>
-              <Button variant="primary">Sign up!</Button>
+              <Button onClick={() => handleSignup()} variant="primary">
+                Sign up!
+              </Button>
             </Form>
           </div>
         </div>
