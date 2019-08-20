@@ -102,7 +102,7 @@ function Post({ post, seo, asPath }) {
           </div>
         </article>
         <div className="featured">
-          <div className="newsletter-signup">
+          <div className="sidebar-block newsletter-signup">
             <h3>Signup For Our Newsletter!</h3>
             <Divider />
             <Form>
@@ -136,6 +136,14 @@ function Post({ post, seo, asPath }) {
                 {successMap[success].text}
               </Button>
             </Form>
+          </div>
+          <div className="sidebar-block popular-posts">
+            <h3>Popular Posts Coming Soon!</h3>
+            <Divider />
+          </div>
+          <div className="sidebar-block featured-products">
+            <h3>Featured Affiliates Coming Soon!</h3>
+            <Divider />
           </div>
         </div>
       </div>
