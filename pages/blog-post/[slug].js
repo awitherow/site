@@ -13,25 +13,6 @@ import ShareIcons from "../../components/ShareIcons";
 
 import "./index.scss";
 
-const successMap = {
-  "n/a": {
-    text: "Sign up!",
-    variant: "primary",
-  },
-  waiting: {
-    text: "Processing...",
-    variant: "warning",
-  },
-  good: {
-    text: "Thanks for signing up!",
-    variant: "success",
-  },
-  bad: {
-    text: "Try again?",
-    variant: "danger",
-  },
-};
-
 function Post({ post, seo, asPath }) {
   const {
     title = "Missing title",
@@ -42,27 +23,6 @@ function Post({ post, seo, asPath }) {
     body = [],
     id,
   } = post;
-
-  const [email_address, updateEmail] = useState("");
-  const [fname, updateFName] = useState("");
-  const [success, setSuccess] = useState("n/a");
-
-  const handleSignup = async () => {
-    setSuccess("waiting");
-    const result = await axios.post("/api/mailchimp/subscribe", {
-      source: `Blog Post: ${title}`,
-      email_address,
-      fname,
-    });
-
-    if (typeof result != Error) {
-      setSuccess("good");
-      // TODO: disable all email signup on that device for that list.
-    } else {
-      setSuccess("bad");
-      //TODO: ROLLBAR
-    }
-  };
 
   return (
     <Layout seo={seo} id="blog-post" fixedNav={true}>
@@ -106,38 +66,7 @@ function Post({ post, seo, asPath }) {
           <div className="sidebar-block newsletter-signup">
             <h3>Signup For Our Newsletter!</h3>
             <Divider />
-            <Form>
-              <Form.Group controlId="form">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  autoComplete="email"
-                  value={email_address}
-                  onChange={e => updateEmail(e.target.value)}
-                />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group controlId="firstname">
-                <Form.Label>Your Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Your Name"
-                  autoComplete="name"
-                  value={fname}
-                  onChange={e => updateFName(e.target.value)}
-                />
-              </Form.Group>
-              <Button
-                disabled={success === "good"}
-                onClick={() => handleSignup()}
-                variant={successMap[success].variant}>
-                {successMap[success].text}
-              </Button>
-            </Form>
+            <MailchimpForm source={`Blog Post: ${title}`} />
           </div>
           <div className="sidebar-block popular-posts">
             <h3>Popular Posts Coming Soon!</h3>

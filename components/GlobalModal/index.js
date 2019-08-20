@@ -23,6 +23,8 @@ export default function GlobalModal() {
       interaction["onClick"] = props => yesFn(props);
     }
 
+    let enableFooter = yesStr && noStr && (yesFn || href);
+
     children = (
       <>
         <Modal.Header closeButton>
@@ -31,14 +33,16 @@ export default function GlobalModal() {
 
         <Modal.Body>{body}</Modal.Body>
 
-        <Modal.Footer>
-          <Button onClick={() => setGlobalModal(null)} variant="secondary">
-            {noStr}
-          </Button>
-          <Button {...interaction} variant="primary">
-            {yesStr}
-          </Button>
-        </Modal.Footer>
+        {enableFooter ? (
+          <Modal.Footer>
+            <Button onClick={() => setGlobalModal(null)} variant="secondary">
+              {noStr}
+            </Button>
+            <Button {...interaction} variant="primary">
+              {yesStr}
+            </Button>
+          </Modal.Footer>
+        ) : null}
       </>
     );
   }
