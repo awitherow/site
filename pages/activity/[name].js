@@ -118,10 +118,7 @@ function ActivityPage({ activity = {}, seo }) {
 
 ActivityPage.getInitialProps = async ({ query, asPath }) => {
   const activity = await sanity.fetch(getActivityByName(query.name));
-  const { image, name, seo_hook, seo_line, seo_sinker } = activity;
-
-  const title = `${seo_hook} - ${seo_line}`;
-  const description = `${seo_hook}. ${seo_line}. ${seo_sinker}`;
+  const { image, name, title, description } = activity;
 
   return {
     activity,
