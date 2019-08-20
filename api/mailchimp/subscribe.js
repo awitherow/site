@@ -9,7 +9,9 @@ module.exports = async (req, res) => {
       `/lists/${process.env.list_id}/members`,
       {
         email_address,
-        fname,
+        merge_fields: {
+          FNAME: fname,
+        },
         status: "subscribed",
       },
     );
