@@ -36,10 +36,9 @@ function Post({ post, seo, asPath }) {
       </div>
       <article>
         {tags && <Tags tags={tags} />}
-        <blockquote>{description}</blockquote>
         <BlockContent
           blocks={body}
-          imageOptions={{ w: 320, h: 240, fit: "max" }}
+          imageOptions={{ w: 754, fit: "max" }}
           {...sanity.config()}
         />
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
