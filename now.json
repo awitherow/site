@@ -1,4 +1,8 @@
 {
   "version": 2,
-  "public": true
+  "public": true,
+  "env": {
+    "mailchimp": "@mailchimp",
+    "list_id": "@list_id"
+  }
 }
