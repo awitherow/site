@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "next/router";
 import BlockContent from "@sanity/block-content-to-react";
 import { Form, Button } from "react-bootstrap";
+import axios from "axios";
 
 import sanity, { urlFor } from "../../lib/sanity";
 import { getPostBySlug } from "../../queries/posts";
@@ -23,8 +24,21 @@ function Post({ post, seo, asPath }) {
     id,
   } = post;
 
-  const [email, updateEmail] = useState("");
-  const [fName, updateFName] = useState("");
+  const [email_address, updateEmail] = useState("");
+  const [fname, updateFName] = useState("");
+
+  const handleEmailSubmission = async () => {
+    const result = await axios.post("/mailchimp-subscribe", {
+      email_address,
+      fname,
+    });
+
+    if (typeof result != Error) {
+      console.log("yay");
+    } else {
+      console.log("uh oh");
+    }
+  };
 
   return (
     <Layout seo={seo} id="blog-post" fixedNav={true}>
@@ -75,7 +89,7 @@ function Post({ post, seo, asPath }) {
                   type="email"
                   placeholder="Enter email"
                   autoComplete="email"
-                  value={email}
+                  value={email_address}
                   onChange={e => updateEmail(e.target.value)}
                 />
                 <Form.Text className="text-muted">
@@ -89,7 +103,7 @@ function Post({ post, seo, asPath }) {
                   type="text"
                   placeholder="Your Name"
                   autoComplete="name"
-                  value={fName}
+                  value={fname}
                   onChange={e => updateFName(e.target.value)}
                 />
               </Form.Group>
