@@ -9,7 +9,7 @@ import Activity from "../../components/Activity";
 import Product from "../../components/Product";
 import AlertDismissible from "../../components/AlertDismissible";
 
-import sanity from "../../lib/sanity";
+import sanity, { urlFor } from "../../lib/sanity";
 import { getActivityByName } from "../../queries/activities";
 
 import "./index.scss";
