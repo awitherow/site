@@ -6,30 +6,28 @@ export const getAllActivities = `
     featured,
 }`;
 
-export const getActivityByName = name => {
-  return `
-    *[_type == 'hobby' && name match "${name}"]{
-        _id,
-        name,
+export const getActivityByName = name => `
+*[_type == 'hobby' && name match "${name}"]{
+    _id,
+    name,
+    description,
+    image,
+    tags[]-> {
+        ...
+    }, 
+    resources[]-> {
+        title,
+        slug,
         description,
-        image,
-        tags[]-> {
-            ...
-        }, 
-        resources[]-> {
-            title,
-            slug,
-            description,
-            mainImage,
+        mainImage,
+    },
+    products[]-> {
+        ...,
+        image {
+            "url": asset->url
         },
-        products[]-> {
-            ...,
-            image {
-                "url": asset->url
-            },
-            tags[] -> {
-                ...
-            }
+        tags[] -> {
+            ...
         }
-    }[0]`;
-};
+    }
+}[0]`;
