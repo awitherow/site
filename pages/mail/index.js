@@ -61,7 +61,7 @@ Mail.getInitialProps = async ({ asPath }) => {
       title,
       description,
       openGraph: {
-        url: asPath,
+        url: `https://highvib.es${asPath}`,
         title: title,
         description,
         images: [

@@ -68,7 +68,7 @@ ActivityPage.getInitialProps = async ({ query, asPath }) => {
       title,
       description,
       openGraph: {
-        url: asPath,
+        url: `https://highvib.es${asPath}`,
         title,
         description,
         images: [
