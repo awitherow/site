@@ -85,10 +85,6 @@
             max-width: 1024px;
             margin: 1rem auto;
             padding: 0;
-
-            h3 {
-              margin-top: 0;
-            }
           }
         }
       }
@@ -96,6 +92,10 @@
 
     .resources {
       padding: 0.5rem;
+
+      h3 {
+        margin-right: 1rem;
+      }
 
       .post-list {
         display: flex;

@@ -12,8 +12,6 @@ import Divider from "../Layout/Divider";
 export default function Resources({ name = "", resources = [] }) {
   const [modal, setModal] = useGlobal("modal");
 
-  console.log(resources);
-
   return (
     <div className="resources">
       <h3>
@@ -43,7 +41,7 @@ export default function Resources({ name = "", resources = [] }) {
                   prefetch
                   href={`/blog-post/[slug]`}
                   as={`/blog-post/${slug.current}`}>
-                  <a className="btn btn-primary">Read More</a>
+                  <a className="btn btn-success">Read More</a>
                 </Link>
               </div>
             </div>
