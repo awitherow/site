@@ -5,10 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
+import { urlFor } from "../../lib/sanity";
+
 import Divider from "../Layout/Divider";
 
 export default function Resources({ name = "", resources = [] }) {
   const [modal, setModal] = useGlobal("modal");
+
+  console.log(resources);
 
   return (
     <div className="resources">
@@ -23,18 +27,28 @@ export default function Resources({ name = "", resources = [] }) {
       </h3>
       <Divider />
       {resources.length ? (
-        <ul>
-          {resources.map(({ title, slug }, i) => (
-            <li key={i}>
-              <Link
-                prefetch
-                href={`/blog-post/[slug]`}
-                as={`/blog-post/${slug.current}`}>
-                <a>{title}</a>
-              </Link>
-            </li>
+        <div className="post-list">
+          {resources.map(({ title, slug, description, mainImage }, i) => (
+            <div className="post" key={i}>
+              <img
+                src={urlFor(mainImage)
+                  .height(750)
+                  .width(750)
+                  .url()}
+              />
+              <div className="post-body">
+                <h4>{title}</h4>
+                <p>{description}</p>
+                <Link
+                  prefetch
+                  href={`/blog-post/[slug]`}
+                  as={`/blog-post/${slug.current}`}>
+                  <a className="btn btn-primary">Read More</a>
+                </Link>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>New articles coming soon!</p>
       )}

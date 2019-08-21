@@ -19,6 +19,8 @@ export const getActivityByName = name => {
         resources[]-> {
             title,
             slug,
+            description,
+            mainImage,
         },
         products[]-> {
             ...,
