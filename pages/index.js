@@ -21,6 +21,18 @@ import "./index.scss";
 const Home = ({ seo, activities }) => {
   const [modal, setModal] = useGlobal("modal");
 
+  const sortByMostContent = (a, b) => {
+    let aScore = 0;
+    let bScore = 0;
+
+    aScore += a.products ? a.products.length : 0;
+    aScore += a.resources ? a.resources.length : 0;
+    bScore += b.products ? b.products.length : 0;
+    bScore += b.resources ? b.resources.length : 0;
+
+    return bScore - aScore;
+  };
+
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
@@ -49,6 +61,7 @@ const Home = ({ seo, activities }) => {
         <div className="container activities">
           {activities
             .filter(activity => activity.featured)
+            .sort(sortByMostContent)
             .map((activity, i) => (
               <Activity data={activity} key={i} />
             ))}
