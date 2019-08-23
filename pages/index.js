@@ -60,7 +60,7 @@ const Home = ({ seo, activities }) => {
 
         <div className="container activities">
           {activities
-            .filter(activity => activity.featured)
+            .filter(({ featured }) => featured)
             .sort(sortByMostContent)
             .map((activity, i) => (
               <Activity data={activity} key={i} />
