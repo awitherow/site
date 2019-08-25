@@ -41,6 +41,7 @@ function ActivityPage({ activity = {}, seo }) {
           <CardColumns>
             {activity.products.map(product => (
               <Product
+                key={product._id}
                 {...product}
                 onClick={e =>
                   logEvent(

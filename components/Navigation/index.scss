@@ -1,5 +1,4 @@
 nav {
-  background-color: rgba(255, 255, 255, 0.77);
   border-bottom: 4px solid gold;
 
   .btn-link {
@@ -12,7 +11,8 @@ nav {
 
   .navbar-brand {
     img {
-      max-height: 54px;
+      max-height: 48px;
+
       &:hover {
         cursor: pointer;
       }

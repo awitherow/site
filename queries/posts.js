@@ -9,5 +9,5 @@ export const getPostBySlug = `*[_type == "post" && slug.current == $slug][0]{
 }`;
 
 export const getAllBlogPosts = `*[_type == "post"]{
-  title, slug, description
+  title, slug, "name": author->name
 }`;

@@ -26,6 +26,8 @@ export const getActivityByName = name => `
         slug,
         description,
         mainImage,
+        _updatedAt,
+        "name": author->name
     },
     products[]-> {
         ...,
