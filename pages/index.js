@@ -78,8 +78,8 @@ const Home = ({ seo, activities }) => {
           <div className="inner">
             <h2>Create Your Life at its Highest Vibration</h2>
             <p>
-              Get High Vibrational, Easy to Implement LifeHacks weekly in your
-              inbox!
+              Theoretical and Practical Learning for Tuning Up Your Vibration,
+              in your Inbox, once a week.
             </p>
             <Form>
               <InputGroup controlId="form">
@@ -102,6 +102,9 @@ const Home = ({ seo, activities }) => {
                   </AnchorLink>
                 </InputGroup.Append>
               </InputGroup>
+              <Form.Text className="text-muted">
+                Your Email is safe with us.
+              </Form.Text>
             </Form>
           </div>
         </div>

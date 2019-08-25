@@ -23,7 +23,6 @@ const successMap = {
 
 export default function MailchimpForm({ source }) {
   const [email_address, updateEmail] = useState("");
-  const [fname, updateFName] = useState("");
   const [success, setSuccess] = useState("n/a");
 
   const handleSignup = async () => {
@@ -31,7 +30,6 @@ export default function MailchimpForm({ source }) {
     const result = await axios.post("/api/mailchimp/subscribe", {
       source,
       email_address,
-      fname,
     });
 
     if (typeof result != Error) {
@@ -57,17 +55,6 @@ export default function MailchimpForm({ source }) {
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
-      </Form.Group>
-
-      <Form.Group controlId="firstname">
-        <Form.Label>Your Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Your Name"
-          autoComplete="name"
-          value={fname}
-          onChange={e => updateFName(e.target.value)}
-        />
       </Form.Group>
       <Button
         disabled={success === "good"}

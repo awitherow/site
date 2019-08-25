@@ -10,14 +10,9 @@ module.exports = async (req, res) => {
       {
         source,
         email_address,
-        merge_fields: {
-          FNAME: fname,
-        },
         status: "subscribed",
       },
     );
-
-    console.log(results);
     return res.json(results);
   } catch (e) {
     return res.json(e);

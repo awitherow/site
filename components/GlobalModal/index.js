@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { useGlobal } from "reactn";
 import { Modal, Button } from "react-bootstrap";
 
@@ -26,7 +26,7 @@ export default function GlobalModal() {
     let enableFooter = yesStr && noStr && (yesFn || href);
 
     children = (
-      <>
+      <Fragment>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
@@ -43,7 +43,7 @@ export default function GlobalModal() {
             </Button>
           </Modal.Footer>
         ) : null}
-      </>
+      </Fragment>
     );
   }
 

@@ -16,7 +16,7 @@ function Archive({ posts, seo }) {
       <h2>The Best of High Vibes</h2>
       <Divider />
       <ul>
-        {posts.map(({ slug, title }, i) => (
+        {posts.reverse().map(({ slug, title }, i) => (
           <li key={i}>
             <Link href={`/blog-post/${slug.current}`}>
               <a>
