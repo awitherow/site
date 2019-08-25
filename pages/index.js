@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useGlobal } from "reactn";
+import axios from "axios";
 import Link from "next/link";
 import { Form, Button, InputGroup } from "react-bootstrap";
 
