@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useGlobal } from "reactn";
 import Link from "next/link";
+import { Form, Button, InputGroup } from "react-bootstrap";
 
-import { Button } from "react-bootstrap";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import { logEvent } from "../lib/analytics";
@@ -15,11 +15,49 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 import Layout, { SectionHeader, Divider } from "../components/Layout";
 import Activity from "../components/Activity";
+import MailchimpForm from "../components/MailchimpForm";
 
 import "./index.scss";
 
+const successMap = {
+  "n/a": {
+    text: "Sign up!",
+    variant: "primary",
+  },
+  waiting: {
+    text: "Processing...",
+    variant: "warning",
+  },
+  good: {
+    text: "Thanks for signing up!",
+    variant: "success",
+  },
+  bad: {
+    text: "Try again?",
+    variant: "danger",
+  },
+};
+
 const Home = ({ seo, activities }) => {
-  const [modal, setModal] = useGlobal("modal");
+  const [email_address, updateEmail] = useState("");
+  const [success, setSuccess] = useState("n/a");
+
+  const handleSignup = async () => {
+    setSuccess("waiting");
+    const result = await axios.post("/api/mailchimp/subscribe", {
+      source,
+      email_address,
+      fname,
+    });
+
+    if (typeof result != Error) {
+      setSuccess("good");
+      // TODO: disable all email signup on that device for that list.
+    } else {
+      setSuccess("bad");
+      //TODO: ROLLBAR
+    }
+  };
 
   const sortByMostContent = (a, b) => {
     let aScore = 0;
@@ -36,19 +74,33 @@ const Home = ({ seo, activities }) => {
   return (
     <Layout id="index" seo={seo}>
       <div className="cover">
-        <h1>highvib.es</h1>
-        <h2>Create Your Life at its Highest Vibration</h2>
-
-        <div className="btn-container">
-          <AnchorLink
-            onClick={e => logEvent("/.button", "scroll to list")}
-            className="btn btn-success"
-            href="#lifestyle">
-            Vibe Higher
-          </AnchorLink>
-          <Button onClick={() => setModal("MailchimpSignup")}>
-            Free eBook!
-          </Button>
+        <div className="container">
+          <div className="inner">
+            <h2>Create Your Life at its Highest Vibration</h2>
+            <p>
+              Get High Vibrational, Easy to Implement LifeHacks weekly in your
+              inbox!
+            </p>
+            <Form>
+              <InputGroup controlId="form">
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  autoComplete="email"
+                  value={email_address}
+                  onChange={e => updateEmail(e.target.value)}
+                />
+                <InputGroup.Append>
+                  <Button
+                    disabled={success === "good"}
+                    onClick={() => handleSignup()}
+                    variant={successMap[success].variant}>
+                    {successMap[success].text}
+                  </Button>
+                </InputGroup.Append>
+              </InputGroup>
+            </Form>
+          </div>
         </div>
       </div>
 

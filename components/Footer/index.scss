@@ -2,13 +2,12 @@ footer {
   max-width: 1200px;
   margin: 1rem auto 0 auto;
   padding: 1.66rem 0.33rem;
-  border-top: 8px solid #ffd700;
+  border-top: 4px solid #ffd700;
 
   ul {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    color: #ffd700;
 
     li {
       display: inline;
@@ -19,7 +18,7 @@ footer {
 
         &:hover,
         &:visited {
-          color: darken(#ffd700, 20%);
+          color: #ffd700;
         }
       }
     }

@@ -1,7 +1,7 @@
 #index {
   &.page {
     .cover {
-      background: url("/static/img/adventure.png") no-repeat center center fixed;
+      background: url("/static/img/adventure.jpg") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -16,30 +16,62 @@
       flex-direction: column;
       color: white;
 
-      text-align: center;
-
       @media (min-width: 768px) {
-        justify-content: center;
-        padding: 4rem 0 0 0;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 2rem;
       }
 
-      h1 {
-        margin-bottom: 0.5rem;
-        font-size: 3rem;
-        font-weight: 300;
-        letter-spacing: 0.25rem;
+      .container,
+      .inner {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+      }
 
-        span {
-          margin-left: 1rem;
+      .inner {
+        text-align: center;
+        padding: 1rem;
+        color: black;
+        max-width: 450px;
+
+        form {
+          width: 300px;
+          margin: 0 auto;
+
+          @media (min-width: 768px) {
+            margin: 0;
+          }
         }
-      }
 
-      h2 {
-        font-weight: 100;
-        letter-spacing: 2px;
-        font-size: 1.55rem;
-        max-width: 666px;
-        margin: 0 auto 0.666rem auto;
+        background: -moz-linear-gradient(
+          45deg,
+          rgba(255, 215, 0, 0.85) 0%,
+          rgba(255, 215, 0, 1) 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          45deg,
+          rgba(255, 215, 0, 0.85) 0%,
+          rgba(255, 215, 0, 1) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          45deg,
+          rgba(255, 215, 0, 0.85) 0%,
+          rgba(255, 215, 0, 1) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffd700',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+        @media (min-width: 768px) {
+          text-align: right;
+        }
+
+        h2 {
+          font-weight: 100;
+          letter-spacing: 2px;
+          font-size: 1.55rem;
+          max-width: 666px;
+        }
       }
     }
   }
