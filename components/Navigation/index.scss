@@ -1,9 +1,5 @@
 nav {
-  background-color: rgba(255, 255, 255, 0.99);
-
-  &.fixed-top {
-    background-color: rgba(255, 255, 255, 0.88);
-  }
+  background-color: rgba(255, 255, 255, 0.77);
 
   .btn-link {
     color: rgba(0, 0, 0, 0.5);
@@ -14,11 +10,8 @@ nav {
   }
 
   .navbar-brand {
-    a {
-      &:hover {
-        text-decoration: none;
-        color: black;
-      }
+    img {
+      max-height: 54px;
     }
   }
 }

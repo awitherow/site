@@ -25,7 +25,7 @@ export default function Navigation({ fixedNav = false }) {
       <div className="container">
         <Navbar.Brand>
           <Link href="/">
-            <a>highvib.es</a>
+            <img src="../../static/img/logo-text.png" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
