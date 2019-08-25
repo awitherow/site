@@ -16,14 +16,13 @@ function Archive({ posts, seo }) {
       <h2>The Best of High Vibes</h2>
       <Divider />
       <ul>
-        {posts.map(({ slug, title, description }, i) => (
+        {posts.map(({ slug, title }, i) => (
           <li key={i}>
             <Link href={`/blog-post/${slug.current}`}>
               <a>
                 <h3>{title}</h3>
               </a>
             </Link>
-            <p>{`${description.substring(0, 140)}...`}</p>
           </li>
         ))}
       </ul>

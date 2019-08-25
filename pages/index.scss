@@ -32,7 +32,7 @@
 
       .inner {
         text-align: center;
-        padding: 1rem;
+        padding: 0.33rem;
         color: black;
         max-width: 450px;
 
@@ -64,6 +64,7 @@
 
         @media (min-width: 768px) {
           text-align: right;
+          padding: 1rem;
         }
 
         h2 {

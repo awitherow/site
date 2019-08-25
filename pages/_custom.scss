@@ -47,6 +47,11 @@ body {
   color: black;
 }
 
+.btn,
+.form-control {
+  border-radius: 0;
+}
+
 .page-transition-enter {
   opacity: 0;
 }
