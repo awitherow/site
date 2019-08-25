@@ -20,7 +20,7 @@ export default function Resources({ name = "", resources = [] }) {
           size="sm"
           variant="primary"
           onClick={() => setModal("MailchimpSignup")}>
-          <FontAwesomeIcon icon={faEnvelope} /> Notify Me About New Posts!
+          <FontAwesomeIcon icon={faEnvelope} /> Notify Me!
         </Button>
       </h3>
       <Divider />

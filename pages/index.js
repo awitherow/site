@@ -11,7 +11,7 @@ import sanity from "../lib/sanity";
 import { getAllActivities } from "../queries/activities";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import Layout, { SectionHeader, Divider } from "../components/Layout";
 import Activity from "../components/Activity";
@@ -97,6 +97,9 @@ const Home = ({ seo, activities }) => {
                     variant={successMap[success].variant}>
                     {successMap[success].text}
                   </Button>
+                  <AnchorLink className="btn btn-secondary" href="#lifestyle">
+                    Browse <FontAwesomeIcon icon={faChevronDown} />
+                  </AnchorLink>
                 </InputGroup.Append>
               </InputGroup>
             </Form>
@@ -106,7 +109,7 @@ const Home = ({ seo, activities }) => {
 
       <section id="lifestyle">
         <SectionHeader
-          title="Achieve Your Highest Vibration"
+          title="Browse Our Curated Collection"
           subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life."
         />
 
