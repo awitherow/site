@@ -3,6 +3,7 @@
   "public": true,
   "env": {
     "mailchimp": "@mailchimp",
-    "list_id": "@list_id"
+    "list_id": "@list_id",
+    "NODE_ENV": "@node_env"
   }
 }

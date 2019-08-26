@@ -16,13 +16,13 @@ import "./index.scss";
 
 function Layout({ id, children, seo, ...props }) {
   useEffect(() => {
-    async function analyze() {
+    function analyze() {
       if (!window.GA_INITIALIZED) {
-        await initGA();
+        initGA();
         window.GA_INITIALIZED = true;
       }
 
-      await logPageView();
+      logPageView();
     }
 
     analyze();

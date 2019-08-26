@@ -83,7 +83,7 @@ const Home = ({ seo, activities }) => {
               in your Inbox, once a week.
             </p>
             <Form>
-              <InputGroup controlId="form">
+              <InputGroup>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
