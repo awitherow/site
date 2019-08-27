@@ -46,7 +46,7 @@ const Home = ({ seo, activities }) => {
   const handleSignup = async () => {
     setSuccess("waiting");
     const result = await axios.post("/api/mailchimp/subscribe", {
-      source,
+      source: "home intro",
       email_address,
       fname,
     });
