@@ -54,6 +54,7 @@ const Home = ({ seo, activities }) => {
 
     if (typeof result != Error) {
       setSuccess("good");
+      updateEmail("");
       // TODO: disable all email signup on that device for that list.
     } else {
       setSuccess("bad");
