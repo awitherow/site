@@ -48,8 +48,9 @@ const Home = ({ seo, activities }) => {
     const result = await axios.post("/api/mailchimp/subscribe", {
       source: "home intro",
       email_address,
-      fname,
     });
+
+    logEvent(`mailchimp signup`, "/");
 
     if (typeof result != Error) {
       setSuccess("good");
