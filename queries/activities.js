@@ -4,12 +4,8 @@ export const getAllActivities = `
     name,
     image,
     featured,
-    resources[]{
-        ...
-    },
-    products[]{
-        ...
-    }
+    resources[]{},
+    products[]{}
 }`;
 
 export const getActivityByName = name => `

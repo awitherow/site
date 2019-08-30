@@ -1,5 +1,5 @@
 @import "~bootstrap/scss/bootstrap.scss";
-@import url("https://fonts.googleapis.com/css?family=Oswald:300|Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300|Mukta:300");
 
 $color-gold: #ffd700;
 
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Slab", serif;
 }
 
 p,
@@ -26,7 +26,7 @@ button,
 a,
 li,
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Mukta", sans-serif;
 }
 
 .btn-container {

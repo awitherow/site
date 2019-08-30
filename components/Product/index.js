@@ -9,7 +9,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 export default function Products({
   _id,
   image,
-  name,
+  title,
   creator,
   tags,
   description,
@@ -21,7 +21,7 @@ export default function Products({
       <Card.Img variant="top" src={image.url} />
       <Card.Body>
         <Card.Title>
-          {name} by {creator}
+          {title} by {creator}
         </Card.Title>
         {tags ? <Tags type="small" tags={tags} /> : null}
         <Card.Text style={{ fontSize: "0.88rem" }}>{`${description.substring(

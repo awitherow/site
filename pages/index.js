@@ -10,6 +10,7 @@ import { logEvent } from "../lib/analytics";
 
 import sanity from "../lib/sanity";
 import { getAllActivities } from "../queries/activities";
+import { getFeaturedPosts } from "../queries/posts";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +18,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Layout, { SectionHeader, Divider } from "../components/Layout";
 import Activity from "../components/Activity";
 import MailchimpForm from "../components/MailchimpForm";
+import PostList from "../components/PostList";
 
 import "./index.scss";
 
@@ -39,7 +41,7 @@ const successMap = {
   },
 };
 
-const Home = ({ seo, activities }) => {
+const Home = ({ seo, activities, featuredPosts }) => {
   const [email_address, updateEmail] = useState("");
   const [success, setSuccess] = useState("n/a");
 
@@ -128,12 +130,21 @@ const Home = ({ seo, activities }) => {
             ))}
         </div>
       </section>
+      <section id="blog">
+        <SectionHeader
+          title="Best of the High Vibes Blog"
+          subtitle="Our most insightful posts that not only contain a wealth of theoretical knowledge, but always ends with a Call for Action to a Higher Vibrational Self"
+        />
+
+        <PostList posts={featuredPosts} />
+      </section>
     </Layout>
   );
 };
 
 Home.getInitialProps = async ({ query }) => {
   return {
+    featuredPosts: await sanity.fetch(getFeaturedPosts),
     activities: await sanity.fetch(getAllActivities),
     seo: {
       title: "Your Life at its Highest Vibration",

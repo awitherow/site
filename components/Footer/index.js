@@ -6,6 +6,7 @@ import {
   faFacebook,
   faTwitter,
   faInstagram,
+  faPatreon,
 } from "@fortawesome/free-brands-svg-icons";
 
 const social = [
@@ -15,6 +16,11 @@ const social = [
     id: "instagram",
     link: "https://instagram.com/highvib.es",
     icon: faInstagram,
+  },
+  {
+    id: "patreon",
+    link: "https://www.patreon.com/awitherow",
+    icon: faPatreon,
   },
 ];
 

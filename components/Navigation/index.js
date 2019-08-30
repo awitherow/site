@@ -11,7 +11,7 @@ import "./index.scss";
 export const links = [
   {
     id: "archive",
-    label: "Blog",
+    label: "Blog Archive",
   },
   {
     id: "products",
