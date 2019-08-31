@@ -69,6 +69,16 @@
         max-width: 450px;
         margin-left: 1rem;
 
+        opacity: 0.333;
+        transition: opacity 0.5s ease-out;
+        -moz-transition: opacity 0.5s ease-out;
+        -webkit-transition: opacity 0.5s ease-out;
+        -o-transition: opacity 0.5s ease-out;
+
+        &:hover {
+          opacity: 1;
+        }
+
         h3 {
           text-align: left;
         }

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { withRouter } from "next/router";
 import BlockContent from "@sanity/block-content-to-react";
-import { Form, Button } from "react-bootstrap";
+import { Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
 
 import sanity, { urlFor } from "../../lib/sanity";
@@ -21,6 +21,7 @@ function Post({ post, seo, asPath }) {
     tags,
     mainImage,
     description,
+    products,
     body = [],
     id,
   } = post;
@@ -92,8 +93,38 @@ function Post({ post, seo, asPath }) {
             <Divider />
           </div>
           <div className="sidebar-block featured-products">
-            <h3>Featured Affiliates Coming Soon!</h3>
+            <h3>Product Highlights</h3>
             <Divider />
+            {products ? (
+              <Fragment>
+                {products.map(({ title, link, image, description }) => (
+                  <Card className="mb-4">
+                    <Card.Img
+                      variant="top"
+                      src={urlFor(image)
+                        .width(380)
+                        .url()}
+                    />
+                    <Card.Body>
+                      <h4>{title}</h4>
+                      <small className="text-muted">
+                        {description.slice(0, 200) + "..."}
+                      </small>
+                    </Card.Body>
+                    <Card.Footer>
+                      <a
+                        className="btn btn-primary btn-block"
+                        href={link}
+                        target="_blank">
+                        Get It Today!
+                      </a>
+                    </Card.Footer>
+                  </Card>
+                ))}
+              </Fragment>
+            ) : (
+              <p>Highlights coming soon!</p>
+            )}
           </div>
         </div>
       </div>

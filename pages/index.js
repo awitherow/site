@@ -106,13 +106,13 @@ const Home = ({ seo, activities, featuredPosts }) => {
                     variant={successMap[success].variant}>
                     {successMap[success].text}
                   </Button>
-                  <Button
-                    className="icon-text"
+                  <a
+                    className="icon-text btn btn-danger"
                     variant="danger"
                     href="https://www.patreon.com/awitherow"
                     targt="_blank">
                     <FontAwesomeIcon icon={faPatreon} /> <span>Subscribe</span>
-                  </Button>
+                  </a>
                 </InputGroup.Append>
               </InputGroup>
               <Form.Text className="text-muted">

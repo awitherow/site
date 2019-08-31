@@ -5,7 +5,10 @@ export const getPostBySlug = `*[_type == "post" && slug.current == $slug][0]{
   mainImage {
     ...
   },
-  body
+  body,
+  products[]-> {
+    link, title, image, description
+  }
 }`;
 
 export const getFeaturedPosts = `*[_type == "post" && featured == true]{
