@@ -13,7 +13,7 @@ import { getAllActivities } from "../queries/activities";
 import { getFeaturedPosts } from "../queries/posts";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faPatreon } from "@fortawesome/free-brands-svg-icons";
 
 import Layout, { SectionHeader, Divider } from "../components/Layout";
 import Activity from "../components/Activity";
@@ -83,8 +83,12 @@ const Home = ({ seo, activities, featuredPosts }) => {
           <div className="inner">
             <h2>Create Your Life at its Highest Vibration</h2>
             <p>
-              Theoretical and Practical Learning for Tuning Up Your Vibration,
-              in your Inbox, once a week.
+              Tune up Your Vibration with our Weekly Email Digest. Premium
+              Content Subscription also available at{" "}
+              <a target="_blank" href="https://www.patreon.com/awitherow">
+                Patreon
+              </a>
+              .
             </p>
             <Form>
               <InputGroup>
@@ -102,9 +106,13 @@ const Home = ({ seo, activities, featuredPosts }) => {
                     variant={successMap[success].variant}>
                     {successMap[success].text}
                   </Button>
-                  <AnchorLink className="btn btn-secondary" href="#lifestyle">
-                    Browse <FontAwesomeIcon icon={faChevronDown} />
-                  </AnchorLink>
+                  <Button
+                    className="icon-text"
+                    variant="danger"
+                    href="https://www.patreon.com/awitherow"
+                    targt="_blank">
+                    <FontAwesomeIcon icon={faPatreon} /> <span>Subscribe</span>
+                  </Button>
                 </InputGroup.Append>
               </InputGroup>
               <Form.Text className="text-muted">
@@ -117,7 +125,7 @@ const Home = ({ seo, activities, featuredPosts }) => {
 
       <section id="lifestyle">
         <SectionHeader
-          title="Browse Our Curated Collection"
+          title="High Vibrational Digest"
           subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life."
         />
 

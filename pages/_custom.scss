@@ -47,6 +47,18 @@ body {
   color: black;
 }
 
+.btn {
+  &.icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    span {
+      margin-left: 0.33rem;
+    }
+  }
+}
+
 .btn,
 .form-control {
   border-radius: 0;
