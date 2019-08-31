@@ -138,7 +138,8 @@ const Home = ({ seo, activities, featuredPosts }) => {
             ))}
         </div>
       </section>
-      <section id="blog">
+
+      <section id="blog" className="bg-dark">
         <SectionHeader
           title="Best of the High Vibes Blog"
           subtitle="Our most insightful posts that not only contain a wealth of theoretical knowledge, but always ends with a Call for Action to a Higher Vibrational Self"

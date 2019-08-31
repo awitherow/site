@@ -27,15 +27,17 @@ const social = [
 export default function Footer() {
   return (
     <footer>
-      <ul>
-        {social.map(({ id, link, icon }) => (
-          <li key={id}>
-            <a href={link} target="_blank">
-              <FontAwesomeIcon icon={icon} />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="container">
+        <ul>
+          {social.map(({ id, link, icon }) => (
+            <li key={id}>
+              <a href={link} target="_blank">
+                <FontAwesomeIcon icon={icon} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }

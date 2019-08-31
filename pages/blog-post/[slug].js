@@ -64,8 +64,26 @@ function Post({ post, seo, asPath }) {
           </div>
         </article>
         <div className="featured">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="font-italic">About High Vib.es</h4>
+            <p class="mb-0">
+              In the Pursuit of Life, to Know and Experience the Truth is our
+              ultimate Goal. Highvib.es intends to empower this Journey with the
+              Highest Vibrational Content for your Growth and Wellbeing. Thanks
+              for reading with us! Check out our Newsletter Signup, as well as
+              other Posts and Products related to this post!
+            </p>
+          </div>
           <div className="sidebar-block newsletter-signup">
             <h3>Signup For Our Newsletter!</h3>
+            <p>
+              Tune up Your Vibration with our Weekly Email Digest. Premium
+              Content Subscription also available at{" "}
+              <a target="_blank" href="https://www.patreon.com/awitherow">
+                Patreon
+              </a>
+              .
+            </p>
             <Divider />
             <MailchimpForm source={`Blog Post: ${title}`} />
           </div>

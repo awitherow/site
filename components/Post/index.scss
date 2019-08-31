@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
 
   img {
     max-width: 100%;
@@ -13,6 +13,10 @@
   p {
     margin-bottom: 0.5rem;
   }
+
+  h4 {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -21,19 +25,9 @@
     align-items: flex-start;
 
     img {
-      width: 200px;
+      width: 250px;
       margin-bottom: 0;
-      margin-right: 0.5rem;
-    }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-      text-align: right;
-
-      img {
-        margin-right: 0;
-        margin-left: 0.5rem;
-      }
+      margin-right: 2rem;
     }
   }
 }
