@@ -10,6 +10,10 @@ import "./index.scss";
 
 export const links = [
   {
+    id: "",
+    label: "Home",
+  },
+  {
     id: "archive",
     label: "Blog Archive",
   },
@@ -18,6 +22,22 @@ export const links = [
     label: "Products",
   },
 ];
+
+const checkRoute = id => {
+  const currentRoute = useRouter().route;
+  console.log(currentRoute, id);
+  if (!currentRoute.includes(id)) {
+    return false;
+  }
+
+  if (currentRoute === "/" && id === "") {
+    return true;
+  }
+
+  if (currentRoute.includes(id) && id != "") {
+    return true;
+  }
+};
 
 export default function Navigation({ fixedNav = false }) {
   return (
@@ -34,10 +54,7 @@ export default function Navigation({ fixedNav = false }) {
             {links.map(({ id, label }, i) => (
               <Nav.Item key={i}>
                 <Link href={`/${id}`}>
-                  <a
-                    className={`nav-link${
-                      useRouter().route.includes(id) ? " active" : ""
-                    }`}>
+                  <a className={`nav-link${checkRoute(id) ? " active" : ""}`}>
                     {label}
                   </a>
                 </Link>
