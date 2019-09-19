@@ -1,5 +1,5 @@
 export const getAllProducts = `*[_type == "product"]{
-    _id, description, link, title, subtitle, creator,
+    _id, description, link, title, creator,
     tags[] -> {
         tag
     },

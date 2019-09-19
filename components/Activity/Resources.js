@@ -7,13 +7,13 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import PostList from "../PostList";
 import Divider from "../Layout/Divider";
 
-export default function Resources({ name = "", resources = [] }) {
+export default function Resources({ title = "", resources = [] }) {
   const [modal, setModal] = useGlobal("modal");
 
   return (
     <div className="resources">
       <h3>
-        Featured Blog Posts About {name}{" "}
+        Featured Blog Posts About {title}{" "}
         <Button
           size="sm"
           variant="primary"

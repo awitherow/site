@@ -9,7 +9,7 @@ import sanity from "../../lib/sanity";
 
 import "./index.scss";
 
-function Products({ products }) {
+function Products({ products, seo }) {
   return (
     <Layout id="products">
       <h2>Essentials</h2>
@@ -19,7 +19,7 @@ function Products({ products }) {
           <Product
             {...product}
             onClick={e =>
-              logEvent(`/products`, `product ${product.name} comission click`)
+              logEvent(`/products`, `product ${product.title} comission click`)
             }
           />
         ))}
@@ -28,9 +28,22 @@ function Products({ products }) {
   );
 }
 
-Products.getInitialProps = async function() {
+Products.getInitialProps = async function({ asPath }) {
+  const title = "Essential Products for High Vibrational Living";
+  const description =
+    "On our journey towards a High Vibrational Lifestyle, we find that some things work and others don't. Here, we've compiled only the best solutions for Living your Dream Life, across all spectrums.";
+
   return {
     products: await sanity.fetch(getAllProducts),
+    seo: {
+      title,
+      description,
+      openGraph: {
+        url: `https://highvib.es${asPath}`,
+        title,
+        description,
+      },
+    },
   };
 };
 

@@ -136,8 +136,8 @@ Post.getInitialProps = async function({ query, asPath }) {
   const { slug = "" } = query;
   const post = await sanity.fetch(getPostBySlug, { slug });
 
-  const { title, description, mainImage, name, publishedAt, tags } = post;
-  const nameSplit = name.split();
+  const { title, description, mainImage, authorName, publishedAt, tags } = post;
+  const nameSplit = authorName.split();
 
   return {
     post,
@@ -167,7 +167,7 @@ Post.getInitialProps = async function({ query, asPath }) {
         },
         article: {
           publishedTime: publishedAt,
-          authors: [name],
+          authors: [authorName],
           // section: TODO: sanity option.
           tags: tags,
         },

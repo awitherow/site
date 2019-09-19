@@ -6,15 +6,15 @@ import { faNewspaper, faStore } from "@fortawesome/free-solid-svg-icons";
 import { urlFor } from "../../lib/sanity";
 
 export default function Tile({
-  name,
+  title,
   image,
   productCount = [],
   resourceCount = [],
 }) {
   return (
     <Link
-      href="/activity/[name]"
-      as={`/activity/${name.replace(/\s+/g, "-").toLowerCase()}`}>
+      href="/activity/[title]"
+      as={`/activity/${title.replace(/\s+/g, "-").toLowerCase()}`}>
       <a>
         <div className="stats">
           <span>
@@ -24,7 +24,7 @@ export default function Tile({
             {productCount.length} <FontAwesomeIcon icon={faStore} />
           </span>
         </div>
-        <h3>{name}</h3>
+        <h3>{title}</h3>
         <img
           src={urlFor(image)
             .width(700)

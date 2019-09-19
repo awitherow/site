@@ -1,17 +1,17 @@
 export const getAllActivities = `
 *[_type == 'hobby']{
     _id,
-    name,
+    title,
     image,
     featured,
     resources[]{},
     products[]{}
 }`;
 
-export const getActivityByName = name => `
-*[_type == 'hobby' && name match "${name}"]{
+export const getActivityByTitle = title => `
+*[_type == 'hobby' && title match "${title}"]{
     _id,
-    name,
+    title,
     description,
     image,
     tags[]-> {
@@ -23,7 +23,7 @@ export const getActivityByName = name => `
         description,
         mainImage,
         _updatedAt,
-        "name": author->name
+        "authorName": author->name
     },
     products[]-> {
         ...,

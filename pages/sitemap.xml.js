@@ -28,13 +28,13 @@ export default class Sitemap extends Component {
 
     const activities = await sanity.fetch(`
         *[_type == 'hobby']{
-            name,
+            title,
         }`);
 
     for (let i = 0; i < activities.length; i += 1) {
       const activity = activities[i];
       routes.push({
-        url: `activity/${activity.name.replace(/\s+/g, "-").toLowerCase()}`,
+        url: `activity/${activity.title.replace(/\s+/g, "-").toLowerCase()}`,
         changefreq: "daily",
         priority: 1,
       });

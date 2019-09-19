@@ -10,7 +10,7 @@ import Resources from "./Resources";
 import "./index.scss";
 
 export default function Activity({ data, expanded }) {
-  const { _id, name, image, tags, description, resources, products } = data;
+  const { _id, title, image, tags, description, resources, products } = data;
 
   if (!_id) {
     return null;
@@ -20,7 +20,7 @@ export default function Activity({ data, expanded }) {
     <div className={`activity ${expanded ? "expansion" : ""}`}>
       {!expanded ? (
         <Tile
-          name={name}
+          title={title}
           image={image}
           productCount={products}
           resourceCount={resources}
@@ -28,12 +28,12 @@ export default function Activity({ data, expanded }) {
       ) : (
         <Jumbotron
           image={image}
-          name={name}
+          title={title}
           tags={tags}
           description={description}
         />
       )}
-      {expanded ? <Resources name={name} resources={resources} /> : null}
+      {expanded ? <Resources title={title} resources={resources} /> : null}
     </div>
   );
 }

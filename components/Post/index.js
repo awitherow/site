@@ -14,7 +14,7 @@ export default function Post({
   description,
   mainImage,
   _updatedAt,
-  name,
+  authorName,
 }) {
   return (
     <div className="post">
@@ -32,7 +32,7 @@ export default function Post({
             {moment(_updatedAt)
               .format("MMMM Do YYYY")
               .toString()}{" "}
-            by {name}
+            by {authorName}
           </small>
         </h5>
         <Divider type="left" />

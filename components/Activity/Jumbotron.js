@@ -3,7 +3,7 @@ import { urlFor } from "../../lib/sanity";
 
 import Divider from "../Layout/Divider";
 
-export default function Jumbotron({ image, name, tags, description }) {
+export default function Jumbotron({ image, title, tags, description }) {
   return (
     <Fragment>
       <div
@@ -14,7 +14,7 @@ export default function Jumbotron({ image, name, tags, description }) {
           ).url()}) no-repeat center center fixed`,
         }}></div>
       <div className="activity-info">
-        <h2>High Vibrational {name} </h2>
+        <h2>High Vibrational {title} </h2>
         <Divider />
         <h3>Searchable Tags</h3>
         <div className="tags">

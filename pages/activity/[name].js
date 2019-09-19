@@ -10,7 +10,7 @@ import Product from "../../components/Product";
 import AlertDismissible from "../../components/AlertDismissible";
 
 import sanity, { urlFor } from "../../lib/sanity";
-import { getActivityByName } from "../../queries/activities";
+import { getActivityByTitle } from "../../queries/activities";
 
 import "./index.scss";
 
@@ -45,8 +45,8 @@ function ActivityPage({ activity = {}, seo }) {
                 {...product}
                 onClick={e =>
                   logEvent(
-                    `/activity/${activity.name}`,
-                    `product ${name} comission click`,
+                    `/activity/${activity.title}`,
+                    `product ${activity.title} comission click`,
                   )
                 }
               />
@@ -59,18 +59,20 @@ function ActivityPage({ activity = {}, seo }) {
 }
 
 ActivityPage.getInitialProps = async ({ query, asPath }) => {
-  const activity = await sanity.fetch(getActivityByName(query.name));
+  const activity = await sanity.fetch(getActivityByTitle(query.name));
 
-  const { image, name, title, description } = activity;
+  const { image, title, description } = activity;
+
+  const modifiedTitle = `High Vibational ${title}`;
 
   return {
     activity,
     seo: {
-      title,
+      title: modifiedTitle,
       description,
       openGraph: {
         url: `https://highvib.es${asPath}`,
-        title,
+        title: modifiedTitle,
         description,
         images: [
           {

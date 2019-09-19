@@ -1,6 +1,6 @@
 export const getPostBySlug = `*[_type == "post" && slug.current == $slug][0]{
   title,
-  "name": author->name,
+  "authorName": author->name,
   "categories": categories[]->title,
   mainImage {
     ...
@@ -15,12 +15,12 @@ export const getFeaturedPosts = `*[_type == "post" && featured == true]{
   title,
   description,
   slug,
-  "name": author->name,
+  "authorName": author->name,
   mainImage {
     ...
   },
 }`;
 
 export const getAllBlogPosts = `*[_type == "post"] | order(updatedNewestFirst) {
-  title, slug, "name": author->name
+  title, slug, "authorName": author->name
 }`;
