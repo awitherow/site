@@ -12,7 +12,20 @@ import Tags from "../../components/Tags";
 import MailchimpForm from "../../components/MailchimpForm";
 import ShareIcons from "../../components/ShareIcons";
 
+import getYouTubeId from "get-youtube-id";
+import YouTube from "react-youtube";
+import PortableText from "@sanity/block-content-to-react";
 import "./index.scss";
+
+const serializers = {
+  types: {
+    youtube: ({ node }) => {
+      const { url } = node;
+      const id = getYouTubeId(url);
+      return <YouTube videoId={id} />;
+    },
+  },
+};
 
 function Post({ post, seo, asPath }) {
   const {
@@ -44,6 +57,7 @@ function Post({ post, seo, asPath }) {
           <Divider type="left" />
 
           <BlockContent
+            serializers={serializers}
             blocks={body}
             imageOptions={{ w: 754, fit: "max" }}
             {...sanity.config()}
