@@ -30,7 +30,7 @@ const serializers = {
 function Post({ post, seo, asPath }) {
   const {
     title = "Missing title",
-    name = "Missing name",
+    authorName = "Missing name",
     tags,
     mainImage,
     description,
@@ -52,7 +52,7 @@ function Post({ post, seo, asPath }) {
       <div className="body">
         <article>
           <h1>{title}</h1>
-          <span>By {name}</span>
+          <span>By {authorName}</span>
           {tags && <Tags tags={tags.tags} />}
           <Divider type="left" />
 

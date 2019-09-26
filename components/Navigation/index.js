@@ -25,7 +25,6 @@ export const links = [
 
 const checkRoute = id => {
   const currentRoute = useRouter().route;
-  console.log(currentRoute, id);
   if (!currentRoute.includes(id)) {
     return false;
   }
