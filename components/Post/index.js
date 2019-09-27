@@ -25,8 +25,9 @@ export default function Post({
       <Card.Img variant="top" src={urlFor(mainImage).url()} />
       <Card.Body>
         <Card.Title>
-          {title} by {authorName}
+          {title}
         </Card.Title>
+        <Card.Text>by {authorName}</Card.Text>
         <Card.Text style={{ fontSize: "0.88rem" }}>{`${description.substring(
           0,
           180,

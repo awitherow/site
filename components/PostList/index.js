@@ -13,12 +13,9 @@ var newestFirst = function(a, b) {
 export default function PostList({ posts }) {
   return (
     <CardColumns className="post-list">
-      {posts
-        .sort(newestFirst)
-        .slice(0, 3)
-        .map((post, i) => {
-          return <Post {...post} key={i} />;
-        })}
+      {posts.sort(newestFirst).map((post, i) => {
+        return <Post {...post} key={i} />;
+      })}
     </CardColumns>
   );
 }
