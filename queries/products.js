@@ -7,3 +7,7 @@ export const getAllProducts = `*[_type == "product"]{
         "url": asset->url
     },
   }`;
+
+export const getProductBySlug = `*[_type == "product" && slug.current == $slug][0]{
+    ...
+  }`;
