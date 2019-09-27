@@ -1,5 +1,6 @@
 import React from "react";
 import Post from "../Post";
+import { CardColumns } from "react-bootstrap";
 
 import "./index.scss";
 
@@ -11,13 +12,13 @@ var newestFirst = function(a, b) {
 
 export default function PostList({ posts }) {
   return (
-    <div className="post-list">
+    <CardColumns className="post-list">
       {posts
         .sort(newestFirst)
         .slice(0, 3)
         .map((post, i) => {
           return <Post {...post} key={i} />;
         })}
-    </div>
+    </CardColumns>
   );
 }

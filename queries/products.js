@@ -1,5 +1,5 @@
 export const getAllProducts = `*[_type == "product"]{
-    _id, description, link, title, creator, slug,
+    _id, description, link, title, creator, slug, featured,
     tags[] -> {
         tag
     },
@@ -12,7 +12,7 @@ export const getAllProducts = `*[_type == "product"]{
   }`;
 
 export const getProductBySlug = `*[_type == "product" && slug.current == $slug][0]{
-    ...,
+    ..., featured,
     provider-> {
         name
     },

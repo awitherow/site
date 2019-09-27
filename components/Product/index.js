@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Card, Button } from "react-bootstrap";
 
 import Tags from "../Tags";
+import Feature from "../Feature";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faStar } from "@fortawesome/free-solid-svg-icons";
@@ -12,12 +13,6 @@ function toTitleCase(str) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 }
-
-const Feature = () => (
-  <div className="feature-corner">
-    <FontAwesomeIcon icon={faStar} />
-  </div>
-);
 
 export default function Products({
   _id,
@@ -44,7 +39,7 @@ export default function Products({
         {tags ? <Tags type="small" tags={tags} /> : null}
         <Card.Text style={{ fontSize: "0.88rem" }}>{`${description.substring(
           0,
-          180,
+          100,
         )}...`}</Card.Text>
       </Card.Body>
       <Card.Footer>
@@ -60,10 +55,10 @@ export default function Products({
             href={link}
             onClick={onClick}
             className={`btn btn-${name.toLowerCase()}`}>
-            <FontAwesomeIcon icon={faShoppingCart} /> Get At ${name}
+            {name}
           </a>
           <Link href={`/product/${slug.current}`}>
-            <a className="btn btn-secondary">Learn More</a>
+            <a className="btn btn-secondary">More</a>
           </Link>
         </div>
       </Card.Footer>

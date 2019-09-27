@@ -10,6 +10,7 @@ import { getProductBySlug } from "../../queries/products";
 import Layout, { Divider } from "../../components/Layout";
 import MailchimpForm from "../../components/MailchimpForm";
 import ShareIcons from "../../components/ShareIcons";
+import Feature from "../../components/Feature";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -33,6 +34,7 @@ function Product({ product, seo, asPath }) {
   return (
     <Layout seo={seo} id="product-showcase">
       <section className={`${featured && "featured"}`}>
+        <Feature />
         <img className="main-image" src={urlFor(image).url()} />
         <div className="info">
           <h2>
@@ -50,7 +52,19 @@ function Product({ product, seo, asPath }) {
                 )
               }
               className={`btn btn-${name.toLowerCase()}`}>
-              <FontAwesomeIcon icon={faShoppingCart} /> Get At ${name}
+              Shop at {name}
+            </a>
+            <a
+              target="_blank"
+              href={link}
+              onClick={e =>
+                logEvent(
+                  `/activity/${activity.title}`,
+                  `product ${activity.title} 1:1 consult`,
+                )
+              }
+              className="btn btn-primary">
+              Discuss Product
             </a>
           </div>
         </div>
