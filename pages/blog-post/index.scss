@@ -24,10 +24,23 @@
       flex-direction: row;
     }
 
+    .responsive-video {
+      max-width: 96vw;
+    }
+
     article {
       margin: 1rem auto;
       max-width: 768px;
       padding: 0 0.5rem;
+
+      p,
+      li {
+        font-size: 1.33rem;
+      }
+
+      p {
+        text-align: justify;
+      }
 
       @media (min-width: 1200px) {
         padding-right: 1rem;
