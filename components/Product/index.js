@@ -5,13 +5,19 @@ import { Card, Button } from "react-bootstrap";
 import Tags from "../Tags";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faStar } from "@fortawesome/free-solid-svg-icons";
 
 function toTitleCase(str) {
   return str.replace(/\w\S*/g, function(txt) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 }
+
+const Feature = () => (
+  <div className="feature-corner">
+    <FontAwesomeIcon icon={faStar} />
+  </div>
+);
 
 export default function Products({
   _id,
@@ -24,10 +30,12 @@ export default function Products({
   onClick,
   provider,
   link,
+  featured,
 }) {
   const { name } = provider;
   return (
-    <Card key={_id}>
+    <Card key={_id} className={`${featured ? "featured" : ""}`}>
+      <Feature />
       <Card.Img variant="top" src={image.url} />
       <Card.Body>
         <Card.Title>

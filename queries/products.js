@@ -12,5 +12,11 @@ export const getAllProducts = `*[_type == "product"]{
   }`;
 
 export const getProductBySlug = `*[_type == "product" && slug.current == $slug][0]{
-    ...
+    ...,
+    provider-> {
+        name
+    },
+    tags[] -> {
+        tag
+    }
   }`;

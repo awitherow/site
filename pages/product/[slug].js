@@ -1,7 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { withRouter } from "next/router";
 import { Card, Form, Button } from "react-bootstrap";
-import axios from "axios";
+
+import { logEvent } from "../../lib/analytics";
 
 import sanity, { urlFor } from "../../lib/sanity";
 import { getProductBySlug } from "../../queries/products";
@@ -9,10 +10,25 @@ import { getProductBySlug } from "../../queries/products";
 import Layout, { Divider } from "../../components/Layout";
 import MailchimpForm from "../../components/MailchimpForm";
 import ShareIcons from "../../components/ShareIcons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
 import "./index.scss";
 
 function Product({ product, seo, asPath }) {
-  const { image, title, description, creator, featured } = product;
+  const {
+    image,
+    title,
+    description,
+    creator,
+    featured,
+    link,
+    provider,
+    tags,
+  } = product;
+
+  const { name } = provider;
 
   return (
     <Layout seo={seo} id="product-showcase">
@@ -23,7 +39,36 @@ function Product({ product, seo, asPath }) {
             {title} by {creator}
           </h2>
           <p>{description}</p>
+          <div className="btn-container">
+            <a
+              target="_blank"
+              href={link}
+              onClick={e =>
+                logEvent(
+                  `/activity/${activity.title}`,
+                  `product ${activity.title} comission click`,
+                )
+              }
+              className={`btn btn-${name.toLowerCase()}`}>
+              <FontAwesomeIcon icon={faShoppingCart} /> Get At ${name}
+            </a>
+          </div>
         </div>
+      </section>
+      <section>
+        <ShareIcons
+          path={asPath}
+          title={title}
+          description={description}
+          caption={description}
+          media={urlFor(image).url()}
+          image={urlFor(image).url()}
+          subject={`Check out this article, ${title}, from highvib.es`}
+          body="I found this pretty useful and wanted to share it with you!"
+          openWindow={true}
+          tags={tags}
+          quote={description}
+        />
       </section>
     </Layout>
   );
