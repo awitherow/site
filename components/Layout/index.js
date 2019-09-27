@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGlobal } from "reactn";
 import Head from "next/head";
+import Pixel from "../Pixel";
 import { NextSeo } from "next-seo";
 
 import { initGA, logPageView } from "../../lib/analytics";
@@ -44,6 +45,7 @@ function Layout({ id, children, seo, ...props }) {
       <GlobalModal modal={modal} />
       {children}
       <Footer />
+      <Pixel name="FACEBOOK_PIXEL_1" />
     </div>
   );
 }
