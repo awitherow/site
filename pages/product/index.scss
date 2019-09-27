@@ -1,0 +1,43 @@
+#product-showcase {
+  section {
+    padding: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    max-width: 900px;
+    margin: 2rem auto;
+
+    @media (min-width: 768px) {
+      margin: 4rem auto;
+      padding: 1rem;
+      flex-wrap: nowrap;
+    }
+  }
+
+  .main-image {
+    max-width: 100%;
+
+    @media (min-width: 768px) {
+      max-width: 380px;
+    }
+  }
+
+  .info {
+    padding: 1rem 0;
+
+    @media (min-width: 768px) {
+      padding: 0 1rem;
+    }
+
+    h2 {
+      text-align: center;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+  }
+}

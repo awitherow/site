@@ -17,6 +17,7 @@ function Products({ products, seo }) {
       <CardColumns>
         {products.map(product => (
           <Product
+            key={product._id}
             {...product}
             onClick={e =>
               logEvent(`/products`, `product ${product.title} comission click`)

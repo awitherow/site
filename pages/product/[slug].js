@@ -11,24 +11,32 @@ import MailchimpForm from "../../components/MailchimpForm";
 import ShareIcons from "../../components/ShareIcons";
 import "./index.scss";
 
-function Post({ product, seo, asPath }) {
-  console.log(product);
+function Product({ product, seo, asPath }) {
+  const { image, title, description, creator, featured } = product;
 
   return (
-    <Layout seo={seo} id="blog-post" fixedNav={true}>
-      Welcome to The Product Page!
+    <Layout seo={seo} id="product-showcase">
+      <section className={`${featured && "featured"}`}>
+        <img className="main-image" src={urlFor(image).url()} />
+        <div className="info">
+          <h2>
+            {title} by {creator}
+          </h2>
+          <p>{description}</p>
+        </div>
+      </section>
     </Layout>
   );
 }
 
-Post.getInitialProps = async function({ query, asPath }) {
+Product.getInitialProps = async function({ query, asPath }) {
   const { slug = "" } = query;
   const product = await sanity.fetch(getProductBySlug, { slug });
 
-  const { title, description, image } = post;
+  const { title, description, image } = product;
 
   return {
-    post,
+    product,
     seo: {
       title,
       description,
@@ -52,4 +60,4 @@ Post.getInitialProps = async function({ query, asPath }) {
   };
 };
 
-export default withRouter(Post);
+export default withRouter(Product);

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Card, Button } from "react-bootstrap";
 
 import Tags from "../Tags";
@@ -18,6 +19,7 @@ export default function Products({
   title,
   creator,
   tags,
+  slug,
   description,
   onClick,
   provider,
@@ -52,6 +54,9 @@ export default function Products({
             className={`btn btn-${name.toLowerCase()}`}>
             <FontAwesomeIcon icon={faShoppingCart} /> Get At ${name}
           </a>
+          <Link href={`/product/${slug.current}`}>
+            <a className="btn btn-secondary">Learn More</a>
+          </Link>
         </div>
       </Card.Footer>
     </Card>
