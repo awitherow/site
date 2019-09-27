@@ -41,10 +41,16 @@ body {
   }
 }
 
+.btn-dōterra {
+  background-color: rgb(179, 120, 211);
+  border-color: darken(rgb(179, 120, 211), 10%);
+  color: white;
+}
+
 .btn-amazon {
   background-color: rgb(255, 153, 0);
   border-color: darken(rgb(255, 153, 0), 10%);
-  color: black;
+  color: white;
 }
 
 .btn {

@@ -6,6 +6,12 @@ import Tags from "../Tags";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
 export default function Products({
   _id,
   image,
@@ -14,8 +20,10 @@ export default function Products({
   tags,
   description,
   onClick,
+  provider,
   link,
 }) {
+  const { name } = provider;
   return (
     <Card key={_id}>
       <Card.Img variant="top" src={image.url} />
@@ -41,12 +49,9 @@ export default function Products({
             target="_blank"
             href={link}
             onClick={onClick}
-            className="btn btn-amazon">
-            <FontAwesomeIcon icon={faShoppingCart} /> Amazon It
+            className={`btn btn-${name.toLowerCase()}`}>
+            <FontAwesomeIcon icon={faShoppingCart} /> Get At ${name}
           </a>
-          <Button variant="secondary" onClick={() => {}}>
-            Review
-          </Button>
         </div>
       </Card.Footer>
     </Card>

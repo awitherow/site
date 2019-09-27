@@ -23,15 +23,18 @@ export const getActivityByTitle = title => `
         description,
         mainImage,
         _updatedAt,
-        "authorName": author->name
+        "authorName": author->name,
     },
     products[]-> {
         ...,
         image {
             "url": asset->url
         },
-        tags[] -> {
+        tags[]-> {
             ...
+        },
+        provider->{
+            name
         }
     }
 }[0]`;
