@@ -78,7 +78,7 @@ function Post({ post, seo, asPath }) {
             />
           </div>
         </article>
-        <div className="featured">
+        <div className="sidebar">
           <div class="p-4 mb-3 bg-light rounded">
             <h4 class="font-italic">About High Vib.es</h4>
             <p class="mb-0">

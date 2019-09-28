@@ -3,6 +3,7 @@ import { setGlobal } from "reactn";
 
 import App, { Container } from "next/app";
 import Router from "next/router";
+import NProgress from "nprogress";
 import withFBQ from "next-fbq";
 import { DefaultSeo } from "next-seo";
 
@@ -11,10 +12,18 @@ import Loader from "../components/Loader";
 import { PageTransition } from "next-page-transitions";
 
 import "./_custom.scss";
+import "./nprogress.scss";
 
 setGlobal({
   modal: null,
 });
+
+Router.events.on("routeChangeStart", url => {
+  console.log(`Loading: ${url}`);
+  NProgress.start();
+});
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 function HighVibes({ Component, pageProps, router }) {
   return (
