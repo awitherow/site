@@ -6,7 +6,7 @@ import { logEvent } from "../../lib/analytics";
 
 import Layout, { Divider } from "../../components/Layout";
 import Activity from "../../components/Activity";
-import Product from "../../components/Product";
+import ProductList from "../../components/ProductList";
 import AlertDismissible from "../../components/AlertDismissible";
 
 import sanity, { urlFor } from "../../lib/sanity";
@@ -38,20 +38,15 @@ function ActivityPage({ activity = {}, seo }) {
         </h5>
 
         {activity.products ? (
-          <CardColumns>
-            {activity.products.map(product => (
-              <Product
-                key={product._id}
-                {...product}
-                onClick={e =>
-                  logEvent(
-                    `/activity/${activity.title}`,
-                    `product ${activity.title} comission click`,
-                  )
-                }
-              />
-            ))}
-          </CardColumns>
+          <ProductList
+            onClick={e =>
+              logEvent(
+                `/activity/${activity.title}`,
+                `product ${activity.title} comission click`,
+              )
+            }
+            products={activity.products}
+          />
         ) : null}
       </div>
     </Layout>

@@ -2,7 +2,7 @@ import React from "react";
 import { CardColumns } from "react-bootstrap";
 
 import Layout, { Divider } from "../../components/Layout";
-import Product from "../../components/Product";
+import ProductList from "../../components/ProductList";
 
 import { getAllProducts } from "../../queries/products";
 import sanity from "../../lib/sanity";
@@ -14,17 +14,12 @@ function Products({ products, seo }) {
     <Layout id="products">
       <h2>Essentials</h2>
       <Divider />
-      <CardColumns>
-        {products.map(product => (
-          <Product
-            key={product._id}
-            {...product}
-            onClick={e =>
-              logEvent(`/products`, `product ${product.title} comission click`)
-            }
-          />
-        ))}
-      </CardColumns>
+      <ProductList
+        products={products}
+        onClick={e =>
+          logEvent(`/products`, `product ${product.title} comission click`)
+        }
+      />
     </Layout>
   );
 }
