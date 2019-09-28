@@ -47,8 +47,8 @@ function Product({ product, seo, asPath }) {
               href={link}
               onClick={e =>
                 logEvent(
-                  `/activity/${activity.title}`,
-                  `product ${activity.title} comission click`,
+                  `/product/${title}`,
+                  `product ${title} comission click`,
                 )
               }
               className={`btn btn-${name.toLowerCase()}`}>
@@ -56,15 +56,12 @@ function Product({ product, seo, asPath }) {
             </a>
             <a
               target="_blank"
-              href={link}
+              href="https://calendly.com/awitherow/evolve"
               onClick={e =>
-                logEvent(
-                  `/activity/${activity.title}`,
-                  `product ${activity.title} 1:1 consult`,
-                )
+                logEvent(`/product/${title}`, `product ${title} 1:1 consult`)
               }
               className="btn btn-primary">
-              Discuss Product
+              Let's Chat
             </a>
           </div>
         </div>
