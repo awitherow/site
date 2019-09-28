@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobal } from "reactn";
 import axios from "axios";
 import Link from "next/link";
@@ -41,9 +41,27 @@ const successMap = {
   },
 };
 
-const Home = ({ seo, activities, featuredPosts }) => {
+const Home = ({ seo }) => {
   const [email_address, updateEmail] = useState("");
   const [success, setSuccess] = useState("n/a");
+
+  const [activities, setActivities] = useState([]);
+  const [featuredPosts, setFeaturedPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchActivities() {
+      const activities = await sanity.fetch(getAllActivities);
+      setActivities(activities);
+    }
+
+    async function fetchFeaturedPosts() {
+      const featuredPosts = await sanity.fetch(getFeaturedPosts);
+      setFeaturedPosts(featuredPosts);
+    }
+
+    fetchActivities();
+    fetchFeaturedPosts();
+  }, []);
 
   const handleSignup = async () => {
     setSuccess("waiting");
@@ -153,8 +171,6 @@ const Home = ({ seo, activities, featuredPosts }) => {
 
 Home.getInitialProps = async ({ query }) => {
   return {
-    featuredPosts: await sanity.fetch(getFeaturedPosts),
-    activities: await sanity.fetch(getAllActivities),
     seo: {
       title: "Your Life at its Highest Vibration",
       description:
