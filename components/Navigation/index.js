@@ -11,7 +11,7 @@ import "./index.scss";
 export const links = [
   {
     id: "",
-    label: "Home",
+    label: "Start Here",
   },
   {
     id: "archive",
