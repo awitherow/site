@@ -6,7 +6,7 @@ export default class extends React.Component {
     if (res) {
       res.writeHead(302, {
         Location:
-          "https://affiliates.amplemeal.com/affiliates/signup.php?a_aid=austin_witherow",
+          "https://www.amplemeal.com/pages/affiliates?a_aid=austin_witherow",
       });
       res.end();
     } else {
