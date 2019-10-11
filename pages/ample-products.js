@@ -10,7 +10,7 @@ export default class extends React.Component {
       });
       res.end();
     } else {
-      Router.push("/about");
+      Router.push("/");
     }
     return {};
   }
