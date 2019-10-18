@@ -26,6 +26,7 @@ function HighVibes({ Component, pageProps, router }) {
     <Fragment>
       <DefaultSeo
         openGraph={{
+          titleTemplate: "highvib.es | %s",
           type: "website",
           locale: "en_IE",
           url: "https://highvib.es",
