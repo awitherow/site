@@ -15,6 +15,10 @@ class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <meta
+            name="fo-verify"
+            content="4594dec5-0667-40cc-8974-49bff93c02e3"
+          />
           <script
             data-ad-client="ca-pub-2149528894778035"
             async
