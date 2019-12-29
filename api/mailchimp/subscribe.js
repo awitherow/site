@@ -1,4 +1,4 @@
-import Mailchimp from "mailchimp-api-v3";
+const Mailchimp = require("mailchimp-api-v3");
 const mailchimp = new Mailchimp(process.env.mailchimp);
 
 module.exports = async (req, res) => {
