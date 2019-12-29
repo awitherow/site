@@ -30,16 +30,14 @@ export default function Post({
         <Card.Text>by {authorName}</Card.Text>
         <Card.Text style={{ fontSize: "0.88rem" }}>{`${description.substring(
           0,
-          180,
+          120,
         )}...`}</Card.Text>
-      </Card.Body>
-      <Card.Footer>
-        <div
+                <div
           className="btn-container"
           style={{
             display: "flex",
-            justifyContent: "center",
-            alingItems: "center",
+            justifyContent: "flex-start",
+            alingItems: "flex-start",
           }}>
           <Link
             prefetch
@@ -48,7 +46,7 @@ export default function Post({
             <a className="btn btn-primary">Read More</a>
           </Link>
         </div>
-      </Card.Footer>
+      </Card.Body>
     </Card>
   );
 }

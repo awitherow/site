@@ -1,4 +1,6 @@
+@import "./themes/cosmo/_variables.scss";
 @import "~bootstrap/scss/bootstrap.scss";
+@import "./themes/cosmo/_bootswatch.scss";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700i&display=swap');
 
 $color-gold: #ffd700;
@@ -66,12 +68,6 @@ body {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
-  }
-
-  @media (min-width: 1024px) {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
   }
 
   .card-text {
