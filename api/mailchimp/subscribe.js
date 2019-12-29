@@ -2,7 +2,7 @@ const Mailchimp = require("mailchimp-api-v3");
 const mailchimp = new Mailchimp(process.env.mailchimp);
 
 module.exports = async (req, res) => {
-  const { email_address, first_name source } = req.body;
+  const { email_address, first_name, source } = req.body;
 
   try {
     const results = await mailchimp.post(

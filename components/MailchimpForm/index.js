@@ -14,7 +14,7 @@ const successMap = {
     variant: "warning",
   },
   good: {
-    text: "Thanks for signing up!",
+    text: "Check Your Inbox for a Freebie!",
     variant: "success",
   },
   bad: {
@@ -38,6 +38,8 @@ export default function MailchimpForm({ source }) {
 
     if (typeof result != Error) {
       setSuccess("good");
+      updateEmail("")
+      updateName("")
       // TODO: disable all email signup on that device for that list.
     } else {
       setSuccess("bad");
