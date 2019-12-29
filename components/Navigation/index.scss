@@ -2,23 +2,26 @@ nav {
   text-transform: uppercase;
   border-bottom: 4px solid gold;
 
+  background-color: rgba(255,255,255,0.888);
+
   .nav-link {
     color: rgba(0, 0, 0, 0.5);
     font-size: 1.22rem;
     font-weight: 300;
-    padding: 0 !important;
+    padding: 0 0.33rem !important;
     margin: 0.5rem;
 
     &.active {
       color: rgba(0, 0, 0, 0.9);
       font-weight: bold;
-      border-bottom: 4px solid gold;
+      background-color:  gold;
+      font-style: italic;
     }
   }
 
   .navbar-brand {
     img {
-      max-height: 48px;
+      max-height: 54px;
 
       &:hover {
         cursor: pointer;

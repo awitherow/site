@@ -2,7 +2,7 @@ import Mailchimp from "mailchimp-api-v3";
 const mailchimp = new Mailchimp(process.env.mailchimp);
 
 module.exports = async (req, res) => {
-  const { email_address, source } = req.body;
+  const { email_address, first_name source } = req.body;
 
   try {
     const results = await mailchimp.post(
@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
       {
         source,
         email_address,
+        first_name,
         status: "subscribed",
       },
     );

@@ -1,5 +1,4 @@
 import React, { useState, Fragment } from "react";
-import Adsense from "react-adsense";
 import { withRouter } from "next/router";
 import BlockContent from "@sanity/block-content-to-react";
 import { Card, Form, Button } from "react-bootstrap";
@@ -91,16 +90,6 @@ function Post({ post, seo, asPath }) {
             </p>
           </div>
           <div className="sidebar-block newsletter-signup">
-            <h3>Signup For Our Newsletter!</h3>
-            <p>
-              Tune up Your Vibration with our Weekly Email Digest. Premium
-              Content Subscription also available at{" "}
-              <a target="_blank" href="https://www.patreon.com/awitherow">
-                Patreon
-              </a>
-              .
-            </p>
-            <Divider />
             <MailchimpForm source={`Blog Post: ${title}`} />
           </div>
           <div className="sidebar-block featured-products">
@@ -136,17 +125,6 @@ function Post({ post, seo, asPath }) {
             ) : (
               <p>Highlights coming soon!</p>
             )}
-          </div>
-          <div className="">
-            <h3>Sponsered Advertisement</h3>
-            <Adsense.Google
-              client="ca-pub-2149528894778035"
-              slot="7067153809"
-              style={{ display: "block" }}
-              format="auto"
-              responsive="true"
-              layoutKey="-gw-1+2a-9x+5c"
-            />
           </div>
         </div>
       </div>

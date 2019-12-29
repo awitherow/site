@@ -22,27 +22,9 @@ import PostList from "../components/PostList";
 
 import "./index.scss";
 
-const successMap = {
-  "n/a": {
-    text: "Sign up!",
-    variant: "primary",
-  },
-  waiting: {
-    text: "Processing...",
-    variant: "warning",
-  },
-  good: {
-    text: "Thanks for signing up!",
-    variant: "success",
-  },
-  bad: {
-    text: "Try again?",
-    variant: "danger",
-  },
-};
-
 const Home = ({ seo }) => {
   const [email_address, updateEmail] = useState("");
+  const [first_name, updateName] = useState("");
   const [success, setSuccess] = useState("n/a");
 
   const [activities, setActivities] = useState([]);
@@ -54,13 +36,13 @@ const Home = ({ seo }) => {
       setActivities(activities);
     }
 
-    async function fetchFeaturedPosts() {
-      const featuredPosts = await sanity.fetch(getFeaturedPosts);
-      setFeaturedPosts(featuredPosts);
-    }
+    // async function fetchFeaturedPosts() {
+    //   const featuredPosts = await sanity.fetch(getFeaturedPosts);
+    //   setFeaturedPosts(featuredPosts);
+    // }
 
     fetchActivities();
-    fetchFeaturedPosts();
+    // fetchFeaturedPosts();
   }, []);
 
   const handleSignup = async () => {
@@ -99,44 +81,7 @@ const Home = ({ seo }) => {
       <div className="cover">
         <div className="container">
           <div className="inner">
-            <h2>Create Your Life at its Highest Vibration</h2>
-            <p>
-              Tune up Your Vibration with our Weekly Email Digest. Premium
-              Content Subscription also available at{" "}
-              <a target="_blank" href="https://www.patreon.com/awitherow">
-                Patreon
-              </a>
-              .
-            </p>
-            <Form>
-              <InputGroup>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  autoComplete="email"
-                  value={email_address}
-                  onChange={e => updateEmail(e.target.value)}
-                />
-                <InputGroup.Append>
-                  <Button
-                    disabled={success === "good"}
-                    onClick={() => handleSignup()}
-                    variant={successMap[success].variant}>
-                    {successMap[success].text}
-                  </Button>
-                  <a
-                    className="icon-text btn btn-danger"
-                    variant="danger"
-                    href="https://www.patreon.com/awitherow"
-                    targt="_blank">
-                    <FontAwesomeIcon icon={faPatreon} /> <span>Subscribe</span>
-                  </a>
-                </InputGroup.Append>
-              </InputGroup>
-              <Form.Text className="text-muted">
-                Your Email is safe with us.
-              </Form.Text>
-            </Form>
+            <MailchimpForm source="Home Page" />
           </div>
         </div>
       </div>
@@ -144,7 +89,7 @@ const Home = ({ seo }) => {
       <section id="lifestyle">
         <SectionHeader
           title="High Vibrational Digest"
-          subtitle="The most Effective and Powerful High Vibrational Lifestyle Enhancements brought to you with Simplicty and Ease of Integration. Tried and Tested Solutions Empower you to Truly Go Further in Life."
+          subtitle="Get the Most Bang for your Buck with our Simple, Natural Solutions to Living Life at Your Highest Vibration. Our High Vibe Digest is packed with Health, Hacks and Highdeas to help create Alignment with Your Dream Life."
         />
 
         <div className="container activities">
@@ -156,15 +101,6 @@ const Home = ({ seo }) => {
             ))}
         </div>
       </section>
-
-      <section id="blog" className="bg-dark">
-        <SectionHeader
-          title="Best of the High Vibes Blog"
-          subtitle="Our most insightful posts that not only contain a wealth of theoretical knowledge, but always ends with a Call for Action to a Higher Vibrational Self"
-        />
-
-        <PostList posts={featuredPosts} />
-      </section>
     </Layout>
   );
 };
@@ -172,9 +108,9 @@ const Home = ({ seo }) => {
 Home.getInitialProps = async ({ query }) => {
   return {
     seo: {
-      title: "Your Life at its Highest Vibration",
+      title: "HIGH VIB.ES | HAPPY, HEALTHY, HOLISTIC",
       description:
-        "Promoting a life that leaves you gasping in a rush of ecstacy at its own amazingness. Fostering such moments with Succint Knowledge and Effective Solutions.",
+        "HIGH VIB.ES | HAPPY, HEALTHY, HOLISTIC. We promote a holistic approach to living a happy and healthy lifestyle by offering a variety of validated, quality articles, media, products and more to help you Live Your Dream Life at its Highest Vibration.",
     },
   };
 };

@@ -40,7 +40,7 @@ const checkRoute = id => {
 
 export default function Navigation({ fixedNav = false }) {
   return (
-    <Navbar expand="lg" bg="light" variant="light" fixed={fixedNav && "top"}>
+    <Navbar expand="lg" fixed={fixedNav && "top"}>
       <div className="container">
         <Navbar.Brand>
           <Link href="/">

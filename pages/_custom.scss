@@ -1,5 +1,5 @@
 @import "~bootstrap/scss/bootstrap.scss";
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300|Mukta:300,500");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700i&display=swap');
 
 $color-gold: #ffd700;
 
@@ -18,7 +18,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto Slab", serif;
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 p,
@@ -26,7 +29,8 @@ button,
 a,
 li,
 body {
-  font-family: "Mukta", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }
 
 .feature-corner {
@@ -89,6 +93,11 @@ body {
   .btn {
     margin: 0.22rem;
   }
+}
+
+.btn-gold  {
+  background-color: gold;
+  color:black;
 }
 
 .btn-dōterra {
