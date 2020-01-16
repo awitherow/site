@@ -1,5 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react";
-import sanity, { urlFor } from "../../lib/sanity";
+import sanity from "../../lib/sanity";
+import moment from "moment";
 import { withRouter } from "next/router";
 import Link from "next/link";
 
@@ -10,27 +11,69 @@ import Tags from "../../components/Tags";
 
 import "./index.scss";
 
+// const formatPostStructure = posts => {
+//   let final = []
+
+//   posts.forEach(post => {
+//     const yearCreated = moment(post._createdAt).year();
+//     const monthCreated = moment(post._createdAt).month();
+
+//     var months = ["January", "February", "March", "April", "May", "June",
+//       "July", "August", "September", "October", "November", "December"];
+
+//     if (!final.length) {
+//       final.push({
+//         yearCreated,
+//         postsByMonth: []
+//       })
+
+//     }
+
+//     final = final.map(o => {
+//       if (o.yearCreated === yearCreated) {
+//         if (!o.postsByMonth.length) {
+//           postsByMonth.push({
+//             monthCreated,
+//             posts: []
+//           })
+//         } else {
+//           o.postsByMonth.map(o => {
+//             if (o.monthCreated === monthCreated) {
+//               return Object.assign({}, o, { posts: o.posts.push[article] })
+//             }
+//           })
+//         }
+//       }
+//     })
+//   })
+// }
+
 function Archive({ posts, seo }) {
+  console.log(posts)
+
   return (
     <Layout seo={seo} id="archive">
-      <h2>The Best of High Vibes</h2>
-      <Divider />
-      <ul>
-        {posts.reverse().map(({ slug, title }, i) => (
-          <li key={i}>
-            <Link href={`/blog-post/${slug.current}`}>
-              <a>
-                <h3>{title}</h3>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Layout>
+      <div className="all-posts">
+        <h2>The Best of the High Vibes Blog</h2>
+        <Divider type="left" />
+        <div>
+          {posts.reverse().map(({ slug, title, tags, _createdAt }, i) => (
+            <div style={{ marginBottom: "1rem" }} key={i}>
+              <Link href={`/blog-post/${slug.current}`}>
+                <a>
+                  <span style={{ fontSize: 24 }}>{title}</span>
+                </a>
+              </Link>
+              <p>{moment(_createdAt).format("MMMM DD, YYYY")}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Layout >
   );
 }
 
-Archive.getInitialProps = async function({ asPath }) {
+Archive.getInitialProps = async function ({ asPath }) {
   const posts = await sanity.fetch(getAllBlogPosts);
 
   const title = "Archive of All Blog Posts";

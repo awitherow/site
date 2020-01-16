@@ -22,5 +22,10 @@ export const getFeaturedPosts = `*[_type == "post" && featured == true]{
 }`;
 
 export const getAllBlogPosts = `*[_type == "post"] | order(updatedNewestFirst) {
-  title, slug, "authorName": author->name
+  title,
+  slug,
+  _createdAt,
+  tags[] -> {
+    tag
+  }
 }`;

@@ -1,18 +1,19 @@
-#archive {
+.all-posts {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem;
+  
   h2 {
     margin: 2rem auto 1rem auto;
-    text-align: center;
   }
 
   ul {
-    max-width: 1200px;
     margin: 0 auto;
     list-style-type: none;
     padding-left: 0;
 
     li {
       margin: 0 auto;
-      text-align: center;
     }
 
     .tags {
