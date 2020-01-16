@@ -108,9 +108,9 @@ const Home = ({ seo }) => {
 Home.getInitialProps = async ({ query }) => {
   return {
     seo: {
-      title: "HIGH VIB.ES | HAPPY, HEALTHY, HOLISTIC",
+      title: "HIGH VIB.ES Health and Wellness | Tune Up Your Vibration",
       description:
-        "HIGH VIB.ES | HAPPY, HEALTHY, HOLISTIC. We promote a holistic approach to living a happy and healthy lifestyle by offering a variety of validated, quality articles, media, products and more to help you Live Your Dream Life at its Highest Vibration.",
+        "HIGH VIB.ES Health and Wellness. We promote a holistic approach to living a happy and healthy lifestyle by offering quality insights, wisdom, theory and application focused on empowering you Live Your Dream Life at its Highest Vibration. Tune in with us today and start living a life without regrets.",
     },
   };
 };

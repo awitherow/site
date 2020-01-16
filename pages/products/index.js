@@ -24,8 +24,8 @@ function Products({ products, seo }) {
   );
 }
 
-Products.getInitialProps = async function({ asPath }) {
-  const title = "Essential Products for High Vibrational Living";
+Products.getInitialProps = async function ({ asPath }) {
+  const title = "Essential Products for High Vibrational Living | No Crap, Only Quality";
   const description =
     "On our journey towards a High Vibrational Lifestyle, we find that some things work and others don't. Here, we've compiled only the best solutions for Living your Dream Life, across all spectrums.";
 

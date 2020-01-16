@@ -11,10 +11,10 @@ export default function Resources({ title = "", resources = [] }) {
   const [modal, setModal] = useGlobal("modal");
 
   return (
-    <div className="resources bg-dark">
+    <div className="resources">
       <div className="container" style={{ maxWidth: 1055 }}>
         <h3>
-          Featured Blog Posts About {title}{" "}
+          Blog Posts {" "}
           <Button
             size="sm"
             variant="primary"
@@ -26,8 +26,8 @@ export default function Resources({ title = "", resources = [] }) {
         {resources.length ? (
           <PostList posts={resources} />
         ) : (
-          <p>New articles coming soon!</p>
-        )}
+            <p>New articles coming soon!</p>
+          )}
       </div>
     </div>
   );

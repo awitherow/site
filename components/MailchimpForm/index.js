@@ -49,39 +49,39 @@ export default function MailchimpForm({ source }) {
 
   return (
     <div>
-      <h2>Your Life At It's Highest Vibrataion, A Click Away</h2>
-            <p>
-            Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter.
-            </p>
-            <Form>
+      <h2>High Vibrational Health and Wellness Made, Simplified</h2>
+      <p>
+        Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter.
+      </p>
+      <Form>
 
-            <Form.Control
-                  type="text"
-                  placeholder="First Name"
-                  autoComplete="given-name"
-                  value={first_name}
-                  onChange={e => updateName(e.target.value)}
-                />
-            <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  autoComplete="email"
-                  value={email_address}
-                  onChange={e => updateEmail(e.target.value)}
-                />
+        <Form.Control
+          type="text"
+          placeholder="First Name"
+          autoComplete="given-name"
+          value={first_name}
+          onChange={e => updateName(e.target.value)}
+        />
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          autoComplete="email"
+          value={email_address}
+          onChange={e => updateEmail(e.target.value)}
+        />
 
-                
 
-                <Button
-                    disabled={success === "good"}
-                    onClick={() => handleSignup()}
-                    variant={successMap[success].variant}>
-                    {successMap[success].text}
-                  </Button>
-              <Form.Text className="text-muted">
-                Your Email is safe here.
+
+        <Button
+          disabled={success === "good"}
+          onClick={() => handleSignup()}
+          variant={successMap[success].variant}>
+          {successMap[success].text}
+        </Button>
+        <Form.Text className="text-muted">
+          Your Email is safe here.
               </Form.Text>
-            </Form>
+      </Form>
     </div>
   );
 }

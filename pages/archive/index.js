@@ -48,30 +48,26 @@ import "./index.scss";
 //   })
 // }
 
-function Archive({ posts, seo }) {
-  console.log(posts)
-
-  return (
-    <Layout seo={seo} id="archive">
-      <div className="all-posts">
-        <h2>The Best of the High Vibes Blog</h2>
-        <Divider type="left" />
-        <div>
-          {posts.reverse().map(({ slug, title, tags, _createdAt }, i) => (
-            <div style={{ marginBottom: "1rem" }} key={i}>
-              <Link href={`/blog-post/${slug.current}`}>
-                <a>
-                  <span style={{ fontSize: 24 }}>{title}</span>
-                </a>
-              </Link>
-              <p>{moment(_createdAt).format("MMMM DD, YYYY")}</p>
-            </div>
-          ))}
-        </div>
+const Archive = ({ posts, seo }) => (
+  <Layout seo={seo} id="archive">
+    <div className="all-posts">
+      <h2>The Best of the High Vibes Blog</h2>
+      <Divider type="left" />
+      <div>
+        {posts.sort((a, b) => moment(b._createdAt) - moment(a._createdAt)).map(({ slug, title, tags, _createdAt }, i) => (
+          <div style={{ marginBottom: "1rem" }} key={i}>
+            <Link href={`/blog-post/${slug.current}`}>
+              <a>
+                <span style={{ fontSize: 24 }}>{title}</span>
+              </a>
+            </Link>
+            <p>{moment(_createdAt).format("MMMM DD, YYYY")}</p>
+          </div>
+        ))}
       </div>
-    </Layout >
-  );
-}
+    </div>
+  </Layout>
+)
 
 Archive.getInitialProps = async function ({ asPath }) {
   const posts = await sanity.fetch(getAllBlogPosts);

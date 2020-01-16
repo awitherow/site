@@ -10,7 +10,7 @@ import ProductList from "../../components/ProductList";
 import AlertDismissible from "../../components/AlertDismissible";
 
 import sanity, { urlFor } from "../../lib/sanity";
-import { getActivityByTitle } from "../../queries/activities";
+import { getActivityByName } from "../../queries/activities";
 
 import "./index.scss";
 
@@ -32,8 +32,8 @@ function ActivityPage({ activity = {}, seo }) {
         <h5>
           {activity.products
             ? `${activity.products.length} Essential Product${
-                activity.products.length === 1 ? "" : "s"
-              }`
+            activity.products.length === 1 ? "" : "s"
+            }`
             : "Essential Products Coming Soon!"}
         </h5>
 
@@ -54,20 +54,18 @@ function ActivityPage({ activity = {}, seo }) {
 }
 
 ActivityPage.getInitialProps = async ({ query, asPath }) => {
-  const activity = await sanity.fetch(getActivityByTitle(query.name));
+  const activity = await sanity.fetch(getActivityByName(query.name));
 
   const { image, title, description } = activity;
-
-  const modifiedTitle = `High Vibational ${title}`;
 
   return {
     activity,
     seo: {
-      title: modifiedTitle,
+      title,
       description,
       openGraph: {
         url: `https://highvib.es${asPath}`,
-        title: modifiedTitle,
+        title,
         description,
         images: [
           {

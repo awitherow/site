@@ -2,17 +2,20 @@ export const getAllActivities = `
 *[_type == 'hobby']{
     _id,
     title,
+    slug,
+    name,
     image,
     featured,
     resources[]{},
     products[]{}
 }`;
 
-export const getActivityByTitle = title => `
-*[_type == 'hobby' && title match "${title}"]{
+export const getActivityByName = name => `
+*[_type == 'hobby' && name match "${name}"]{
     _id,
     title,
     description,
+    name,
     image,
     tags[]-> {
         ...

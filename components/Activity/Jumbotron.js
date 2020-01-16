@@ -14,7 +14,7 @@ export default function Jumbotron({ image, title, tags, description }) {
           ).url()}) no-repeat center center fixed`,
         }}></div>
       <div className="activity-info">
-        <h2>High Vibrational {title} </h2>
+        <h2>{title}</h2>
         <Divider />
         <h3>Searchable Tags</h3>
         <div className="tags">

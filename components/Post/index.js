@@ -22,7 +22,7 @@ export default function Post({
   return (
     <Card key={_id} className={`${featured ? "featured" : ""}`}>
       <Feature />
-      <Card.Img variant="top" src={urlFor(mainImage).url()} />
+      <Card.Img variant="top" src={urlFor(mainImage).url()} style={{ borderBottom: "3px solid gold" }} />
       <Card.Body>
         <Card.Title>
           {title}
@@ -32,7 +32,7 @@ export default function Post({
           0,
           120,
         )}...`}</Card.Text>
-                <div
+        <div
           className="btn-container"
           style={{
             display: "flex",
