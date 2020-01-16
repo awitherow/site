@@ -1,7 +1,7 @@
 @import "./themes/cosmo/_variables.scss";
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./themes/cosmo/_bootswatch.scss";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,500,800i&display=swap');
 
 $color-gold: #ffd700;
 
@@ -21,9 +21,15 @@ h4,
 h5,
 h6 {
   font-family: "Open Sans", serif;
-  font-weight: 700;
+  font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
+  letter-spacing: 0px;
+
+  background: url("/static/img/stars.jpg") center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 p,
@@ -32,7 +38,6 @@ a,
 li,
 body {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
 }
 
 .feature-corner {
