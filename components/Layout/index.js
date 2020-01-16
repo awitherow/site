@@ -39,6 +39,7 @@ function Layout({ id, children, seo, ...props }) {
           name="google-site-verification"
           content="sO6wuMmvZ9hsBHpkHZaNRqqA9xnwGV8_YRN6N2TU2nc"
         />
+        <meta name="p:domain_verify" content="fb4c33a5ff75491d44ccfd6df46ab953" />
       </Head>
       <NextSeo {...seo} />
       <Navigation fixedNav={fixedNav} />
