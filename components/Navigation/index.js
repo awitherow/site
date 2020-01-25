@@ -3,15 +3,12 @@ import { Button, Navbar, Nav } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-
 import "./index.scss";
 
 export const links = [
   {
     id: "",
-    label: "Start Here",
+    label: "Home",
   },
   {
     id: "archive",
