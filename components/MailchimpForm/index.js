@@ -49,7 +49,7 @@ export default function MailchimpForm({ source }) {
 
   return (
     <div>
-      <h2>High Vibrational Health and Wellness Made, Simplified</h2>
+      <h2>Start Living Life at Your Highest Vibration, Today.</h2>
       <p>
         Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter.
       </p>
