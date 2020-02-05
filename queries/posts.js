@@ -1,5 +1,6 @@
 export const getPostBySlug = `*[_type == "post" && slug.current == $slug][0]{
   title,
+  description,
   "authorName": author->name,
   "categories": categories[]->title,
   mainImage {
