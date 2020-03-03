@@ -86,9 +86,9 @@ const Home = ({ seo }) => {
         </div>
       </div>
 
-      <section id="lifestyle">
+      <section id="start-here">
         <SectionHeader
-          title="High Vibrational Digest"
+          title="Tune Up Your Vibration"
           subtitle="Get the Most Bang for your Buck with our Simple, Natural Solutions to Living Life at Your Highest Vibration. Our High Vibe Digest is packed with Health, Hacks and Highdeas to help create Alignment with Your Dream Life."
         />
 

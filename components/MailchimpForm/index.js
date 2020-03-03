@@ -49,7 +49,7 @@ export default function MailchimpForm({ source }) {
 
   return (
     <div>
-      <h2>Start Living Life at Your Highest Vibration, Today.</h2>
+      <h2>Tune Up Your Vibration, Manifest Your Dream Life</h2>
       <p>
         Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter.
       </p>
@@ -71,13 +71,16 @@ export default function MailchimpForm({ source }) {
         />
 
 
+        <div className="btn-container">
+          <Button
+            disabled={success === "good"}
+            onClick={() => handleSignup()}
+            variant={successMap[success].variant}>
+            {successMap[success].text}
+          </Button>
 
-        <Button
-          disabled={success === "good"}
-          onClick={() => handleSignup()}
-          variant={successMap[success].variant}>
-          {successMap[success].text}
-        </Button>
+          <a className="btn btn-secondary" href="#start-here">START HERE</a>
+        </div>
         <Form.Text className="text-muted">
           Your Email is safe here.
               </Form.Text>
