@@ -10,15 +10,10 @@ import { logEvent } from "../lib/analytics";
 
 import sanity from "../lib/sanity";
 import { getAllActivities } from "../queries/activities";
-import { getFeaturedPosts } from "../queries/posts";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPatreon } from "@fortawesome/free-brands-svg-icons";
-
-import Layout, { SectionHeader, Divider } from "../components/Layout";
+import Layout, { SectionHeader } from "../components/Layout";
 import Activity from "../components/Activity";
 import MailchimpForm from "../components/MailchimpForm";
-import PostList from "../components/PostList";
 
 import "./index.scss";
 

@@ -11,6 +11,10 @@ export const links = [
     label: "Home",
   },
   {
+    id: "get-started",
+    label: "Get Started",
+  },
+  {
     id: "archive",
     label: "Blog Archive",
   },

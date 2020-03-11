@@ -1,0 +1,36 @@
+#get-started-page {
+  section {
+    max-width: 768px;
+    margin: 32px auto;
+    padding: 16px;
+    text-align: center;
+
+    .profile-header {
+      .profile-pic {
+        max-width: 150px;
+        border-radius: 50%;
+        margin: 0 auto 16px auto;
+      }
+    }
+
+    .category-divider {
+      margin-bottom: 32px;
+    }
+
+    .btn-container {
+      &.full-width {
+        max-width: 540px;
+        margin: inherit auto;
+
+        .btn {
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .title {
+    }
+    .subtitle {
+    }
+  }
+}

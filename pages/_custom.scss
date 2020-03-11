@@ -1,9 +1,18 @@
 @import "./themes/cosmo/_variables.scss";
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./themes/cosmo/_bootswatch.scss";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,500,800i&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,500,800i&display=swap");
 
 $color-gold: #ffd700;
+
+// -- bootstrap theme fixes
+.navbar {
+  .container {
+    flex-wrap: unset;
+  }
+}
+
+// -- end bootstrap theme fixes
 
 html {
   box-sizing: border-box;
@@ -87,6 +96,12 @@ body {
 .btn-container {
   margin: 0.33rem auto;
 
+  &.full-width {
+    .btn {
+      width: 100%;
+    }
+  }
+
   &.left {
     margin: 0.33rem 0 0.33rem 0;
   }
@@ -96,9 +111,14 @@ body {
   }
 }
 
-.btn-gold  {
+.btn-gold {
   background-color: gold;
-  color:black;
+  color: black;
+
+  &:hover {
+    background-color: lighten(gold, 15%);
+    font-weight: bold;
+  }
 }
 
 .btn-dōterra {
