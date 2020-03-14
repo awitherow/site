@@ -52,7 +52,7 @@ body {
 }
 
 .featured {
-  border: 4px solid #5cb85c;
+  border: 4px solid #3fb618;
   position: relative;
 
   .feature-corner {
@@ -62,7 +62,7 @@ body {
     top: 0;
     border-bottom-left-radius: 25%;
     padding: 0.4rem 0.4rem 0.5rem 0.5rem;
-    background: #5cb85c;
+    background: #3fb618;
     color: white;
   }
 }
@@ -110,11 +110,11 @@ body {
 }
 
 .btn-gold {
-  background-color: #5cb85c;
+  background-color: #3fb618;
   color: black;
 
   &:hover {
-    background-color: lighten(#5cb85c, 15%);
+    background-color: lighten(#3fb618, 15%);
     font-weight: bold;
   }
 }

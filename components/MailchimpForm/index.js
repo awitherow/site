@@ -78,8 +78,6 @@ export default function MailchimpForm({ source }) {
             variant={successMap[success].variant}>
             {successMap[success].text}
           </Button>
-
-          <a className="btn btn-secondary" href="#start-here">START HERE</a>
         </div>
       </Form>
     </div>
