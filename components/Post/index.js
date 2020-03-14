@@ -22,7 +22,7 @@ export default function Post({
   return (
     <Card key={_id} className={`${featured ? "featured" : ""}`}>
       <Feature />
-      <Card.Img variant="top" src={urlFor(mainImage).url()} style={{ borderBottom: "3px solid gold" }} />
+      <Card.Img variant="top" src={urlFor(mainImage).url()} style={{ borderBottom: "3px solid #5cb85c" }} />
       <Card.Body>
         <Card.Title>
           {title}

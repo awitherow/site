@@ -1,8 +1,8 @@
 nav {
   text-transform: uppercase;
-  border-bottom: 4px solid gold;
+  border-bottom: 4px solid #5cb85c;
 
-  background-color: rgba(255,255,255,0.888);
+  background-color: rgba(255, 255, 255, 0.888);
 
   .nav-link {
     color: rgba(0, 0, 0, 0.5);
@@ -14,7 +14,7 @@ nav {
     &.active {
       color: rgba(0, 0, 0, 0.9);
       font-weight: bold;
-      background-color:  gold;
+      background-color: #5cb85c;
       font-style: italic;
     }
   }

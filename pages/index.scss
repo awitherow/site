@@ -1,7 +1,7 @@
 #index {
   &.page {
     .cover {
-      background: url("/static/img/stones.jpg") no-repeat center center fixed;
+      background: url("/static/img/bamboo.jpg") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -35,7 +35,7 @@
         padding: 1rem;
         color: black;
         max-width: 460px;
-
+        background: rgba(225, 225, 225, 0.88);
         h2 {
           font-weight: 100;
           padding: 0.33rem 0;

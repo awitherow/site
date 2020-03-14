@@ -7,7 +7,7 @@ import "./index.scss"
 const successMap = {
   "n/a": {
     text: "Tune Up Today",
-    variant: "primary",
+    variant: "success",
   },
   waiting: {
     text: "Processing...",
@@ -15,7 +15,7 @@ const successMap = {
   },
   good: {
     text: "Check Your Inbox for a Freebie!",
-    variant: "success",
+    variant: "light",
   },
   bad: {
     text: "Try again?",
@@ -81,9 +81,6 @@ export default function MailchimpForm({ source }) {
 
           <a className="btn btn-secondary" href="#start-here">START HERE</a>
         </div>
-        <Form.Text className="text-muted">
-          Your Email is safe here.
-              </Form.Text>
       </Form>
     </div>
   );

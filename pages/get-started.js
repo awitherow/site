@@ -78,7 +78,7 @@ function GetStartePage({ seo }) {
             <h4>{name}</h4>
             <div className="btn-container full-width">
               {links.map(({ href, title, subtitle }) => (
-                <a href={href} className="btn btn-gold">
+                <a href={href} className="btn btn-success">
                   <span className="title">{title}</span>
                   <span className="subtitle">{subtitle}</span>
                 </a>
