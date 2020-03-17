@@ -10,13 +10,7 @@ export default class Sitemap extends Component {
 
     const SITE_ROOT = "https://highvib.es";
 
-    const routes = [
-      {
-        url: "",
-        changefreq: "daily",
-        priority: 1,
-      },
-    ];
+    const routes = [];
 
     links.map(({ id }) =>
       routes.push({
@@ -28,13 +22,13 @@ export default class Sitemap extends Component {
 
     const activities = await sanity.fetch(`
         *[_type == 'hobby']{
-            title,
+            slug,
         }`);
 
     for (let i = 0; i < activities.length; i += 1) {
       const activity = activities[i];
       routes.push({
-        url: `activity/${activity.title.replace(/\s+/g, "-").toLowerCase()}`,
+        url: `activity/${activity.slug}`,
         changefreq: "daily",
         priority: 1,
       });

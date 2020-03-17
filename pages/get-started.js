@@ -10,7 +10,8 @@ const linkCategories = [
       {
         href: "https://insig.ht/austinwitherow",
         title: "Free Guided Meditations on Insight Timer",
-        subtitle: ""
+        subtitle: "",
+        disabled: true
       }
     ]
   },
@@ -20,18 +21,21 @@ const linkCategories = [
       {
         href: "https://calendly.com/awitherow/wellness",
         title: "Schedule a Free Wellness Consultation",
-        subtitle: ""
+        subtitle: "",
+        disabled: false
       },
       {
-        href: "https://welcomely.growthtools.com/p/wcDuqtokajQBcVj",
+        href: "https://welcome.ly/p/wcDuqtokajQBcVj",
         title: "Learn: Empowered Living with Essential Oils",
-        subtitle: ""
+        subtitle: "",
+        disabled: false
       },
       {
         href:
           "https://www.doterra.com/US/en/p/healthy-habits-enrollment-kit?OwnerID=8122444",
         title: "(Recommended) dōTERRA Essential Oils Healthy Habits Kit",
-        subtitle: ""
+        subtitle: "",
+        disabled: false
       }
     ]
   },
@@ -42,13 +46,15 @@ const linkCategories = [
       {
         href: "https://calendly.com/awitherow/coaching-clarity-session",
         title: "Schedule a Clarity Coaching Call",
-        subtitle: ""
+        subtitle: "",
+        disabled: false
       },
       {
         href:
           "https://www.youtube.com/watch?v=yAjLJA647-w&list=PL2IhiQCs6lsjX5GDKLKCACLzNiUdLCU-k",
         title: "Agile Business Solutions Youtube Playlist",
-        subtitle: ""
+        subtitle: "",
+        disabled: false
       }
     ]
   }
@@ -73,12 +79,12 @@ function GetStartePage({ seo }) {
           title="Tune Up Your Vibration"
           subtitle="Looking to get started with living a higher vibrational lifestyle? Check out these quick resources!"
         />
-        {linkCategories.map(({ name, links }) => (
-          <div className="category-divider">
+        {linkCategories.map(({ name, links }, i) => (
+          <div key={i} className="category-divider">
             <h4>{name}</h4>
             <div className="btn-container full-width">
-              {links.map(({ href, title, subtitle }) => (
-                <a href={href} className="btn btn-success">
+              {links.map(({ href, title, subtitle, disabled }, i) => !!disabled && (
+                <a key={i} href={href} className="btn btn-success">
                   <span className="title">{title}</span>
                   <span className="subtitle">{subtitle}</span>
                 </a>
