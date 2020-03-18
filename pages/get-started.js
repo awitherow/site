@@ -9,9 +9,13 @@ const linkCategories = [
     links: [
       {
         href: "https://insig.ht/austinwitherow",
-        title: "Free Guided Meditations on Insight Timer",
-        subtitle: "",
-        disabled: true
+        title: "Coming Soon: Free Guided Meditations on Insight Timer",
+        subtitle: "Coming Soon: Guided meditations for sleep, alignment, focus and more!",
+      },
+      {
+        href: "https://insig.ht/austinwitherow",
+        title: "Free Online Yoga Classes",
+        subtitle: "Enjoy Yoga from the comfort of your home. Classes available for all levels.",
       }
     ]
   },
@@ -21,40 +25,46 @@ const linkCategories = [
       {
         href: "https://calendly.com/awitherow/wellness",
         title: "Schedule a Free Wellness Consultation",
-        subtitle: "",
-        disabled: false
+        subtitle: "Find out Which Essential Oils are Right For You!",
       },
       {
         href: "https://welcome.ly/p/wcDuqtokajQBcVj",
         title: "Learn: Empowered Living with Essential Oils",
-        subtitle: "",
-        disabled: false
+        subtitle: "Understand the Simple Science and Power of Purity of dōTERRAs Essential Oils",
       },
       {
         href:
           "https://www.doterra.com/US/en/p/healthy-habits-enrollment-kit?OwnerID=8122444",
-        title: "(Recommended) dōTERRA Essential Oils Healthy Habits Kit",
-        subtitle: "",
-        disabled: false
+        title: "Building Healthy Habits",
+        subtitle: "This Enrollment Kit is perfect for building holistic healthy daily habits",
+      },
+      {
+        href:
+          "https://www.doterra.com/US/en/p/healthy-home-enrollment-kit?OwnerID=8122444",
+        title: "Create a Healthier Home",
+        subtitle: "Replace Toxic Products for a Healthy Home with this Enrollment Kit",
+      },
+      {
+        href:
+          "https://www.doterra.com/US/en/p/natural-solutions-enrollment-kit?OwnerID=8122444",
+        title: "Natural Solutions",
+        subtitle: "This Comprehensive Enrollment Kit is the all in one package for a truly holistic lifestyle",
       }
     ]
   },
-  ,
   {
     name: "Lean Entrepreneurship",
     links: [
       {
         href: "https://calendly.com/awitherow/coaching-clarity-session",
         title: "Schedule a Clarity Coaching Call",
-        subtitle: "",
-        disabled: false
+        subtitle: "Got an Idea you wanna bring into Reality? Let's get some clarity here!",
       },
       {
         href:
           "https://www.youtube.com/watch?v=yAjLJA647-w&list=PL2IhiQCs6lsjX5GDKLKCACLzNiUdLCU-k",
-        title: "Agile Business Solutions Youtube Playlist",
-        subtitle: "",
-        disabled: false
+        title: "Agile Business Solutions Playlist",
+        subtitle: "Looking for free, simple tools for your small business?",
       }
     ]
   }
@@ -81,12 +91,12 @@ function GetStartePage({ seo }) {
         />
         {linkCategories.map(({ name, links }, i) => (
           <div key={i} className="category-divider">
-            <h4>{name}</h4>
+            <h3>{name}</h3>
             <div className="btn-container full-width">
-              {links.map(({ href, title, subtitle, disabled }, i) => !!disabled && (
+              {links.map(({ href, title, subtitle }, i) => (
                 <a key={i} href={href} className="btn btn-success">
-                  <span className="title">{title}</span>
-                  <span className="subtitle">{subtitle}</span>
+                  <p className="title">{title}</p>
+                  <p className="subtitle"><small>{subtitle}</small></p>
                 </a>
               ))}
             </div>

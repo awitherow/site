@@ -3,15 +3,6 @@
 @import "./themes/cosmo/_bootswatch.scss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,500,800i&display=swap");
 
-// -- bootstrap theme fixes
-.navbar {
-  .container {
-    flex-wrap: unset;
-  }
-}
-
-// -- end bootstrap theme fixes
-
 html {
   box-sizing: border-box;
 }

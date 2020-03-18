@@ -23,6 +23,10 @@ nav {
     img {
       max-height: 54px;
 
+      @media (max-width: 375px) {
+        width: 200px;
+      }
+
       &:hover {
         cursor: pointer;
       }
