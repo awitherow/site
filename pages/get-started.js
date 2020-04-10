@@ -4,56 +4,44 @@ import Link from "next/link";
 import "./get-started.scss";
 
 const linkCategories = [
+  // {
+  //   name: "Yoga and Meditation",
+  //   links: [
+  //     {
+  //       href: "https://insig.ht/austinwitherow",
+  //       title: "Coming Soon: Free Guided Meditations on Insight Timer",
+  //       subtitle: "Coming Soon: Guided meditations for sleep, alignment, focus and more!",
+  //     },
+  //     {
+  //       href: "https://insig.ht/austinwitherow",
+  //       title: "Free Online Yoga Classes",
+  //       subtitle: "Enjoy Yoga from the comfort of your home. Classes available for all levels.",
+  //     }
+  //   ]
+  // },
   {
-    name: "Yoga and Meditation",
-    links: [
-      {
-        href: "https://insig.ht/austinwitherow",
-        title: "Coming Soon: Free Guided Meditations on Insight Timer",
-        subtitle: "Coming Soon: Guided meditations for sleep, alignment, focus and more!",
-      },
-      {
-        href: "https://insig.ht/austinwitherow",
-        title: "Free Online Yoga Classes",
-        subtitle: "Enjoy Yoga from the comfort of your home. Classes available for all levels.",
-      }
-    ]
-  },
-  {
-    name: "Natural Solutions with Essential Oils",
+    name: "#essentialoilswork",
     links: [
       {
         href: "https://calendly.com/awitherow/wellness",
-        title: "Schedule a Free Wellness Consultation",
-        subtitle: "Find out Which Essential Oils are Right For You!",
+        title: "What Oils are Right for Me?",
+        subtitle: "Get FREE personalised recommendations on Natural Solutions with Essential Oils.",
       },
       {
         href: "https://welcome.ly/p/wcDuqtokajQBcVj",
-        title: "Learn: Empowered Living with Essential Oils",
+        title: "Free Course: Empowered Living with Essential Oils",
         subtitle: "Understand the Simple Science and Power of Purity of dōTERRAs Essential Oils",
       },
       {
         href:
           "https://www.doterra.com/US/en/p/healthy-habits-enrollment-kit?OwnerID=8122444",
-        title: "Building Healthy Habits",
-        subtitle: "This Enrollment Kit is perfect for building holistic healthy daily habits",
+        title: "Get Started Today with Healthy habits",
+        subtitle: "Purchase as as Wholesale Customer and get this healthy habits bundle 25% off!",
       },
-      {
-        href:
-          "https://www.doterra.com/US/en/p/healthy-home-enrollment-kit?OwnerID=8122444",
-        title: "Create a Healthier Home",
-        subtitle: "Replace Toxic Products for a Healthy Home with this Enrollment Kit",
-      },
-      {
-        href:
-          "https://www.doterra.com/US/en/p/natural-solutions-enrollment-kit?OwnerID=8122444",
-        title: "Natural Solutions",
-        subtitle: "This Comprehensive Enrollment Kit is the all in one package for a truly holistic lifestyle",
-      }
     ]
   },
   {
-    name: "Lean Entrepreneurship",
+    name: "#ENTREPRENEURSHIP",
     links: [
       {
         href: "https://calendly.com/awitherow/coaching-clarity-session",
@@ -75,15 +63,6 @@ function GetStartePage({ seo }) {
       <section>
         <div className="profile-header">
           <img src="static/img/me.jpg" className="profile-pic" />
-          <p>
-            👋 Hi, I'm Austin Witherow. I'm a 500 Hour Yoga and Meditation
-            Instructor, Digital Nomad and dōTERRA Wellness Advocate. This{" "}
-            <strong>Get Started</strong> page is focused on Action. Check out
-            the links below for the best direction for Tuning Up Your Vibration
-            and Achieving Your Dreams. Otherwise, check out the{" "}
-            <Link href="/">Home Page</Link> or the{" "}
-            <Link href="/archive">Blog Archive</Link> to get the full tuneup!
-          </p>
         </div>
         <SectionHeader
           title="Tune Up Your Vibration"
