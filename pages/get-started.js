@@ -4,21 +4,26 @@ import Link from "next/link";
 import "./get-started.scss";
 
 const linkCategories = [
-  // {
-  //   name: "Yoga and Meditation",
-  //   links: [
-  //     {
-  //       href: "https://insig.ht/austinwitherow",
-  //       title: "Coming Soon: Free Guided Meditations on Insight Timer",
-  //       subtitle: "Coming Soon: Guided meditations for sleep, alignment, focus and more!",
-  //     },
-  //     {
-  //       href: "https://insig.ht/austinwitherow",
-  //       title: "Free Online Yoga Classes",
-  //       subtitle: "Enjoy Yoga from the comfort of your home. Classes available for all levels.",
-  //     }
-  //   ]
-  // },
+  {
+    name: "Yoga and Meditation",
+    links: [
+      // {
+      //   href: "https://insig.ht/austinwitherow",
+      //   title: "Coming Soon: Free Guided Meditations on Insight Timer",
+      //   subtitle: "Coming Soon: Guided meditations for sleep, alignment, focus and more!",
+      // },
+      // {
+      //   href: "https://insig.ht/austinwitherow",
+      //   title: "Free Online Yoga Classes",
+      //   subtitle: "Enjoy Yoga from the comfort of your home. Classes available for all levels.",
+      // }
+      {
+        href: "https://forms.gle/xrm2hNBxdzNysEaw9",
+        title: "Schedule In Person or Online Private Lessons",
+        subtitle: "Currently offering a variety of private options in Oahu, online worldwide."
+      }
+    ]
+  },
   {
     name: "#essentialoilswork",
     links: [
@@ -66,7 +71,9 @@ function GetStartePage({ seo }) {
         </div>
         <SectionHeader
           title="Tune Up Your Vibration"
-          subtitle="Looking to get started with living a higher vibrational lifestyle? Check out these quick resources!"
+          subtitle={
+            <span>Looking to get started with living a higher vibrational lifestyle? Check out these quick resources! Otherwise <Link href="/">Browse Around</Link> :)</span>
+          }
         />
         {linkCategories.map(({ name, links }, i) => (
           <div key={i} className="category-divider">

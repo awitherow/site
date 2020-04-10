@@ -49,9 +49,9 @@ export default function MailchimpForm({ source }) {
 
   return (
     <div>
-      <h2>Tune Up Your Vibration, Manifest Your Dream Life</h2>
+      <h2>Tune Up Your Vibration</h2>
       <p>
-        Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter.
+        Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter, here to empower your fullest potential with insights on high vibrational yoga, meditation, nutrition, alchemy, plant medicine, mind magic and more!
       </p>
       <Form>
 
