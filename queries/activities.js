@@ -10,11 +10,12 @@ export const getAllActivities = `
     products[]{}
 }`;
 
-export const getActivityByName = name => `
+export const getActivityByName = (name) => `
 *[_type == 'hobby' && name match "${name}"]{
     _id,
     title,
     description,
+    body,
     name,
     image,
     tags[]-> {

@@ -54,8 +54,10 @@ export default function MailchimpForm({ source }) {
         As we grow, learn and evolve, we achieve higher states of vibration.
         With each new level, our life transforms in ways we never thought
         possible. Learn how to reach and maintain new heights with the High
-        Vibes Digest. Sign up below and get the High Vibes Primer Course, Free.
+        Vibes Digest. Sign up below and get the{" "}
+        <strong>High Vibes Primer Course</strong>, Free.
       </p>
+
       <Form>
         <Form.Control
           type="text"

@@ -1,31 +1,17 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { withRouter } from "next/router";
-import BlockContent from "@sanity/block-content-to-react";
-import { Card, Form, Button } from "react-bootstrap";
-import axios from "axios";
+import { Card } from "react-bootstrap";
 
 import sanity, { urlFor } from "../../lib/sanity";
 import { getPostBySlug } from "../../queries/posts";
 
 import Layout, { Divider } from "../../components/Layout";
+import Block from "../../components/Block";
 import Tags from "../../components/Tags";
 import MailchimpForm from "../../components/MailchimpForm";
 import ShareIcons from "../../components/ShareIcons";
 
-import getYouTubeId from "get-youtube-id";
-import YouTube from "react-youtube";
-import PortableText from "@sanity/block-content-to-react";
 import "./index.scss";
-
-const serializers = {
-  types: {
-    youtube: ({ node }) => {
-      const { url } = node;
-      const id = getYouTubeId(url);
-      return <YouTube className="responsive-video" videoId={id} />;
-    },
-  },
-};
 
 function Post({ post, seo, asPath }) {
   const {
@@ -45,7 +31,7 @@ function Post({ post, seo, asPath }) {
         className="full-img"
         style={{
           background: `url(${urlFor(
-            mainImage,
+            mainImage
           ).url()}) no-repeat center center fixed`,
         }}
       />
@@ -56,12 +42,7 @@ function Post({ post, seo, asPath }) {
           {tags && <Tags tags={tags.tags} />}
           <Divider type="left" />
 
-          <BlockContent
-            serializers={serializers}
-            blocks={body}
-            imageOptions={{ w: 754, fit: "max" }}
-            {...sanity.config()}
-          />
+          <Block content={body} />
           <div style={{ marginTop: "2rem", textAlign: "center" }}>
             <ShareIcons
               path={asPath}
@@ -101,9 +82,7 @@ function Post({ post, seo, asPath }) {
                   <Card className="mb-4">
                     <Card.Img
                       variant="top"
-                      src={urlFor(image)
-                        .width(380)
-                        .url()}
+                      src={urlFor(image).width(380).url()}
                     />
                     <Card.Body>
                       <h4>{title}</h4>
@@ -115,7 +94,8 @@ function Post({ post, seo, asPath }) {
                       <a
                         className="btn btn-primary btn-block"
                         href={link}
-                        target="_blank">
+                        target="_blank"
+                      >
                         Get It Today!
                       </a>
                     </Card.Footer>
@@ -132,7 +112,7 @@ function Post({ post, seo, asPath }) {
   );
 }
 
-Post.getInitialProps = async function({ query, asPath }) {
+Post.getInitialProps = async function ({ query, asPath }) {
   const { slug = "" } = query;
   const post = await sanity.fetch(getPostBySlug, { slug });
 
@@ -150,10 +130,7 @@ Post.getInitialProps = async function({ query, asPath }) {
         description,
         images: [
           {
-            url: urlFor(mainImage)
-              .height(800)
-              .width(800)
-              .url(),
+            url: urlFor(mainImage).height(800).width(800).url(),
             width: 800,
             height: 800,
             alt: "description",
