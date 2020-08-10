@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
-import "./index.scss"
+import "./index.scss";
 
 const successMap = {
   "n/a": {
@@ -33,13 +33,13 @@ export default function MailchimpForm({ source }) {
     const result = await axios.post("/api/mailchimp/subscribe", {
       source,
       email_address,
-      first_name
+      first_name,
     });
 
     if (typeof result != Error) {
       setSuccess("good");
-      updateEmail("")
-      updateName("")
+      updateEmail("");
+      updateName("");
       // TODO: disable all email signup on that device for that list.
     } else {
       setSuccess("bad");
@@ -49,33 +49,35 @@ export default function MailchimpForm({ source }) {
 
   return (
     <div>
-      <h2>Tune Up Your Vibration</h2>
+      <h2>Get More out of Life</h2>
       <p>
-        Tune Up Your Life with our bite-sized weekly Health, Hacks and Highdeas Email Newsletter, here to empower your fullest potential with insights on high vibrational yoga, meditation, nutrition, alchemy, plant medicine, mind magic and more!
+        As we grow, learn and evolve, we achieve higher states of vibration.
+        With each new level, our life transforms in ways we never thought
+        possible. Learn how to reach and maintain new heights with the High
+        Vibes Digest. Sign up below and get the High Vibes Primer Course, Free.
       </p>
       <Form>
-
         <Form.Control
           type="text"
           placeholder="First Name"
           autoComplete="given-name"
           value={first_name}
-          onChange={e => updateName(e.target.value)}
+          onChange={(e) => updateName(e.target.value)}
         />
         <Form.Control
           type="email"
           placeholder="Enter email"
           autoComplete="email"
           value={email_address}
-          onChange={e => updateEmail(e.target.value)}
+          onChange={(e) => updateEmail(e.target.value)}
         />
-
 
         <div className="btn-container">
           <Button
             disabled={success === "good"}
             onClick={() => handleSignup()}
-            variant={successMap[success].variant}>
+            variant={successMap[success].variant}
+          >
             {successMap[success].text}
           </Button>
         </div>
