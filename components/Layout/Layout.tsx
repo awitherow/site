@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useGlobal } from "reactn";
-import Head from "next/head";
-import Pixel from "../Pixel";
 import { NextSeo } from "next-seo";
 
 import { initGA, logPageView } from "../../lib/analytics";
@@ -31,22 +29,11 @@ function Layout({ id, children, seo, ...props }) {
 
   return (
     <div id={id} className="page">
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="sO6wuMmvZ9hsBHpkHZaNRqqA9xnwGV8_YRN6N2TU2nc"
-        />
-        <meta
-          name="p:domain_verify"
-          content="fb4c33a5ff75491d44ccfd6df46ab953"
-        />
-      </Head>
       <NextSeo {...seo} />
       <Navigation fixedNav={fixedNav} />
       <GlobalModal modal={modal} />
       {children}
       <Footer />
-      <Pixel name="FACEBOOK_PIXEL_1" />
     </div>
   );
 }

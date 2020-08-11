@@ -3,8 +3,12 @@ import Head from "next/head";
 
 import FACEBOOK_PIXEL_1 from "./facebook/pixel-1";
 
-const PixelHeader = ({ name }) => {
-  return <Head>{name === "FACEBOOK_PIXEL_1" && <FACEBOOK_PIXEL_1 />}</Head>;
+const PixelHeader = () => {
+  return (
+    <>
+      <FACEBOOK_PIXEL_1 />
+    </>
+  );
 };
 
 export default PixelHeader;
