@@ -10,7 +10,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "deploy": "now --target production"
+    "deploy": "now --target production",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "author": "",
   "license": "ISC",
@@ -47,7 +48,15 @@
     "@babel/runtime-corejs2": "^7.11.2",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.46",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "nodemon": "^1.19.1",
+    "prettier": "^2.0.5",
     "typescript": "^3.9.7"
   }
 }

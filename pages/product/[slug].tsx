@@ -45,22 +45,24 @@ function Product({ product, seo, asPath }) {
             <a
               target="_blank"
               href={link}
-              onClick={e =>
+              onClick={(e) =>
                 logEvent(
                   `/product/${title}`,
-                  `product ${title} comission click`,
+                  `product ${title} comission click`
                 )
               }
-              className={`btn btn-${name.toLowerCase()}`}>
+              className={`btn btn-${name.toLowerCase()}`}
+            >
               Shop at {name}
             </a>
             <a
               target="_blank"
               href="https://calendly.com/awitherow/evolve"
-              onClick={e =>
+              onClick={(e) =>
                 logEvent(`/product/${title}`, `product ${title} 1:1 consult`)
               }
-              className="btn btn-primary">
+              className="btn btn-primary"
+            >
               Let's Chat
             </a>
           </div>
@@ -85,7 +87,7 @@ function Product({ product, seo, asPath }) {
   );
 }
 
-Product.getInitialProps = async function({ query, asPath }) {
+Product.getInitialProps = async function ({ query, asPath }) {
   const { slug = "" } = query;
   const product = await sanity.fetch(getProductBySlug, { slug });
 
@@ -102,10 +104,7 @@ Product.getInitialProps = async function({ query, asPath }) {
         description,
         images: [
           {
-            url: urlFor(image)
-              .height(800)
-              .width(800)
-              .url(),
+            url: urlFor(image).height(800).width(800).url(),
             width: 800,
             height: 800,
             alt: description,

@@ -23,7 +23,7 @@ export default function GlobalModal() {
       interaction["onClick"] = (props) => yesFn(props);
     }
 
-    let enableFooter = yesStr && noStr && (yesFn || href);
+    const enableFooter = yesStr && noStr && (yesFn || href);
 
     children = (
       <Fragment>

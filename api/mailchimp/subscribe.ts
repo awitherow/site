@@ -1,7 +1,7 @@
-const Mailchimp = require("mailchimp-api-v3");
+import Mailchimp from "mailchimp-api-v3";
 const mailchimp = new Mailchimp(process.env.mailchimp);
 
-module.exports = async (req, res) => {
+const run = async (req, res) => {
   const { email_address, first_name, source } = req.body;
 
   try {
@@ -12,10 +12,12 @@ module.exports = async (req, res) => {
         email_address,
         first_name,
         status: "subscribed",
-      },
+      }
     );
     return res.json(results);
   } catch (e) {
     return res.json(e);
   }
 };
+
+export default run;

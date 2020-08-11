@@ -17,7 +17,7 @@ export default class Sitemap extends Component {
         url: `${id}`,
         changefreq: "daily",
         priority: 1,
-      }),
+      })
     );
 
     const activities = await sanity.fetch(`

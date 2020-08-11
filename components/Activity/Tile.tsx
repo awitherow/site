@@ -15,7 +15,8 @@ export default function Tile({
   return (
     <Link
       href="/activity/[slug]"
-      as={`/activity/${name.replace(/\s+/g, "-").toLowerCase()}`}>
+      as={`/activity/${name.replace(/\s+/g, "-").toLowerCase()}`}
+    >
       <a>
         <div className="stats">
           <span>
@@ -26,12 +27,7 @@ export default function Tile({
           </span>
         </div>
         <h3>{name}</h3>
-        <img
-          src={urlFor(image)
-            .width(700)
-            .height(700)
-            .url()}
-        />
+        <img src={urlFor(image).width(700).height(700).url()} />
       </a>
     </Link>
   );

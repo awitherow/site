@@ -32,17 +32,17 @@ function ActivityPage({ activity = {}, seo }) {
         <h5>
           {activity.products
             ? `${activity.products.length} Essential Product${
-            activity.products.length === 1 ? "" : "s"
-            }`
+                activity.products.length === 1 ? "" : "s"
+              }`
             : "Essential Products Coming Soon!"}
         </h5>
 
         {activity.products ? (
           <ProductList
-            onClick={e =>
+            onClick={(e) =>
               logEvent(
                 `/activity/${activity.title}`,
-                `product ${activity.title} comission click`,
+                `product ${activity.title} comission click`
               )
             }
             products={activity.products}
@@ -69,10 +69,7 @@ ActivityPage.getInitialProps = async ({ query, asPath }) => {
         description,
         images: [
           {
-            url: urlFor(image)
-              .height(800)
-              .width(800)
-              .url(),
+            url: urlFor(image).height(800).width(800).url(),
             width: 800,
             height: 800,
             alt: "description",

@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 
 import FACEBOOK_PIXEL_1 from "./facebook/pixel-1";
 
