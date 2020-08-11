@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { urlFor } from "../../lib/sanity";
 
 import Divider from "../Layout/Divider";
@@ -6,7 +6,7 @@ import Block from "../Block";
 
 export default function Jumbotron({ image, title, tags, body }) {
   return (
-    <Fragment>
+    <>
       <div
         className="activity-header"
         style={{
@@ -14,7 +14,7 @@ export default function Jumbotron({ image, title, tags, body }) {
             image
           ).url()}) no-repeat center center fixed`,
         }}
-      ></div>
+      />
       <div className="activity-info">
         <h2>{title}</h2>
         <Divider />
@@ -29,6 +29,6 @@ export default function Jumbotron({ image, title, tags, body }) {
         <h3>Description</h3>
         <Block content={body} />
       </div>
-    </Fragment>
+    </>
   );
 }

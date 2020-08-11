@@ -14,11 +14,12 @@ export default function Resources({ title = "", resources = [] }) {
     <div className="resources">
       <div className="container" style={{ maxWidth: 1055 }}>
         <h3>
-          Blog Posts {" "}
+          Blog Posts{" "}
           <Button
             size="sm"
             variant="primary"
-            onClick={() => setModal("MailchimpSignup")}>
+            onClick={() => setModal("MailchimpSignup")}
+          >
             <FontAwesomeIcon icon={faEnvelope} /> Notify Me!
           </Button>
         </h3>
@@ -26,8 +27,8 @@ export default function Resources({ title = "", resources = [] }) {
         {resources.length ? (
           <PostList posts={resources} />
         ) : (
-            <p>New articles coming soon!</p>
-          )}
+          <p>New articles coming soon!</p>
+        )}
       </div>
     </div>
   );

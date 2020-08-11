@@ -10,9 +10,6 @@ import Navigation from "../Navigation";
 import Footer from "../Footer";
 import GlobalModal from "../GlobalModal";
 
-import Divider from "./Divider";
-import SectionHeader from "./SectionHeader";
-
 import "./index.scss";
 
 function Layout({ id, children, seo, ...props }) {
@@ -39,7 +36,10 @@ function Layout({ id, children, seo, ...props }) {
           name="google-site-verification"
           content="sO6wuMmvZ9hsBHpkHZaNRqqA9xnwGV8_YRN6N2TU2nc"
         />
-        <meta name="p:domain_verify" content="fb4c33a5ff75491d44ccfd6df46ab953" />
+        <meta
+          name="p:domain_verify"
+          content="fb4c33a5ff75491d44ccfd6df46ab953"
+        />
       </Head>
       <NextSeo {...seo} />
       <Navigation fixedNav={fixedNav} />
@@ -52,4 +52,3 @@ function Layout({ id, children, seo, ...props }) {
 }
 
 export default Layout;
-export { Divider, SectionHeader };

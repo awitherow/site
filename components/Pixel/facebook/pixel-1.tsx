@@ -1,5 +1,7 @@
-export default () => (
-  <React.Fragment>
+import React from "react";
+
+const Pixel = () => (
+  <>
     <script
       dangerouslySetInnerHTML={{
         __html: `!function(f,b,e,v,n,t,s)
@@ -20,5 +22,7 @@ export default () => (
       src="https://www.facebook.com/tr?id=464342714197262&ev=PageView&noscript=1" />`,
       }}
     />
-  </React.Fragment>
+  </>
 );
+
+export default Pixel;
