@@ -36,9 +36,9 @@ const linkCategories = [
       },
       {
         href: "https://welcome.ly/p/wcDuqtokajQBcVj",
-        title: "Empowered Living w/ Essential Oils",
+        title: "FREE COURSE: Empowered Living w/ Essential Oils",
         subtitle:
-          "FREE COURSE: Understanding the Simple Science and Power of Purity of dōTERRAs Essential Oils",
+          "Understanding the Simple Science and Power of Purity of dōTERRAs Essential Oils",
       },
       {
         href:
