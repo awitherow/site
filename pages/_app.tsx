@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { setGlobal } from "reactn";
-import Head from "next/Head";
+import Head from "next/head";
 import App from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
