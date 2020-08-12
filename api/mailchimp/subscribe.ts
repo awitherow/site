@@ -1,7 +1,9 @@
 import Mailchimp from "mailchimp-api-v3";
+import { NextApiRequest, NextApiResponse } from "next";
+
 const mailchimp = new Mailchimp(process.env.mailchimp);
 
-const run = async (req, res) => {
+const run = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email_address, first_name, source } = req.body;
 
   try {
