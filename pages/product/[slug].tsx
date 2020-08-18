@@ -27,6 +27,7 @@ function Product({ product, seo, asPath }) {
     link,
     provider,
     tags,
+    body,
   } = product;
 
   const { name } = provider;
@@ -40,7 +41,7 @@ function Product({ product, seo, asPath }) {
           <h2>
             {title} by {creator}
           </h2>
-          <p>{description}</p>
+          <p>{body ? body : description}</p>
           <div className="btn-container">
             <a
               target="_blank"

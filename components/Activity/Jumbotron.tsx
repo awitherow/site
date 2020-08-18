@@ -4,7 +4,8 @@ import { urlFor } from "../../lib/sanity";
 import Divider from "../Layout/Divider";
 import Block from "../Block";
 
-export default function Jumbotron({ image, title, tags, body }) {
+export default function Jumbotron({ image, title, tags, body, description }) {
+  console.log(body);
   return (
     <>
       <div
@@ -27,7 +28,7 @@ export default function Jumbotron({ image, title, tags, body }) {
           ))}
         </div>
         <h3>Description</h3>
-        <Block content={body} />
+        {Boolean(body) ? <Block content={body} /> : <p>{description}</p>}
       </div>
     </>
   );

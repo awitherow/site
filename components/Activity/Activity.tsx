@@ -10,7 +10,17 @@ import Resources from "./Resources";
 import "./index.scss";
 
 export default function Activity({ data, expanded }) {
-  const { _id, title, name, image, tags, body, resources, products } = data;
+  const {
+    _id,
+    title,
+    name,
+    image,
+    tags,
+    body,
+    resources,
+    products,
+    description,
+  } = data;
 
   if (!_id) {
     return null;
@@ -26,7 +36,13 @@ export default function Activity({ data, expanded }) {
           resourceCount={resources}
         />
       ) : (
-        <Jumbotron image={image} title={title} tags={tags} body={body} />
+        <Jumbotron
+          description={description}
+          image={image}
+          title={title}
+          tags={tags}
+          body={body}
+        />
       )}
       {expanded ? <Resources title={title} resources={resources} /> : null}
     </div>
