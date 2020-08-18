@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.scss";
+import Block from "../../components/Block";
 
 function Product({ product, seo, asPath }) {
   const {
@@ -41,7 +42,7 @@ function Product({ product, seo, asPath }) {
           <h2>
             {title} by {creator}
           </h2>
-          <p>{body ? body : description}</p>
+          <p>{body ? <Block content={body} /> : description}</p>
           <div className="btn-container">
             <a
               target="_blank"
