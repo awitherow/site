@@ -18,10 +18,10 @@ export const links = [
     id: "archive",
     label: "Blog Archive",
   },
-  // {
-  //   id: "products",
-  //   label: "Products",
-  // },
+  {
+    id: "products",
+    label: "Store",
+  },
 ];
 
 const checkRoute = (id) => {
